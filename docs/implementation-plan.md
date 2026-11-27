@@ -24,12 +24,12 @@ Three rules keep the streams off each other's toes:
 
 ## What needs Prafull, and what it costs
 
-Every recurring cost is listed here before it is incurred, as the build rules require. Development costs about **$4 a month** (GitHub Pro, if his account is on the free plan), and launch adds the spec's **~$81 a month** at 1,000 active learners.
+Every recurring cost is listed here before it is incurred, as the build rules require. Development costs **$0 a month** on GitHub, because the repo is public and GitHub protects branches on public repos for free. Launch adds the spec's **~$81 a month** at 1,000 active learners.
 
 | # | Step | When | What Prafull does | Cost |
 | --- | --- | --- | --- | --- |
 | 1 | Approve this plan and its Proposed items | Before Phase 0 | Reads the plan and says go, or changes items | $0 |
-| 2 | GitHub Pro | Before Phase 0 ends | Approves the upgrade on github.com, only if his account is on GitHub Free | $4 a month. Needed to lock main on a private repo, because GitHub Free offers protected branches only on public repos ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). The $0 alternative is an unlocked main that agents guard by rule. |
+| 2 | Protect main | Before Phase 0 ends | Adds a free branch ruleset on main on github.com: pull requests only, required checks, branch current with main, no force pushes | $0. The repo is public, and GitHub Free protects branches on public repos ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). |
 | 3 | Firebase projects, dev and prod | Phase 0 | Approves one Google sign-in in the browser; Claude creates both projects and keyless deploy access from GitHub; Prafull enters a card for the Blaze plan himself | $0 in development, inside the free tiers. Budget alerts at $5 (dev) and $100 (prod) (**Proposed**). |
 | 4 | Gemini API key for production debriefs | Phase 2 | Nothing beyond step 3; the key is created in the prod project and kept in Secret Manager | ~$72 a month at 1,000 learners (already accepted). Development uses template debriefs; each run of the debrief quality test costs about $0.20 and runs only when debrief code changes. |
 | 5 | Apple Developer Program | Start of Phase 1 | Enrolls with his Apple ID and approves 2FA on his phone; decides individual or organization first (an organization needs a free D-U-N-S number, which can take days) | $99 a year. Needed for Sign in with Apple, App Attest and TestFlight. |
@@ -256,7 +256,7 @@ Linux jobs run on Prafull's Tenki runners and are filtered by path, so a content
 
 **Branch protection on main**
 
-Pull requests only, every required check green, branch current with main, linear history, no force pushes, and CODEOWNERS approval from Prafull for contracts, rules, workflows and `streams.yml`. This needs GitHub Pro on a private repo (step 2 above).
+Pull requests only, every required check green, branch current with main, linear history, no force pushes, and CODEOWNERS approval from Prafull for contracts, rules, workflows and `streams.yml`. This is free because the repo is public; it is set up in step 2 above.
 
 ## Testing per stream
 
@@ -322,7 +322,7 @@ S0 runs each integration milestone on a dedicated `ws/s0/integration-mN` branch 
 | Engine results differ between the Dart VM, JavaScript and WebAssembly | Client and server disagree on a score | Integer money and prices, a pure-Dart seeded random generator, deterministic rounding, and golden vectors on all three targets in CI |
 | No official Dart Admin SDK for the server | Dart scoring service cannot reach Firestore easily | A spike in Phase 0 using Google's REST APIs; if it fails, a TypeScript port of scoring verified by the same golden vectors, as the spec allows |
 | Flutter web no longer ships a default service worker ([flutter-announce](https://groups.google.com/g/flutter-announce/c/0Vv-j_TyrdI)) | Offline replays and installability break | S11 writes its own service worker in Phase 1, modeled on the guest experience app's setup, and tests offline play in the installed app |
-| GitHub Free cannot protect main on a private repo | Unreviewed merges | GitHub Pro ($4 a month), or an agent-enforced gate if he declines |
+| Main is unprotected until the branch ruleset is added | Unreviewed merges | The free branch ruleset in step 2, added before Phase 0 ends |
 | CI minutes run out, as they did on another project | Slow or stalled builds | Path filters, Tenki Linux runners, iOS builds only on main, release and `ios`-labeled pull requests, and Codemagic's free macOS minutes; no check is ever skipped |
 | Google Play's 12-tester, 14-day closed test | Android launch slips | Start the closed track at M5, so the clock runs during hardening; or use an organization account |
 | Apple or Google account setup takes days | Sign in with Apple and TestFlight blocked | Steps 5 and 6 start at the beginning of Phase 1 |
@@ -357,7 +357,6 @@ Everything above that the spec, design guide or lesson plan did not already deci
 
 ## Open questions
 
-- Is Prafull's GitHub account on the free plan, and does he want GitHub Pro to lock main?
 - Should the Apple and Google developer accounts be personal or belong to a company? An organization account avoids Google's 12-tester rule but needs a D-U-N-S number, and it ties into the spec's open question on which entity publishes the apps.
 - Who are the 12 or more closed testers for Google Play?
 - Who signs off the lesson content and each scenario's calibration, as the spec's open questions ask?
