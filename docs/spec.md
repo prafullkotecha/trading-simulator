@@ -450,6 +450,10 @@ The app uses its own design system built on Material 3 tokens rather than stock 
 
 The full UX and UI rules live in [Trading Simulator: UX and UI Design Guide v1](design-guide.md): color, type and motion tokens for both themes, components, navigation, the key screens with wireframes, chart rules, microcopy, accessibility and teen safety, and PWA and native differences. It raises the accessibility bar here from WCAG 2.1 AA to 2.2 AA, and every new choice it makes is marked Proposed and listed at its end for sign-off.
 
+**Implementation plan**
+
+How the build is split into parallel workstreams that never touch each other's code lives in [Trading Simulator: Implementation Plan v1](implementation-plan.md): phases and milestones, exclusive folder ownership per stream, frozen interface contracts, branch and merge rules, testing, risks, and the steps and costs that need Prafull.
+
 ## Analytics
 
 Analytics measure learning and retention, not ad targeting. Google Analytics for Firebase runs with ad personalization signals and advertising ID collection turned off for every user, and no third-party analytics or attribution SDKs are added.

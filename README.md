@@ -2,13 +2,14 @@
 
 A plan for a simulator that teaches anyone 13 or older to invest and trade US stocks and options, including options strategies, using real tickers, synthetic prices and simulated money.
 
-This repository holds the plan only: the product spec, the design guide and the lesson plan. There is no app or code yet.
+This repository holds the plan only: the product spec, the design guide, the lesson plan and the implementation plan. There is no app or code yet.
 
 ## Documents
 
 - **[Product spec](docs/spec.md):** what the app does, the curriculum, the farm-analogy glossary, architecture, costs and launch scope.
 - **[UX and UI design guide](docs/design-guide.md):** design tokens, components, navigation, key screens, charts, microcopy, accessibility and PWA versus native differences.
 - **[Lesson plan](docs/lesson-plan.md):** all four levels, lesson by lesson, with timings and what each level unlocks.
+- **[Implementation plan](docs/implementation-plan.md):** phases, parallel workstreams with exclusive folder ownership, frozen interface contracts, merge rules, testing, risks, and the steps and costs that need Prafull.
 
 ## At a glance
 
