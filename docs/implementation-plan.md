@@ -164,7 +164,7 @@ Every contract below is written, reviewed and frozen in Phase 0 as version 1.0.0
 | C9 | Feature module interface | `packages/contracts/lib/feature_module.dart` | How a feature package hands its routes, providers and navigation destination to the shell |
 | C10 | Analytics events | `packages/contracts/lib/analytics_events.dart` | Every event name and parameter from the spec's Analytics section, with age only as "teen" or "adult" |
 | C11 | Remote Config keys | `packages/contracts/lib/remote_config_keys.dart` and `firebase/remoteconfig.template.json` | Debrief caps, AI kill switch, fallback model switch, feature flags, with defaults |
-| C12 | Content format | `packages/contracts/schemas/lesson.json`, `quiz.json`, `news.json` | Lesson structure (analogy line, text, one diagram id, checks, "Try it" scenario), quiz bank items, news beats, and the registry of 33 diagram ids |
+| C12 | Content format | `packages/contracts/schemas/lesson.json`, `quiz.json`, `news.json` | Lesson structure (analogy line, text, one diagram id, checks, "Try it" scenario), quiz bank items, news beats, and the registry of 38 diagram ids |
 | C13 | Golden test vectors | `test_vectors/` | Input and expected-output files that the engine, the pricing package and the server must all reproduce exactly |
 
 **Firestore schema, first cut (C4)**
@@ -212,7 +212,7 @@ The critical path runs through the engine, not the screens: Foundation, then the
 
 **Near-critical paths that can quietly become critical**
 
-- **Content and scenario review.** Thirty-three lessons, four quiz banks and 8 to 12 scenarios each need a person's sign-off. S12 and S2 start in Phase 1 so review never waits on code.
+- **Content and scenario review.** Thirty-eight lessons, four quiz banks and 8 to 12 scenarios each need a person's sign-off. S12 and S2 start in Phase 1 so review never waits on code.
 - **Store accounts.** Apple enrollment and Play verification can take days, and a D-U-N-S number longer, so steps 5 and 6 in the table above start at the beginning of Phase 1.
 - **The 14-day closed test.** It starts at M5 with the first Play closed-track build, so its clock runs during hardening rather than after it.
 
@@ -285,7 +285,7 @@ S0 runs each integration milestone on a dedicated `ws/s0/integration-mN` branch 
 | --- | --- | --- |
 | **M1 Engine in the loop** | A real pack plays and scores identically in the client engine and on the server | Command line, VM, JavaScript, WebAssembly |
 | **M2 Walking skeleton** | Sign in, open lesson 1.1, tap "Try it", play the replay, get a server score and a template debrief | iOS simulator, Android emulator, web preview |
-| **M3 Level 1 complete** | All 11 L1 lessons and the reality check, the L1 quiz and gate challenge, real Gemini debriefs with the daily cap | All three |
+| **M3 Level 1 complete** | All 16 L1 lessons and both L1 reality checks, the L1 quiz and gate challenge, real Gemini debriefs with the daily cap | All three |
 | **M4 Options complete** | L2 to L4, modeled chains and greeks, collateral, assignment at expiry, spreads, every gate | All three |
 | **M5 Live and challenges** | The live market ticking in the dev project, live orders, portfolio, weekly challenge and leaderboards, the first Play closed-track build | All three |
 | **M6 Release candidate** | Everything in the spec's launch scope, with every Definition of done met | All three, release builds |
