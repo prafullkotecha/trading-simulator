@@ -79,7 +79,7 @@ packages/
   sim_engine/             accounts, orders, fills, collateral, expiry, scoring (S4)
   trading_ui/             trade ticket, option chain, position card, price chart (S6)
   feature_learn/          level path, lesson renderer, quizzes, gates (S5)
-  lesson_diagrams/        the 33 interactive lesson diagrams (S5)
+  lesson_diagrams/        the 38 interactive lesson diagrams (S5)
   feature_replay/         scenario library, replay player, study mode (S6)
   feature_live/           live market screens (S7)
   feature_portfolio/      live paper account (S7)
@@ -129,14 +129,14 @@ Fourteen streams own the code. Each one is a separate Claude Code session in its
 | S2 | Market model and scenarios | `packages/market_model`, `tools/scenario_builder`, `tools/ticker_sync`, `content/scenarios/*/scenario.yaml` | C1, C3 | Regime-switching generator, calibration checker, the SEC ticker list, 8 to 12 frozen scenario packs, the live market's model parameters | 1 to 3 |
 | S3 | Options pricing | `packages/options_pricing`, `test_vectors/pricing` | C1, C2 | Black-Scholes prices, greeks, skew, modeled bid and ask, chain builder, strategy payoff curves | 1 |
 | S4 | Simulation engine and scoring | `packages/sim_engine`, `server/sim_server/lib/src/scoring`, `test_vectors/engine` | C1 to C3, S3 | Deterministic engine (orders, fills, slippage, collateral, dividends, expiry), replay clock, scoring, and the server scoring endpoint | 1 to 2 |
-| S5 | Learn | `packages/feature_learn`, `packages/lesson_diagrams` | S1, C12 | Level path, lesson renderer, the 33 diagrams, quizzes from banks, gates, level unlock | 2 |
+| S5 | Learn | `packages/feature_learn`, `packages/lesson_diagrams` | S1, C12 | Level path, lesson renderer, the 38 diagrams, quizzes from banks, gates, level unlock | 2 |
 | S6 | Replay and trading UI | `packages/feature_replay`, `packages/trading_ui` | S1, S3, S4 | Scenario library, replay player with timeline, trade ticket, option chain, positions, study mode, offline pack cache | 2 |
 | S7 | Live market and portfolio | `packages/feature_live`, `packages/feature_portfolio`, `server/sim_server/lib/src/live` | S2, S4, S6 `trading_ui` | Minute tick job, live order fills, live screens, portfolio, weekly reset | 2 |
 | S8 | AI debrief | `packages/feature_debrief`, `functions/src/debrief` | C5, C6 | Summary builder, Gemini call with structured output, advice filter, caps, template fallback, kill switch, debrief screens | 2 |
 | S9 | Identity, onboarding and safety | `packages/feature_onboarding`, `packages/feature_profile`, `functions/src/identity` | S1, C4, C5 | Age gate, sign-in with Apple, Google and email link, store age signals, nicknames, teen defaults, break prompt, export and delete | 1 to 2 |
 | S10 | Challenges and leaderboards | `packages/feature_challenges`, `functions/src/challenges` | S4, C4, C5 | Weekly rollover, risk-adjusted ranking, leaderboards, invite codes and friends | 2 |
 | S11 | App shell, PWA and web | `apps/app` (except `ios/` and `android/` signing files, which S13 owns) | S1, C8, C9 | Adaptive navigation, routing composition, splash, manifest, a custom service worker for offline packs, install sheet, web push, keyboard shortcuts | 1 to 2 |
-| S12 | Content | `content/lessons`, `content/quizzes`, `content/glossary`, `content/copy`, `content/scenarios/*/news.yaml` | C12 | Lesson text for 33 lessons and 4 reality checks, quiz banks for 4 gates, news beats, glossary, disclaimers and microcopy | 1 to 3 |
+| S12 | Content | `content/lessons`, `content/quizzes`, `content/glossary`, `content/copy`, `content/scenarios/*/news.yaml` | C12 | Lesson text for 38 lessons and 5 reality checks, quiz banks for 4 gates, news beats, glossary, disclaimers and microcopy | 1 to 3 |
 | S13 | CI/CD and release | `.github/workflows`, `.github/*_TEMPLATE*`, `tools/walkthrough`, signing and store metadata | Everything (read only) | CI pipelines, preview deploys per pull request, walkthrough videos, iOS and Android builds, store listings, release automation | 0 to 4 |
 
 **How a stream works, day to day**
