@@ -106,7 +106,7 @@ Each lesson is 3 to 5 minutes: a short read with an interactive diagram, two or 
 
 The curriculum is 38 core lessons of 3 to 5 minutes plus 5 two-minute reality checks, about 161 minutes of reading in all. Each lesson opens with one line from a single running analogy, a farm and its harvest, then switches to real tickers and numbers: one goal, one diagram the learner can drag (price, days left or strike) with real dollar amounts, and one short replay to try it. No other metaphors are used. The glossary at the end gives every term a one-line "think of it like". On Nov 27, 2026 the lessons were checked against the Jump$tart national investing standards, the SIFMA Stock Market Game, SEC investor.gov, the Options Industry Council and the FINRA SIE outline; Prafull approved the resulting changes, so Level 1 gained five lessons (1.3, 1.9, 1.11, 1.12 and 1.15, marked new), 1.5, 1.13, 1.16 and 3.7 were widened or trimmed, and the reality checks now cover investment scams and real-world options rules. The full lesson plan, with every diagram and the benchmark map, is in [Trading Simulator Lesson Plan](lesson-plan.md) (Nov 27, 2026).
 
-*L1 Stocks and ETFs: 11 lessons + 1 reality check, 44 min*
+*L1 Stocks and ETFs: 16 lessons + 2 reality checks, 64 min*
 
 | # | Lesson | Farm line | Goal | Diagram |
 | --- | --- | --- | --- | --- |
