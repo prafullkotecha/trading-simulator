@@ -22,7 +22,7 @@ Two learners test every screen: Maya, 15, on her phone for 5 to 15 minutes in th
 
 The palette is a custom Material 3 color scheme with two money colors that never change meaning: blue for gain and orange for loss. Dark is the default theme, as the spec decided; light is a full equal, and a "Match system" option in Settings is **Proposed**. Every text pair below passes WCAG 2.2 AA (4.5:1), and every input border passes the 3:1 non-text rule.
 
-*Figure not included in this Markdown copy: core color tokens · dark and light.*
+![Core color tokens in dark and light themes: blue always means gain, orange always means loss](images/design-colors.png)
 
 | Role (Flutter `ColorScheme` or extension) | Dark (default) | Light | Used for |
 | --- | --- | --- | --- |
@@ -167,7 +167,7 @@ Empty, loading and error states are part of every component: skeletons in `surfa
 
 Five top-level destinations follow the core loop, and the trade ticket is one shared component reached from Replays, Live and Portfolio (**Proposed**: the spec set the loop but not the tabs).
 
-*Figure not included in this Markdown copy: app map · 5 tabs and the shared trade ticket.*
+![App map: five tabs and the shared trade ticket](images/design-app-map.png)
 
 Learn is home. A lesson's "Try it" jumps straight into a seeded replay, and the replay's debrief links back to the next lesson, so the loop never needs the tab bar.
 
@@ -184,7 +184,7 @@ Rules: the tab bar hides during a replay and inside the ticket to give the chart
 
 Ten screens carry the whole product. Each is described top to bottom on a compact phone, with its one primary action; wider layouts follow Responsive. Wireframes show the busiest screens.
 
-*Figure not included in this Markdown copy: wireframes · home, replay, trade ticket, payoff (dark theme marks).*
+![Wireframes of four key screens: home, replay, trade ticket and payoff diagram](images/design-wireframes.png)
 
 ### Onboarding
 

@@ -34,12 +34,16 @@ Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 - **Visual:** A company drawn as 100 squares with 10 of them yours. Change the price and the value of your 10 squares updates.
 - **Try it:** Buy 10 shares of any stock in the live market and watch your position value change.
 
+![Lesson 1.1: Ten of one hundred share squares highlighted](images/lessons/lesson-1-1.png)
+
 ### 1.2 Why prices move (4 min)
 
 - **Farm:** Wheat sells for more at the market when more bakers want it than farmers bring.
 - **Goal:** The price is the last trade. When buyers are more eager than sellers, trades happen at higher prices.
 - **Visual:** A price line above a bar chart of buy minus sell orders. The line rises on blue bars and falls on orange bars.
 - **Try it:** Replay one trading day of the January 2021 squeeze at 1 minute per second.
+
+![Lesson 1.2: Price line moving with buy minus sell order bars](images/lessons/lesson-1-2.png)
 
 ### 1.3 Reading a price chart (4 min)
 
@@ -48,12 +52,16 @@ Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 - **Visual:** One large labeled candle next to 18 days of small candles. Tap any candle to see its four prices.
 - **Try it:** Scrub 30 days of the 2022 bear market and find the lowest close.
 
+![Lesson 1.3: A labeled candle and 18 daily candles](images/lessons/lesson-1-3.png)
+
 ### 1.4 Bid, ask and spread (3 min)
 
 - **Farm:** The grain dealer buys a little lower than they sell, and that gap is the cost of trading.
 - **Goal:** You buy at the ask and sell at the bid, so every round trip costs the spread.
 - **Visual:** A price ladder with bids below and asks above. The gap between the best bid and best ask is shaded as your cost.
 - **Try it:** Buy and sell right away in a small company, then in a broad-market ETF, and compare the cost.
+
+![Lesson 1.4: Bid and ask ladder with the spread shaded](images/lessons/lesson-1-4.png)
 
 ### 1.5 Market, limit and stop orders (5 min)
 
@@ -62,12 +70,16 @@ Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 - **Visual:** A price line with a buy-limit line and a sell-stop line. Dots show where each order filled, including a gap that fills below the stop.
 - **Try it:** Set a stop in the March 2020 replay and see where it actually fills.
 
+![Lesson 1.5: Price path with limit and stop fills](images/lessons/lesson-1-5.png)
+
 ### 1.6 Gains, losses and percent (3 min)
 
 - **Farm:** If a bad year halves the farm's value, it takes a doubled harvest to get back.
 - **Goal:** Measure results in percent, and see why losses take more to win back.
 - **Visual:** A curve of loss against the gain needed to get back to even: −10% needs +11%, −50% needs +100%.
 - **Try it:** Read your percent return and the gain needed to recover on any replay result.
+
+![Lesson 1.6: Loss versus gain needed to recover](images/lessons/lesson-1-6.png)
 
 ### 1.7 Diversification (4 min)
 
@@ -76,12 +88,16 @@ Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 - **Visual:** One stock's jagged line against a 10-stock portfolio's smoother line over the same 120 days.
 - **Try it:** Play the 2000 dot-com replay twice: all in one tech stock, then spread across 8 sectors.
 
+![Lesson 1.7: Single stock path versus a ten stock portfolio](images/lessons/lesson-1-7.png)
+
 ### 1.8 ETFs and index funds (3 min)
 
 - **Farm:** An ETF is like a co-op that owns hundreds of farms; one share gives you a slice of all of them.
 - **Goal:** One ETF ticker holds many companies, so one trade buys a diversified basket.
 - **Visual:** One broad-market ETF split into its holdings: the 10 largest as big blocks and the other 490 as small cells.
 - **Try it:** Buy a broad-market ETF in the live market and open its holdings list.
+
+![Lesson 1.8: ETF split into holdings](images/lessons/lesson-1-8.png)
 
 ### 1.9 Position sizing (5 min)
 
@@ -90,6 +106,8 @@ Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 - **Visual:** A $10,000 account bar with the $100 at risk highlighted, and the math that turns a $2 stop distance into 50 shares.
 - **Try it:** Use the size calculator on 3 trades in the 2022 replay.
 
+![Lesson 1.9: Position sizing math](images/lessons/lesson-1-9.png)
+
 ### 1.10 Drawdowns (4 min)
 
 - **Farm:** Drawdown is how far the farm's value falls from its best year before it recovers.
@@ -97,12 +115,16 @@ Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 - **Visual:** An account value line with its largest peak-to-trough drop shaded and labeled in percent.
 - **Try it:** Play March 2020 and read your max drawdown on the result card.
 
+![Lesson 1.10: Account value with largest drawdown shaded](images/lessons/lesson-1-10.png)
+
 ### 1.11 Compounding over time (4 min)
 
 - **Farm:** Replanting seed from each harvest grows a bigger harvest every year.
 - **Goal:** Gains left invested earn their own gains, so growth speeds up over the years.
 - **Visual:** Two lines over 30 years at 7% a year: $1,000 left to compound against $1,000 with gains taken out each year.
 - **Try it:** Drag the yearly return and years and watch the gap between the two lines.
+
+![Lesson 1.11: Compounding versus simple growth](images/lessons/lesson-1-11.png)
 
 ### Reality check: Why simulated prices differ (2 min)
 
@@ -114,6 +136,8 @@ Replay prices follow the shape and size of real events, not the exact daily numb
 - **Quiz:** 10 to 15 questions from the L1 bank, pass at 80%
 - **Challenge:** End with less than a 15% drawdown while holding at least three positions.
 - Failed quizzes can be retaken after a short review. Levels never re-lock.
+
+![Gate to L2: Drawdown limit 15%](images/lessons/gate-l2.png)
 
 ## L2: Covered calls and cash-secured puts
 
@@ -128,12 +152,16 @@ Unlocks: Sell calls against 100 shares you own, and sell puts with the cash set 
 - **Visual:** A contract card with its five parts: stock, call or put, strike, expiry and price × 100.
 - **Try it:** Open the option chain for any stock in the live market.
 
+![Lesson 2.1: Option contract card](images/lessons/lesson-2-1.png)
+
 ### 2.2 Strike, expiry and the chain (4 min)
 
 - **Farm:** A chain is a menu of price locks: each row is a different locked price, each page a different harvest date.
 - **Goal:** Read an option chain: strikes in rows, calls on one side, puts on the other, one expiry at a time.
 - **Visual:** A five-row chain with in-the-money prices shaded and the stock price drawn between the rows.
 - **Try it:** Find the strike closest to the stock price on 3 different stocks.
+
+![Lesson 2.2: Option chain](images/lessons/lesson-2-2.png)
 
 ### 2.3 Premium (3 min)
 
@@ -142,12 +170,16 @@ Unlocks: Sell calls against 100 shares you own, and sell puts with the cash set 
 - **Visual:** Cash moving from buyer to seller when the trade fills, and the two possible endings at expiry.
 - **Try it:** Compare premiums one week and one month out on the same strike.
 
+![Lesson 2.3: Premium flow from buyer to seller](images/lessons/lesson-2-3.png)
+
 ### 2.4 Calls and puts at expiry (4 min)
 
 - **Farm:** At harvest, a price lock is worth the gap between the market price and the locked price, or nothing.
 - **Goal:** At expiry a call is worth price minus strike, a put is worth strike minus price, and neither is worth less than zero.
 - **Visual:** Value lines for a $100 call and a $100 put. Drag the expiry price and read what each contract is worth.
 - **Try it:** Drag the price and predict each value before you read it.
+
+![Lesson 2.4: Call and put value at expiry](images/lessons/lesson-2-4.png)
 
 ### 2.5 The covered call (5 min)
 
@@ -156,12 +188,16 @@ Unlocks: Sell calls against 100 shares you own, and sell puts with the cash set 
 - **Visual:** Profit at expiry for 100 shares plus one short $105 call, drawn over the shares-only line. Drag the price to read profit.
 - **Try it:** Sell one covered call a month in the 2022 replay.
 
+![Lesson 2.5: Profit at expiry](images/lessons/lesson-2-5.png)
+
 ### 2.6 The cash-secured put (5 min)
 
 - **Farm:** You are paid a fee to promise to buy a neighbor's harvest at a set price, with the cash ready.
 - **Goal:** Selling a put pays you now. If the price ends below the strike, you buy 100 shares at the strike.
 - **Visual:** Profit at expiry for one short $95 put, with the $9,500 of cash it reserves.
 - **Try it:** Sell a put below the market on a stock you would want to own, in the 2022 replay.
+
+![Lesson 2.6: Profit at expiry](images/lessons/lesson-2-6.png)
 
 ### 2.7 Assignment at expiry (4 min)
 
@@ -170,12 +206,16 @@ Unlocks: Sell calls against 100 shares you own, and sell puts with the cash set 
 - **Visual:** Two branches at expiry for a covered call: price above the strike, price below it, and what happens to your shares and cash on each.
 - **Try it:** Hold a covered call through expiry and watch the shares get called away.
 
+![Lesson 2.7: Assignment decision tree](images/lessons/lesson-2-7.png)
+
 ### 2.8 Income versus upside (4 min)
 
 - **Farm:** Selling your harvest ahead at a set price pays steadily, but you miss out if prices soar.
 - **Goal:** Selling options earns steady income in flat markets and gives up gains in strong rallies.
 - **Visual:** Shares alone against shares with monthly covered calls, in a rally and in a flat market.
 - **Try it:** Run the same covered-call plan in the March 2020 rebound and in the 2022 bear market.
+
+![Lesson 2.8: Covered calls in a rally and a flat market](images/lessons/lesson-2-8.png)
 
 ### Reality check: Early assignment (2 min)
 
@@ -187,6 +227,8 @@ Real US stock options can be assigned before expiry, most often just before a di
 - **Quiz:** 10 to 15 questions from the L2 bank, pass at 80%
 - **Challenge:** Sell at least 4 covered calls or cash-secured puts and finish with a smaller drawdown than holding the broad-market ETF alone.
 - Failed quizzes can be retaken after a short review. Levels never re-lock.
+
+![Gate to L3: Compare drawdown to the benchmark](images/lessons/gate-l3.png)
 
 ## L3: Long calls and puts
 
@@ -201,12 +243,16 @@ Unlocks: Buy calls and puts.
 - **Visual:** Profit at expiry for one $100 call bought for $4, with the breakeven at $104. Drag the price to read profit.
 - **Try it:** Buy a call in the March 2020 rebound.
 
+![Lesson 3.1: Profit at expiry](images/lessons/lesson-3-1.png)
+
 ### 3.2 Buying a put (4 min)
 
 - **Farm:** A put is crop insurance: it pays when the price falls.
 - **Goal:** A long put profits below strike minus premium, and it can protect shares you already own.
 - **Visual:** Profit at expiry for one $100 put bought for $4, with the breakeven at $96.
 - **Try it:** Buy a put on shares you hold before the March 2020 drop.
+
+![Lesson 3.2: Profit at expiry](images/lessons/lesson-3-2.png)
 
 ### 3.3 Leverage (4 min)
 
@@ -215,12 +261,16 @@ Unlocks: Buy calls and puts.
 - **Visual:** $1,000 in shares against $1,000 in calls, held to expiry, after the stock moves −10%, 0% and +10%.
 - **Try it:** Split $2,000 between shares and calls in the meme-stock replay and compare.
 
+![Lesson 3.3: Return of shares versus calls](images/lessons/lesson-3-3.png)
+
 ### 3.4 Time decay (4 min)
 
 - **Farm:** A price lock loses value as harvest day gets closer, and fastest in the final weeks.
 - **Goal:** An option loses value every day, and the loss speeds up in the last month.
 - **Visual:** The price of a 90-day at-the-money call as the days run out. Drag the days left and read the daily loss.
 - **Try it:** Hold the same call for 30 days in a flat replay and watch its value drop.
+
+![Lesson 3.4: Option value falling as expiry approaches](images/lessons/lesson-3-4.png)
 
 ### 3.5 Implied volatility (4 min)
 
@@ -229,12 +279,16 @@ Unlocks: Buy calls and puts.
 - **Visual:** The price of the same 30-day call at different volatility levels, from a calm market to the March 2020 peak.
 - **Try it:** Price one call before and after the March 2020 volatility peak.
 
+![Lesson 3.5: Option price versus implied volatility](images/lessons/lesson-3-5.png)
+
 ### 3.6 Delta (4 min)
 
 - **Farm:** Delta is how much your price lock gains when wheat rises $1 a bushel.
 - **Goal:** Delta is how many dollars the option moves when the stock moves $1.
 - **Visual:** Delta of a $100 call across stock prices, from near 0 to near 1. Drag the stock price and read delta.
 - **Try it:** Read delta on 3 strikes, then predict how each moves on the next bar.
+
+![Lesson 3.6: Delta curve](images/lessons/lesson-3-6.png)
 
 ### 3.7 The greeks on one card (4 min)
 
@@ -243,12 +297,16 @@ Unlocks: Buy calls and puts.
 - **Visual:** One position card with all four greeks, each written as dollars per contract.
 - **Try it:** Open the greeks card on every position during one replay.
 
+![Lesson 3.7: Greeks card](images/lessons/lesson-3-7.png)
+
 ### 3.8 Why most short-dated options expire worthless (4 min)
 
 - **Farm:** Insurance against a once-in-a-lifetime frost is cheap because the frost almost never comes.
 - **Goal:** A far out-of-the-money option with a week left needs a large move, and large moves are rare.
 - **Visual:** The spread of likely prices one week out, with the small area above a $110 strike shaded and its probability shown.
 - **Try it:** Buy a cheap one-week call and follow it to expiry.
+
+![Lesson 3.8: Probability of finishing above the strike](images/lessons/lesson-3-8.png)
 
 ### Reality check: How real option chains differ (2 min)
 
@@ -260,6 +318,8 @@ Replay option prices come from a model and carry a Modeled badge. Real chains ar
 - **Quiz:** 10 to 15 questions from the L3 bank, pass at 80%
 - **Challenge:** Trade calls or puts with no more than 5% of the account in any one trade, and finish with less than a 10% drawdown.
 - Failed quizzes can be retaken after a short review. Levels never re-lock.
+
+![Gate to L4: Drawdown limit 10%](images/lessons/gate-l4.png)
 
 ## L4: Spreads
 
@@ -274,12 +334,16 @@ Unlocks: Vertical debit and credit spreads. Iron condors and calendars come in a
 - **Visual:** A long $100 call and a short $110 call drawn thin, and their sum drawn thick: a line with a floor and a ceiling.
 - **Try it:** Build your first spread in the order ticket and read its max loss before sending.
 
+![Lesson 4.1: Profit at expiry](images/lessons/lesson-4-1.png)
+
 ### 4.2 The bull call spread (5 min)
 
 - **Farm:** Lock in the right to buy at $10 and sell someone the right to buy at $11: cheaper, but your gain stops at $11.
 - **Goal:** Pay a debit to profit from a rise, with max loss, max gain and breakeven known before you trade.
 - **Visual:** Profit at expiry for a $100/$110 call spread bought for $3.00.
 - **Try it:** Open a bull call spread in the March 2020 rebound.
+
+![Lesson 4.2: Profit at expiry](images/lessons/lesson-4-2.png)
 
 ### 4.3 The bear put spread (4 min)
 
@@ -288,12 +352,16 @@ Unlocks: Vertical debit and credit spreads. Iron condors and calendars come in a
 - **Visual:** Profit at expiry for a $100/$90 put spread bought for $2.80.
 - **Try it:** Open a bear put spread in the 2008 financial crisis replay.
 
+![Lesson 4.3: Profit at expiry](images/lessons/lesson-4-3.png)
+
 ### 4.4 Credit spreads (5 min)
 
 - **Farm:** Sell insurance and buy cheaper insurance behind it: you collect a fee, and your worst case is capped.
 - **Goal:** Sell a spread to collect a credit now. The cash reserved equals your maximum loss.
 - **Visual:** Profit at expiry for a $95/$90 put spread sold for $1.40, with $360 of cash reserved.
 - **Try it:** Sell a put credit spread below the market in the 2022 replay.
+
+![Lesson 4.4: Profit at expiry](images/lessons/lesson-4-4.png)
 
 ### 4.5 Choosing strikes (4 min)
 
@@ -302,12 +370,16 @@ Unlocks: Vertical debit and credit spreads. Iron condors and calendars come in a
 - **Visual:** A call spread whose upper strike you drag from $105 to $120. Cost, max gain and max loss update as it widens.
 - **Try it:** Price three widths on the same stock and pick one that fits your 2% risk limit.
 
+![Lesson 4.5: Call spread width](images/lessons/lesson-4-5.png)
+
 ### 4.6 Managing and closing early (4 min)
 
 - **Farm:** You do not have to wait for harvest day: sell the deal early once it has paid enough.
 - **Goal:** Close at a planned profit or loss instead of waiting for expiry.
 - **Visual:** The spread's value today drawn as a curve over its value at expiry. Drag the days left and watch the curve settle onto the expiry line.
 - **Try it:** Set a 50% profit target and close a spread early in the 2022 replay.
+
+![Lesson 4.6: Spread value today versus at expiry](images/lessons/lesson-4-6.png)
 
 ### Reality check: Defined risk is not no risk (2 min)
 
@@ -319,6 +391,8 @@ A spread tells you the worst case before you trade. It does not make the worst c
 - **Quiz:** 10 to 15 questions from the L4 bank, pass at 80%
 - **Challenge:** Use only defined-risk trades, risk no more than 3% of the account per trade, and finish with less than a 12% drawdown.
 - Failed quizzes can be retaken after a short review. Levels never re-lock.
+
+![Final challenge · Level 4 badge: Drawdown limit 12%](images/lessons/gate-final.png)
 
 ## Glossary
 
