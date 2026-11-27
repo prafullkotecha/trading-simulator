@@ -104,7 +104,7 @@ Each lesson is 3 to 5 minutes: a short read with an interactive diagram, two or 
 
 **Lesson plan**
 
-The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality checks, about 141 minutes of reading in all. Each lesson opens with one line from a single running analogy, a farm and its harvest, then switches to real tickers and numbers: one goal, one diagram the learner can drag (price, days left or strike) with real dollar amounts, and one short replay to try it. No other metaphors are used. The glossary at the end gives every term a one-line "think of it like". The full lesson plan is in [Trading Simulator Lesson Plan](lesson-plan.md) (Nov 27, 2026).
+The curriculum is 38 core lessons of 3 to 5 minutes plus 5 two-minute reality checks, about 161 minutes of reading in all. Each lesson opens with one line from a single running analogy, a farm and its harvest, then switches to real tickers and numbers: one goal, one diagram the learner can drag (price, days left or strike) with real dollar amounts, and one short replay to try it. No other metaphors are used. The glossary at the end gives every term a one-line "think of it like". On Nov 27, 2026 the lessons were checked against the Jump$tart national investing standards, the SIFMA Stock Market Game, SEC investor.gov, the Options Industry Council and the FINRA SIE outline; Prafull approved the resulting changes, so Level 1 gained five lessons (1.3, 1.9, 1.11, 1.12 and 1.15, marked new), 1.5, 1.13, 1.16 and 3.7 were widened or trimmed, and the reality checks now cover investment scams and real-world options rules. The full lesson plan, with every diagram and the benchmark map, is in [Trading Simulator Lesson Plan](lesson-plan.md) (Nov 27, 2026).
 
 *L1 Stocks and ETFs: 11 lessons + 1 reality check, 44 min*
 
@@ -112,16 +112,22 @@ The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality ch
 | --- | --- | --- | --- | --- |
 | 1.1 | What a share is | Owning a share is like owning a slice of a farm: you get a piece of every future harvest. | A share is one small piece of a company, and your holding is worth shares × price. | A company drawn as 100 squares with 10 of them yours. |
 | 1.2 | Why prices move | Wheat sells for more at the market when more bakers want it than farmers bring. | The price is the last trade. When buyers are more eager than sellers, trades happen at higher prices. | A price line above a bar chart of buy minus sell orders. |
-| 1.3 | Reading a price chart | A price chart is the market's record of what wheat sold for, day after day. | Read open, high, low and close from a candle, and see a trend across days. | One large labeled candle next to 18 days of small candles. |
-| 1.4 | Bid, ask and spread | The grain dealer buys a little lower than they sell, and that gap is the cost of trading. | You buy at the ask and sell at the bid, so every round trip costs the spread. | A price ladder with bids below and asks above. |
-| 1.5 | Market, limit and stop orders | A limit order says "sell my wheat only at $8 or more"; a stop says "sell it if the price falls to $6". | A market order fills now, a limit order fills at your price or better, and a stop order sells after a drop. | A price line with a buy-limit line and a sell-stop line. |
-| 1.6 | Gains, losses and percent | If a bad year halves the farm's value, it takes a doubled harvest to get back. | Measure results in percent, and see why losses take more to win back. | A curve of loss against the gain needed to get back to even: −10% needs +11%, −50% needs +100%. |
-| 1.7 | Diversification | A farm that grows wheat, corn and apples does not lose everything to one bad crop. | Several unrelated holdings give the account a smoother path than any single stock. | One stock's jagged line against a 10-stock portfolio's smoother line over the same 120 days. |
-| 1.8 | ETFs and index funds | An ETF is like a co-op that owns hundreds of farms; one share gives you a slice of all of them. | One ETF ticker holds many companies, so one trade buys a diversified basket. | One broad-market ETF split into its holdings: the 10 largest as big blocks and the other 490 as small cells. |
-| 1.9 | Position sizing | Plant only as much as you can afford to lose in one bad season. | Decide how much you can lose before you buy: about 1 to 2% of the account per trade. | A $10,000 account bar with the $100 at risk highlighted, and the math that turns a $2 stop distance into 50 shares. |
-| 1.10 | Drawdowns | Drawdown is how far the farm's value falls from its best year before it recovers. | Drawdown is the drop from the account's high point. Keeping it small keeps you in the game. | An account value line with its largest peak-to-trough drop shaded and labeled in percent. |
-| 1.11 | Compounding over time | Replanting seed from each harvest grows a bigger harvest every year. | Gains left invested earn their own gains, so growth speeds up over the years. | Two lines over 30 years at 7% a year: $1,000 left to compound against $1,000 with gains taken out each year. |
+| 1.3 | Dividends and earnings (new) | Some farms pay out part of every harvest in cash, while others replant it all to grow bigger. | Your return is the price change plus any dividends, and over time prices follow earnings. | Two bars for one year on $1,000: a stock that replants every dollar grows by price alone, while a dividend payer adds cash on top. |
+| 1.4 | Reading a price chart | A price chart is the market's record of what wheat sold for, day after day. | Read open, high, low and close from a candle, and see a trend across days. | One large labeled candle next to 18 days of small candles. |
+| 1.5 | Bid, ask and spread | The grain dealer buys a little lower than they sell, and that gap is the cost of trading. | You buy at the ask and sell at the bid, so every round trip costs the spread. Thinly traded stocks have wider spreads and are harder to sell quickly. | A price ladder with bids below and asks above. |
+| 1.6 | Market, limit and stop orders | A limit order says "sell my wheat only at $8 or more"; a stop says "sell it if the price falls to $6". | A market order fills now, a limit order fills at your price or better, and a stop order sells after a drop. | A price line with a buy-limit line and a sell-stop line. |
+| 1.7 | Gains, losses and percent | If a bad year halves the farm's value, it takes a doubled harvest to get back. | Measure results in percent, and see why losses take more to win back. | A curve of loss against the gain needed to get back to even: −10% needs +11%, −50% needs +100%. |
+| 1.8 | Diversification | A farm that grows wheat, corn and apples does not lose everything to one bad crop. | Several unrelated holdings give the account a smoother path than any single stock. | One stock's jagged line against a 10-stock portfolio's smoother line over the same 120 days. |
+| 1.9 | Risk and return (new) | A grain store pays a little every year, while a new orchard might pay a lot or nothing at all. | Riskier investments are expected to pay more over time, and their results swing more widely. | Cash, a bond fund, a broad-market ETF and one small stock as dots of yearly return against the size of their swings. |
+| 1.10 | ETFs and index funds | An ETF is like a co-op that owns hundreds of farms; one share gives you a slice of all of them. | One ETF ticker holds many companies, so one trade buys a diversified basket. | One broad-market ETF split into its holdings: the 10 largest as big blocks and the other 490 as small cells. |
+| 1.11 | Fees and expense ratios (new) | A co-op that keeps 1% of every harvest takes far more over 30 years than one that keeps 0.05%. | Fund fees come out every year, so a small fee compounds into a large gap. | $10,000 over 30 years at 7%, after a 0.05% fee and after a 1% fee, with the dollar gap printed. |
+| 1.12 | Indexes and benchmarks (new) | A harvest is only a good one if it beats what the whole valley grew that year. | Judge your results against an index such as the S&P 500, not against zero. | Your replay account line against the broad-market index line, with the gap between them shaded. |
+| 1.13 | Position sizing | Plant only as much as you can afford to lose in one bad season. | Start from your own risk tolerance, then decide how much you can lose before you buy: about 1 to 2% of the account per trade. | A five-question risk-tolerance check sets your starting risk, then a $10,000 account bar with the $100 at risk highlighted, and the math that turns a $2 stop distance into 50 shares. |
+| 1.14 | Drawdowns | Drawdown is how far the farm's value falls from its best year before it recovers. | Drawdown is the drop from the account's high point. Keeping it small keeps you in the game. | An account value line with its largest peak-to-trough drop shaded and labeled in percent. |
+| 1.15 | Your own biases (new) | A farmer who always plants whatever sold best last year is always one season late. | Loss aversion and chasing hot stocks lead to buying high and selling low. | Your own buys and sells from a replay, marked on its price line, with the high-buy and low-sell trades circled. |
+| 1.16 | Compounding over time | Replanting seed grows a bigger harvest every year, but if bread costs 3% more each year, the harvest has to grow faster than that. | Gains left invested earn their own gains, so growth speeds up over the years. Inflation means real growth is your return minus inflation. | Three lines over 30 years at 7% a year: $1,000 left to compound, the same money after 3% inflation, and $1,000 with gains taken out each year. |
 | Check | Why simulated prices differ | None | Replay prices follow the shape and size of real events, not the exact daily numbers, so a real chart will show different prices. | None |
+| Check | Spotting investment scams (new) | None | Promises of guaranteed returns, pressure to act now and pump-and-dump hype on social media are red flags. Real money never needs to move to learn here. | None |
 
 *L2 Covered calls and cash-secured puts: 8 lessons + 1 reality check, 35 min*
 
@@ -135,7 +141,7 @@ The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality ch
 | 2.6 | The cash-secured put | You are paid a fee to promise to buy a neighbor's harvest at a set price, with the cash ready. | Selling a put pays you now. If the price ends below the strike, you buy 100 shares at the strike. | Profit at expiry for one short $95 put, with the $9,500 of cash it reserves. |
 | 2.7 | Assignment at expiry | On harvest day the deal settles, and the crop changes hands only if the lock is worth using. | In-the-money options settle automatically at expiry, so know in advance what you will own or sell. | Two branches at expiry for a covered call: price above the strike, price below it, and what happens to your shares and cash on each. |
 | 2.8 | Income versus upside | Selling your harvest ahead at a set price pays steadily, but you miss out if prices soar. | Selling options earns steady income in flat markets and gives up gains in strong rallies. | Shares alone against shares with monthly covered calls, in a rally and in a flat market. |
-| Check | Early assignment | None | Real US stock options can be assigned before expiry, most often just before a dividend. Version 1 settles only at expiry. | None |
+| Check | Real-world options rules | None | Real US stock options are American style and can be assigned before expiry, most often just before a dividend; Version 1 settles only at expiry. Brokers also approve options trading by level and ask you to read the Options Disclosure Document first. | None |
 
 *L3 Long calls and puts: 8 lessons + 1 reality check, 34 min*
 
@@ -147,7 +153,7 @@ The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality ch
 | 3.4 | Time decay | A price lock loses value as harvest day gets closer, and fastest in the final weeks. | An option loses value every day, and the loss speeds up in the last month. | The price of a 90-day at-the-money call as the days run out. |
 | 3.5 | Implied volatility | Crop insurance costs more in a stormy year, when everyone expects big price swings. | Options cost more when the market expects big moves, and get cheaper when that fear fades. | The price of the same 30-day call at different volatility levels, from a calm market to the March 2020 peak. |
 | 3.6 | Delta | Delta is how much your price lock gains when wheat rises $1 a bushel. | Delta is how many dollars the option moves when the stock moves $1. | Delta of a $100 call across stock prices, from near 0 to near 1. |
-| 3.7 | The greeks on one card | The greeks tell you what moves your price lock: the wheat price, its speed, the days left and the weather. | Read delta, gamma, theta and vega together to see what will move your position most. | One position card with all four greeks, each written as dollars per contract. |
+| 3.7 | The greeks on one card | The greeks tell you what moves your price lock: the wheat price, its speed, the days left and the weather. | Read delta and theta together to see what will move your position most. Gamma and vega are optional extras. | One position card with delta and theta up front, each written as dollars per contract. |
 | 3.8 | Why most short-dated options expire worthless | Insurance against a once-in-a-lifetime frost is cheap because the frost almost never comes. | A far out-of-the-money option with a week left needs a large move, and large moves are rare. | The spread of likely prices one week out, with the small area above a $110 strike shaded and its probability shown. |
 | Check | How real option chains differ | None | Replay option prices come from a model and carry a Modeled badge. Real chains are set by traders and have wider spreads on thinly traded strikes. | None |
 
@@ -161,7 +167,7 @@ The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality ch
 | 4.4 | Credit spreads | Sell insurance and buy cheaper insurance behind it: you collect a fee, and your worst case is capped. | Sell a spread to collect a credit now. The cash reserved equals your maximum loss. | Profit at expiry for a $95/$90 put spread sold for $1.40, with $360 of cash reserved. |
 | 4.5 | Choosing strikes | A wider gap between the two locked prices costs more and can pay more. | A wider spread can earn more but costs and risks more. Pick the width by how much you can lose. | A call spread whose upper strike you drag from $105 to $120. |
 | 4.6 | Managing and closing early | You do not have to wait for harvest day: sell the deal early once it has paid enough. | Close at a planned profit or loss instead of waiting for expiry. | The spread's value today drawn as a curve over its value at expiry. |
-| Check | Defined risk is not no risk | None | A spread tells you the worst case before you trade. It does not make the worst case unlikely, so size it like any other trade. | None |
+| Check | Defined risk is not no risk | None | A spread tells you the worst case before you trade. It does not make the worst case unlikely, so size it like any other trade. Real brokers also require a higher options approval level before you can trade spreads. | None |
 
 *Unlock gates (quiz of 10 to 15 questions at 80% or better, plus a replay challenge)*
 
@@ -177,27 +183,37 @@ The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality ch
 | Term | Meaning | Think of it like | Lesson |
 | --- | --- | --- | --- |
 | Share | One unit of ownership in a company. | A slice of the farm and its future harvests. | 1.1 |
-| Bid and ask | The highest price a buyer offers and the lowest price a seller accepts. | What the grain dealer pays you, and what they charge you. | 1.4 |
-| Bid-ask spread | The gap between bid and ask, paid on every round trip. | The grain dealer's cut. | 1.4 |
-| Market order | Buy or sell now at the best available price. | Sell the wheat at today's market price, whatever it is. | 1.5 |
-| Limit order | Buy or sell only at your price or better. | Sell the wheat only at $8 a bushel or more. | 1.5 |
-| Stop order | Sell once the price falls to a level you set. | Sell the wheat if the price drops to $6. | 1.5 |
-| Diversification | Owning several unrelated holdings to smooth the path. | Growing wheat, corn and apples instead of one crop. | 1.7 |
-| ETF | One fund, traded under one ticker, that holds many companies. | A co-op that owns hundreds of farms. | 1.8 |
-| Position size | How much you put into one trade, set by how much you can lose. | How many acres you plant with one crop. | 1.9 |
-| Drawdown | The drop from the account's high point to its low point. | How far the farm's value falls from its best year. | 1.10 |
-| Compounding | Gains that stay invested and earn their own gains. | Replanting seed from each harvest. | 1.11 |
+| Dividend | Cash a company pays shareholders out of its profits. | The part of each harvest a farm pays out in cash. | 1.3 |
+| Earnings | A company's profit over a period, the main driver of its price over time. | The farm's harvest after costs. | 1.3 |
+| Bid and ask | The highest price a buyer offers and the lowest price a seller accepts. | What the grain dealer pays you, and what they charge you. | 1.5 |
+| Bid-ask spread | The gap between bid and ask, paid on every round trip. | The grain dealer's cut. | 1.5 |
+| Liquidity | How quickly you can sell without moving the price. | How easily you can find a buyer for your wheat on market day. | 1.5 |
+| Market order | Buy or sell now at the best available price. | Sell the wheat at today's market price, whatever it is. | 1.6 |
+| Limit order | Buy or sell only at your price or better. | Sell the wheat only at $8 a bushel or more. | 1.6 |
+| Stop order | Sell once the price falls to a level you set. | Sell the wheat if the price drops to $6. | 1.6 |
+| Diversification | Owning several unrelated holdings to smooth the path. | Growing wheat, corn and apples instead of one crop. | 1.8 |
+| Risk and return | Investments that swing more are expected to pay more over time. | A grain store pays a little every year; a new orchard might pay a lot or nothing. | 1.9 |
+| ETF | One fund, traded under one ticker, that holds many companies. | A co-op that owns hundreds of farms. | 1.10 |
+| Expense ratio | The yearly fee a fund charges, as a percent of your money. | The share of every harvest the co-op keeps. | 1.11 |
+| Index | A list of companies whose combined price shows how a market did. | What the whole valley grew this year. | 1.12 |
+| Benchmark | The index you compare your results against. | The valley's harvest you hope to beat. | 1.12 |
+| Position size | How much you put into one trade, set by how much you can lose. | How many acres you plant with one crop. | 1.13 |
+| Risk tolerance | How much loss you can live with, in money and in nerves. | How bad a season you could get through without selling the farm. | 1.13 |
+| Drawdown | The drop from the account's high point to its low point. | How far the farm's value falls from its best year. | 1.14 |
+| Loss aversion | Feeling a loss more strongly than an equal gain, which leads to poor timing. | Refusing to sell a failing crop because selling would admit the loss. | 1.15 |
+| Compounding | Gains that stay invested and earn their own gains. | Replanting seed from each harvest. | 1.16 |
+| Inflation | Prices rising over time, which shrinks what money buys. | Bread costing a little more every year. | 1.16 |
 | Option | A contract on 100 shares that gives the buyer a right and the seller an obligation. | A deal on 100 bushels. | 2.1 |
-| Call | The right to buy at the strike price until expiry. | A deposit that locks today's wheat price. | 3.1 |
-| Put | The right to sell at the strike price until expiry. | Crop insurance against a price drop. | 3.2 |
 | Strike | The price written into the option. | The locked price per bushel. | 2.2 |
 | Expiry | The last day the option exists. | Harvest day, when the deal settles. | 2.2 |
-| Premium | The price of an option, paid by the buyer to the seller. | The fee for holding a price. | 2.3 |
 | In the money | An option that would be worth something if it settled now. | A price lock that beats the market price. | 2.2 |
+| Premium | The price of an option, paid by the buyer to the seller. | The fee for holding a price. | 2.3 |
 | Covered call | Selling a call on 100 shares you own. | Selling a buyer the right to your harvest at a set price. | 2.5 |
 | Cash-secured put | Selling a put with the cash set aside to buy the shares. | Being paid to promise to buy a neighbor's harvest at a set price. | 2.6 |
 | Assignment | The seller fulfilling the contract when an in-the-money option settles. | The crop changing hands on harvest day. | 2.7 |
+| Call | The right to buy at the strike price until expiry. | A deposit that locks today's wheat price. | 3.1 |
 | Breakeven | The price at which a trade neither makes nor loses money. | The wheat price at which the deal just pays for its fee. | 3.1 |
+| Put | The right to sell at the strike price until expiry. | Crop insurance against a price drop. | 3.2 |
 | Leverage | Controlling more value than the money you put in. | A small deposit that controls a whole harvest. | 3.3 |
 | Time decay (theta) | The value an option loses each day. | A price lock that weakens as harvest day nears. | 3.4 |
 | Implied volatility | How big a move the market expects, built into option prices. | How stormy the year looks. | 3.5 |
@@ -206,8 +222,8 @@ The curriculum is 33 core lessons of 3 to 5 minutes plus 4 two-minute reality ch
 | Vega | How much an option's price changes when implied volatility moves 1 point. | How much insurance prices jump when storms are forecast. | 3.7 |
 | Spread | Buying one option and selling another on the same stock. | Buying one price lock and selling another to cut the cost. | 4.1 |
 | Debit spread | A spread you pay for up front. | Paying a smaller fee for a price lock with a ceiling. | 4.2 |
-| Credit spread | A spread you are paid for up front, with the max loss held as cash. | Selling insurance with cheaper insurance bought behind it. | 4.4 |
 | Max loss and max gain | The worst and best results a trade can have, known before you trade. | The floor and the ceiling on the deal. | 4.2 |
+| Credit spread | A spread you are paid for up front, with the max loss held as cash. | Selling insurance with cheaper insurance bought behind it. | 4.4 |
 
 ## Replay engine
 
