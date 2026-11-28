@@ -2,7 +2,7 @@
 
 Nov 27, 2026 · Prafull Kotecha
 
-This guide turns the Product Spec v1 into a buildable design system and screen set for the Flutter apps and the PWA. Anything the spec did not already decide is marked **Proposed**. It was updated on Nov 28, 2026 with the review refinements Prafull decided that day (spec R1 to R31, decisions 22 to 42); the diagrams were not redrawn.
+This guide turns the Product Spec v1 into a buildable design system and screen set for the Flutter apps and the PWA. Anything the spec did not already decide is marked **Proposed**. It was updated on Nov 28, 2026 with the review refinements Prafull decided that day (spec R1 to R31, decisions 22 to 44). The color, app map and wireframe diagrams were redrawn to match; their sources are in `images/src/`.
 
 ## Principles
 
@@ -22,7 +22,7 @@ Two learners test every screen: Maya, 15, on her phone for 5 to 15 minutes in th
 
 The palette is a custom Material 3 color scheme with two money colors that never change meaning within a market: blue for gain and orange for loss in the US pack, which is the only pack in version 1. Their values come from the market pack, because rise and fall colors differ by market (see Designing for more markets). Dark is the default theme, as the spec decided; light is a full equal, and a "Match system" option in Settings is **Proposed**. Every text pair below passes WCAG 2.2 AA (4.5:1), and every input border passes the 3:1 non-text rule.
 
-![Core color tokens in dark and light themes: blue always means gain, orange always means loss](images/design-colors.png)
+![Core color tokens in dark and light themes: in the US pack, blue means gain and orange means loss](images/design-colors.png)
 
 | Role (Flutter `ColorScheme` or extension) | Dark (default) | Light | Used for |
 | --- | --- | --- | --- |
@@ -53,7 +53,7 @@ Rules for color:
 - **Color is never alone.** Every gain or loss also shows a sign (+ or −), and charts add a pattern or label where color carries meaning (see Charts).
 - **Errors are red, losses are orange.** A loss is a normal outcome, not a mistake, so it never uses the error color.
 - **No company colors.** Tickers are plain text with no logos or brand colors, as the spec requires.
-- **Level marks reuse the brand.** Levels are told apart by an icon and numeral, not new hues: L1 Seed, L2 Sprout, L3 Stalk, L4 Harvest, following the farm analogy (**Proposed**).
+- **Level marks reuse the brand.** Levels are told apart by an icon and numeral, not new hues: L1 Seed, L2 Sprout, L3 Stalk, L4 Harvest, following the farm analogy (**Proposed**). The investing track has its own badge, Orchard, in the same style (accepted Nov 28).
 - In Flutter, gain and loss live in a `ThemeExtension` (`MarketColors`) whose values are loaded from the market pack, so widgets read `Theme.of(context).extension<MarketColors>()` and never hard-code a hex value. Copy, chart titles and screen-reader text never name a color.
 
 ## Type, spacing, shape and elevation
@@ -157,7 +157,7 @@ Every interactive component has the same six states: enabled, hovered (web and t
 | Term chip | A bold new term inside lesson text | Tap opens a sheet with the one-line definition and its farm line; never a hover-only popover |
 | Quiz answer tile | One answer option, full width | Selected, correct and wrong states use icon plus text ("Correct", "Not quite"), not color alone |
 | Debrief card | One debrief section: went well, mistakes, study next | Mistakes link to the moment on the timeline; "Study next" opens the lesson |
-| Level badge | Seed, Sprout, Stalk, Harvest icon with level numeral | Locked badges show a lock and what unlocks them |
+| Level badge | Seed, Sprout, Stalk, Harvest icon with level numeral; Orchard for the investing track, with no numeral | Locked badges show a lock and what unlocks them |
 | Leaderboard row | Rank, generated nickname, score, level badge | No photo, no location, no free text; the learner's own row is pinned and highlighted |
 | Disclaimer banner | The spec's educational disclaimer | Persistent footer on web screens; on mobile at signup, in Settings and on every debrief |
 | Break prompt | Gentle prompt after 45 minutes of continuous play for under-18s | A sheet, not a blocker: "Take a break" and "Keep going" |
@@ -478,7 +478,7 @@ The farm analogy travels, but its nouns do not: wheat and bushels become rice or
 
 Everything above that the spec had not already settled is marked Proposed; this table collects those decisions so each can be accepted or changed in one place.
 
-Rows 15 to 28 came from the Nov 28, 2026 review and were all accepted that day. Rows 15 to 27 are applied in the sections above; row 28 is built after launch. Row 29 is new and still proposed.
+Rows 15 to 28 came from the Nov 28, 2026 review and were all accepted that day. Rows 15 to 27 are applied in the sections above; row 28 is built after launch. Row 29 was accepted on Nov 28 and is applied.
 
 | # | Proposed decision | Why |
 | --- | --- | --- |
@@ -510,7 +510,7 @@ Rows 15 to 28 came from the Nov 28, 2026 review and were all accepted that day. 
 | 26 | Accepted Nov 28. A scorecard card on the debrief and in You: how often the learner's planned trades beat the benchmark at the horizon they chose, and wins against losses (spec R26, needs row 22) | Grades the plan, not the luck, and never rewards a rising market |
 | 27 | Accepted Nov 28. "My limits" in Settings (largest position, largest sector, a drawdown at which to pause); the ticket's risk panel names any limit an order would break, with "Change the order" and "Place anyway" as equal buttons (spec R29) | Turns lesson 1.13 into a habit the learner owns |
 | 28 | Accepted Nov 28, for after launch. A style lens sheet on a ticker inside replays and in lessons I.8 and I.9: a checklist of facts against one investing style's usual thresholds, with a "Modeled" label, never a buy or sell and never in live mode (spec R28) | Teaches how different investors read the same numbers without giving a signal |
-| 29 | The investing track has its own badge, Orchard, drawn in the level icons' style | Keeps the farm analogy; an orchard is the long-term crop |
+| 29 | Accepted Nov 28. The investing track has its own badge, Orchard, drawn in the level icons' style | Keeps the farm analogy; an orchard is the long-term crop |
 
 Open questions:
 

@@ -105,7 +105,7 @@ tools/
   walkthrough/                                pull request video recorder (S13)
   site_builder/                               static lesson and glossary pages from content/ (S12)
 .github/                  workflows, CODEOWNERS, streams.yml, templates (S13; streams.yml and CODEOWNERS S0)
-docs/                     plans (S0); docs/streams/<id>.md progress notes (each stream its own file)
+docs/                     plans, images and the scripts that draw them in images/src (S0); docs/streams/<id>.md progress notes (each stream its own file)
 ```
 
 **Hotspot files and how each is defused**
@@ -384,7 +384,7 @@ Everything above that the spec, design guide or lesson plan did not already deci
 | 17 | Accepted Nov 28. Localization files in every package from the first screen, with the `l10n` check | Later markets need other languages, and retrofitting strings touches every stream |
 | 18 | Accepted Nov 28. One scheduler dispatcher for every market's minute tick | Keeps scheduled jobs at Cloud Scheduler's three free ones as markets are added |
 | 19 | Accepted Nov 28. One prod Firebase project in a US location; a later market gets its own project only if its law requires local storage | A Firestore location cannot be changed, and one project is the cheapest to run |
-| 20 | A `startRun` endpoint that hands out a gate or scored variant's pack only when the run begins | A detail of accepted R1: keeps held-out paths off the device until they are played |
+| 20 | Accepted Nov 28. A `startRun` endpoint that hands out a gate or scored variant's pack only when the run begins | A detail of accepted R1: keeps held-out paths off the device until they are played |
 | 21 | Accepted Nov 28. Static lesson and glossary pages built by a new `tools/site_builder` owned by S12 (R12) | Search engines index plain HTML far better than a Flutter canvas, at $0 |
 | 22 | Accepted Nov 28. A prototype test before M0 and an open web beta for adults at M3 (R14) | Learners see the product before every contract and feature is built |
 | 23 | Accepted Nov 28, changed. Content may be drafted by AI and Prafull approves every item; no outside reviewer (R11) | Content is the largest unowned item on the critical path |

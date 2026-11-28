@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+#frame{width:1950px;height:1200px}
+h1{position:absolute;left:50px;top:26px;font-size:30px}
+.sub{position:absolute;left:50px;top:70px;font-size:18px;color:#4A5361}
+.col{position:absolute;top:118px;width:590px;display:flex;flex-direction:column;gap:22px}
+.card{border:2px solid #D5DAE3;border-radius:14px;padding:16px 10px 10px}
+.card h2{font-size:20px;font-weight:700;margin:0 10px 12px}
+.row{display:flex;justify-content:space-between;align-items:center;height:37.5px;padding:0 10px 0 12px;font-size:18px;border-radius:6px}
+.row:nth-of-type(odd){background:#F5F6F9}
+.p{min-width:62px;height:28px;border-radius:14px;color:#fff;font-size:15px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 12px}
+.leg{position:absolute;left:50px;top:968px;font-size:20px;font-weight:700}
+.lg{position:absolute;font-size:17px;display:flex;align-items:center;gap:13px}
+</style>
+<div id="frame"><h1>Who owns which folder</h1>
+<div class="sub">Every path has exactly one owning stream. The stream-guard check fails any pull request that crosses these lines.</div>
+<div id="g"></div><div class="leg">Streams</div></div>
+<script>
+const col={S0:'#475569',S1:'#0F766E',S2:'#1D4ED8',S3:'#1D4ED8',S4:'#1D4ED8',S5:'#5B43D6',S6:'#5B43D6',S7:'#5B43D6',S8:'#5B43D6',S9:'#5B43D6',S10:'#5B43D6',S11:'#0F766E',S12:'#B45309',S13:'#475569',each:'#94A3B8'};
+const pill=s=>`<span class="p" style="background:${col[s]}">${s}</span>`;
+const cols=[[['packages/',[['contracts/','S0'],['firebase_client/','S0'],['design_system/','S1'],['market_model/','S2'],['options_pricing/','S3'],['sim_engine/','S4'],['feature_learn/','S5'],['lesson_diagrams/','S5'],['feature_replay/','S6'],['trading_ui/','S6'],['feature_live/','S7'],['feature_portfolio/','S7'],['feature_debrief/','S8'],['feature_onboarding/','S9'],['feature_profile/','S9'],['feature_challenges/','S10']]]],
+[['apps/',[['app/ (shell, web/)','S11'],['app/ios, app/android signing','S13'],['widgetbook/','S1']]],['content/',[['lessons, quizzes, glossary, copy','S12'],['scenarios/*/scenario.yaml','S2'],['scenarios/*/news.yaml','S12']]],['server/sim_server/',[['app and routing','S0'],['lib/src/scoring/','S4'],['lib/src/live/','S7']]],['functions/src/',[['index.ts, shared/','S0'],['debrief/','S8'],['identity/','S9'],['challenges/','S10']]]],
+[['firebase/',[['rules, indexes, Remote Config','S0']]],['test_vectors/',[['packs/sample/','S0'],['engine/','S4'],['pricing/','S3']]],['tools/',[['scenario_builder/, ticker_sync/','S2'],['site_builder/ (static lesson pages)','S12'],['walkthrough/','S13']]],['.github/',[['workflows/, templates','S13'],['streams.yml, CODEOWNERS','S0']]],['docs/',[['plans, contracts, images','S0'],['streams/&lt;id&gt;.md','each']]]]];
+const g=document.getElementById('g');
+cols.forEach((cards,i)=>{g.insertAdjacentHTML('beforeend',`<div class="col" style="left:${50+i*618}px">`+cards.map(([t,rows])=>`<div class="card"><h2>${t}</h2>`+rows.map(([n,s])=>`<div class="row"><span>${n}</span>${pill(s)}</div>`).join('')+'</div>').join('')+'</div>')});
+const names=['Platform, contracts, integration','Design system','Market model and scenarios','Options pricing','Simulation engine and scoring','Learn','Replay and trading UI','Live market and portfolio','AI debrief','Identity, onboarding, safety','Challenges and leaderboards','App shell, PWA and web','Content and static pages','CI/CD and release'];
+names.forEach((n,k)=>g.insertAdjacentHTML('beforeend',`<div class="lg" style="left:${50+(k%5)*370}px;top:${1010+Math.floor(k/5)*43}px">${pill('S'+k)}${n}</div>`));
+</script>

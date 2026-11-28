@@ -1,6 +1,6 @@
 # Trading Simulator Lesson Plan
 
-Draft for review, Nov 27, 2026. Updated Nov 28, 2026 with the review refinements Prafull decided that day (R1 to R31 in the [spec](spec.md#review-refinements-nov-28-2026)). The existing lesson diagrams were not redrawn, and the six investing-track diagrams are not drawn yet. Visual version: see the published page.
+Draft for review, Nov 27, 2026. Updated Nov 28, 2026 with the review refinements Prafull decided that day (R1 to R31 in the [spec](spec.md#review-refinements-nov-28-2026)). The six investing-track diagrams and the coverage map were drawn on Nov 28; the 38 level diagrams did not need redrawing, because none of them shows anything the review changed. Visual version: see the published page.
 
 **4 levels and an investing track · 44 lessons · 10 reality checks · about 195 minutes of reading · 3 to 5 minutes per lesson**
 
@@ -469,11 +469,13 @@ A spread tells you the worst case before you trade. It does not make the worst c
 
 ## Investing track
 
-*Open after Level 1 and not required for any options gate. 6 lessons, 24 min. Accepted on Nov 28, 2026 (R7); four more lessons follow after launch. The six diagrams are not drawn yet.*
+*Open after Level 1 and not required for any options gate. 6 lessons, 24 min. Accepted on Nov 28, 2026 (R7); four more lessons follow after launch.*
 
 Unlocks: the Investing badge, and decades replays: monthly bars, 30 years in about 3 minutes, with a deposit each month.
 
 ### I.1 Goals and time horizon (4 min) (new)
+
+![Best and worst yearly result of a broad-market ETF held for 1, 5, 10 and 20 years; the range narrows as the years grow.](images/lessons/lesson-I-1.png)
 
 - **Farm:** Seed you need next spring should not go into an orchard that takes ten years to fruit.
 - **Goal:** Money needed soon belongs in steadier things; money for decades can ride out the swings.
@@ -482,6 +484,8 @@ Unlocks: the Investing badge, and decades replays: monthly bars, 30 years in abo
 
 ### I.2 Bonds and cash (4 min) (new)
 
+![A bond's price falling as the interest rate rises, with the price marked at 2%, 4% and 6%.](images/lessons/lesson-I-2.png)
+
 - **Farm:** Lending seed to a neighbor pays back a fixed amount; owning the farm pays whatever the harvest brings.
 - **Goal:** A bond is a loan that pays interest, and its price falls when interest rates rise.
 - **Visual:** A bond's price against a slider for the interest rate.
@@ -489,12 +493,16 @@ Unlocks: the Investing badge, and decades replays: monthly bars, 30 years in abo
 
 ### I.3 Asset allocation (4 min) (new)
 
+![Three accounts through one crash: all stocks, 60/40 and 20/80, each labeled with its worst drop.](images/lessons/lesson-I-3.png)
+
 - **Farm:** Decide how much land goes to steady crops and how much to risky ones before the season starts.
 - **Goal:** The split between stocks, bonds and cash sets most of how far an account swings.
-- **Visual:** Three accounts through 2008: all stocks, 60/40 and 20/80.
+- **Visual:** Three accounts through one crash: all stocks, 60/40 and 20/80, each labeled with its worst drop.
 - **Try it:** Play the same replay with two different splits.
 
 ### I.4 Investing a little every month (4 min) (new)
+
+![Twelve monthly buys on a price line that falls and then rises, with the average price and the lower average cost marked.](images/lessons/lesson-I-4.png)
 
 - **Farm:** Planting a row each week means no single week decides the harvest.
 - **Goal:** A fixed amount each month buys more shares when prices are low and removes the timing decision.
@@ -503,12 +511,16 @@ Unlocks: the Investing badge, and decades replays: monthly bars, 30 years in abo
 
 ### I.5 Rebalancing (4 min) (new)
 
+![A 60/40 account drifting to 75/25 after a rally, then reset to 60/40.](images/lessons/lesson-I-5.png)
+
 - **Farm:** When the orchard outgrows the wheat field, replant to get back to your plan.
 - **Goal:** Selling some of what grew and buying what lagged holds risk at the level you chose.
 - **Visual:** A 60/40 account drifting to 75/25, then reset.
 - **Try it:** Rebalance once a year in a decades replay and compare with never rebalancing.
 
 ### I.6 Time in the market (4 min) (new)
+
+![$10,000 over twenty years, fully invested against the same years without the ten best days.](images/lessons/lesson-I-6.png)
 
 - **Farm:** A farmer who skips the ten best growing weeks of a decade loses much of the decade's harvest.
 - **Goal:** Much of the long-run gain comes from a few strong days, and they tend to follow the worst ones, so selling in a crash often misses them.
@@ -621,6 +633,14 @@ Approved by Prafull on Nov 27, 2026 and applied: five new Level 1 lessons (1.3, 
 | 4.4 | Credit spreads | OIC Bull Put Spread; Bear Call Spread |
 | 4.5 | Choosing strikes | OIC Strategy pages (not confirmed) (partly) |
 | 4.6 | Managing and closing early | OIC Not confirmed in pages read (partly) |
+| I.1 | Goals and time horizon | Not yet checked |
+| I.2 | Bonds and cash | Jump$tart 8-3 · SIFMA SMG S8 (partly) |
+| I.3 | Asset allocation | Jump$tart 12-6 · SIFMA SMG S8 (partly) · investor.gov Asset allocation and diversification |
+| I.4 | Investing a little every month | Not yet checked |
+| I.5 | Rebalancing | Not yet checked |
+| I.6 | Time in the market | Not yet checked |
+
+The investing-track rows were added on Nov 28, 2026. I.2 and I.3 use the codes the Nov 27 check had already read for bonds and asset allocation. The benchmark sites could not be opened on Nov 28, so I.1 and I.4 to I.6 are marked "Not yet checked" rather than guessed, and the five new reality checks are not in the map.
 
 ### Gaps the check found, and how each was closed
 
@@ -791,6 +811,7 @@ A two-minute question on a short, unlabeled chart ("Your stop is $96 and the sto
 ## Notes
 
 - All four gates use the rules accepted on Nov 28, 2026 (R1 and R2). Their thresholds are starting points, held in Remote Config and tuned in playtests.
-- Diagram numbers are worked examples: option prices use Black-Scholes, 30% volatility, 4% rate unless noted.
+- Diagram numbers are worked examples: option prices use Black-Scholes, 30% volatility, 4% rate unless noted. The investing-track diagrams use illustrative figures and seeded synthetic paths, not market data.
+- The scripts that draw the investing-track diagrams and the coverage map are in `docs/images/src/`; the coverage map is drawn from the Coverage by lesson table above.
 - Lesson text, quiz items and news beats may be drafted by AI. Prafull approves every one before it ships (R11, decided Nov 28). At run time AI is used only for debriefs.
 - The Review refinements section (Nov 28, 2026) records what was applied and what was accepted for after launch. Nothing in this plan is awaiting sign-off.

@@ -2,7 +2,7 @@
 
 A plan for a simulator that teaches anyone 13 or older to invest and trade US stocks and options, including options strategies, using real tickers, synthetic prices and simulated money.
 
-This repository holds the plan only: the product spec, the design guide, the lesson plan and the implementation plan. There is no app or code yet.
+This repository holds the plan only: the product spec, the design guide, the lesson plan and the implementation plan. There is no app code yet. The only scripts are the ones in `docs/images/src/` that draw the diagrams; its README says how to run them.
 
 ## Documents
 

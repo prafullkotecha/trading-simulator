@@ -18,7 +18,7 @@ An app for iPhone, Android and the web (an installable PWA) that teaches anyone 
 
 ## Decision log
 
-Eighteen decisions came out of the interview on Nov 27, 2026, and later rows record changes Prafull made after reading the first draft and after the Nov 28 review. Rows 25 to 42 came from a second interview on Nov 28, where the answer column quotes the option Prafull chose. The answer column quotes Prafull's words; the last column says what the spec does with each one.
+Eighteen decisions came out of the interview on Nov 27, 2026, and later rows record changes Prafull made after reading the first draft and after the Nov 28 review. Rows 25 to 44 came from a second interview on Nov 28 and its follow-ups, where the answer column quotes the option Prafull chose. The answer column quotes Prafull's words; the last column says what the spec does with each one.
 
 | # | Topic | Answer | What the spec does |
 | --- | --- | --- | --- |
@@ -64,6 +64,8 @@ Eighteen decisions came out of the interview on Nov 27, 2026, and later rows rec
 | 40 | Name clearance (R25) | "US only for now" (Nov 28) | The name is cleared in the US only. Each later market is checked when it is scheduled. |
 | 41 | Debrief cache (R31) | "Accept for v1" (Nov 28) | AI wording is reused when the scenario variant, the findings and the tone bucket are the same. |
 | 42 | Order of markets | "ES, SG, IN, MX, then JP/KR/HK" (Nov 28) | Planning assumption: Spanish for the US pack, then Singapore, India, Mexico, then Japan, Korea and Hong Kong. |
+| 43 | Investing badge | "Orchard badge - yes" (Nov 28) | The investing track has its own badge, Orchard, in the level icons' style. |
+| 44 | Held-out packs | "startRun endpoint - approved/signed." (Nov 28) | A `startRun` endpoint hands out a gate or scored variant's pack only when that run begins. It is a build detail of R1 and asks nothing further of Prafull. |
 
 ## Goals and non-goals
 
