@@ -476,7 +476,7 @@ The farm analogy travels, but its nouns do not: wheat and bushels become rice or
 
 ## Proposed decisions and open questions
 
-Everything above that the spec had not already settled is marked Proposed; this table collects those decisions so each can be accepted or changed in one place.
+Everything above that the spec had not already settled is marked Proposed; this table collects those decisions. Prafull accepted rows 1 to 14 as written on Nov 28, 2026 (spec decision 45), so every row in this table is now accepted. The **Proposed** markers in the text above are kept to show which choices were this guide's own.
 
 Rows 15 to 28 came from the Nov 28, 2026 review and were all accepted that day. Rows 15 to 27 are applied in the sections above; row 28 is built after launch. Row 29 was accepted on Nov 28 and is applied.
 

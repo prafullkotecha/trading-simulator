@@ -6,7 +6,7 @@ This plan turns the [Product spec](spec.md), the [UX and UI design guide](design
 
 ## Summary
 
-The build runs in five phases. One stream builds the foundation alone; then up to six streams at a time build in parallel, each owning its own folders and talking to the others only through frozen contracts.
+The build runs in five phases. One stream builds the foundation alone; then streams build in parallel, at most four at a time until M1 and up to six after it, each owning its own folders and talking to the others only through frozen contracts.
 
 - **Phase 0, Foundation:** one stream builds the repository skeleton, every shared contract, the design tokens and CI, so every later stream starts from code that already compiles.
 - **Phase 1, Engines and system:** the market model, options pricing, simulation engine, design system, app shell, sign-in and content start in parallel.
@@ -28,14 +28,14 @@ Every recurring cost is listed here before it is incurred, as the build rules re
 
 | # | Step | When | What Prafull does | Cost |
 | --- | --- | --- | --- | --- |
-| 1 | Approve this plan and its Proposed items | Before Phase 0 | Reads the plan and says go, or changes items | $0 |
+| 1 | Approve this plan and its Proposed items | Done Nov 28, 2026 | Accepted every proposed item, four of them with changes (spec decisions 46 to 50) | $0 |
 | 2 | Protect main | Before Phase 0 ends | Adds a free branch ruleset on main on github.com: pull requests only, required checks, branch current with main, no force pushes | $0. The repo is public, and GitHub Free protects branches on public repos ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). |
-| 3 | Firebase projects, dev and prod | Phase 0 | Approves one Google sign-in in the browser; Claude creates both projects and keyless deploy access from GitHub; Prafull enters a card for the Blaze plan himself. The prod database goes in a US location, which cannot be changed later (spec R23) | $0 in development, inside the free tiers. Budget alerts at $5 (dev) and $100 (prod) (**Proposed**). |
+| 3 | Firebase projects, dev and prod | Phase 0 | Approves one Google sign-in in the browser; Claude creates both projects and keyless deploy access from GitHub; Prafull enters a card for the Blaze plan himself. The prod database goes in a US location, which cannot be changed later (spec R23) | $0 in development, inside the free tiers. Budget alerts: $5 for dev, and a $100 monthly budget for prod that alerts at 50%, 90% and 100%. Alerts only notify; the AI kill switch is what stops debrief spend. |
 | 4 | Gemini API key for production debriefs | Phase 2 | Nothing beyond step 3; the key is created in the prod project and kept in Secret Manager | ~$72 a month at 1,000 learners (already accepted). Development uses findings-only debriefs; each run of the debrief quality test costs about $0.20 and runs only when debrief code changes. |
 | 5 | Apple Developer Program | Start of Phase 1 | Enrolls with his Apple ID and approves 2FA on his phone; decides individual or organization first (an organization needs a free D-U-N-S number, which can take days) | $99 a year. Needed for Sign in with Apple, App Attest and TestFlight. |
 | 6 | Google Play Console | Start of Phase 1 | Registers and completes identity verification | $25 once. A personal account created after Nov 13, 2023 must run a closed test with at least 12 testers for 14 days in a row before it can publish ([Play Console Help](https://support.google.com/googleplay/android-developer/answer/14151465)); an organization account is not named in that rule. |
 | 7 | Store automation keys | Phase 2 | Approves creation of an App Store Connect API key and a Play service account in the browser | $0 |
-| 8 | iOS build runner | Phase 1 | Signs in to Codemagic with GitHub (**Proposed**), or approves Tenki macOS runners if Tenki offers them | $0 within Codemagic's 500 free macOS minutes a month for personal accounts ([Codemagic pricing](https://docs.codemagic.io/billing/pricing/)). Linux jobs run on his Tenki runners at Tenki's per-minute rate, checked at setup. |
+| 8 | CI runners | Phase 0 | Nothing while the repo is public: Linux and iOS jobs run on GitHub's standard hosted runners. If the repo ever goes private, he signs in to Codemagic for iOS builds and points Linux jobs at his Tenki runners | $0. Standard GitHub-hosted runners are free for public repositories ([GitHub Docs](https://docs.github.com/en/billing/managing-billing-for-your-products/about-billing-for-github-actions)), read from pricing summaries on Nov 28 and to be confirmed on that page at setup. Larger runners are billed even on public repos, so the workflows use standard ones only. |
 | 9 | 12 or more closed testers | Phase 3 (M5) | Invites friends or family to the Play closed test and asks them to stay opted in for 14 days | $0 |
 | 10 | Counsel review | Before Phase 4 | Engages counsel for the spec's open legal questions (real names, age rating, not advice) | Counsel's fee; outside this plan |
 | 11 | Pull request approvals | Throughout | Approves merges from his phone; contract-change pull requests always need his approval | $0 |
@@ -59,7 +59,7 @@ Phases end at milestones, not dates; the build cannot see how long agents, revie
 | 3 Integration and hardening | All streams fix; S0 leads | **M6 Release candidate** | Every Definition of done below is met; audits pass; content signed off |
 | 4 Beta and launch | S13 leads; S0 and owners fix | **M7 Launch** | Apps approved in both stores; web app live; URL in the repo's Website field and README |
 
-At most six streams run at the same time (**Proposed**), so Prafull's review queue stays small enough for a phone. Streams that wait (for example S7 until the engine exists) start on fakes from the contracts package and swap in the real implementation at a milestone.
+At most four streams run at the same time until M1, and up to six after it if the review queue is comfortable, so Prafull's queue of pull requests and content approvals stays small enough for a phone. In Phase 1 that means S2, S3 and S4 (the critical path) and S1 start first, and S9, S11, S12 and S13 take a slot as one frees up. Streams that wait (for example S7 until the engine exists) start on fakes from the contracts package and swap in the real implementation at a milestone.
 
 ## Repository layout and ownership
 
@@ -193,7 +193,8 @@ Every contract below is written, reviewed and frozen in Phase 0 as version 1.0.0
 **Server API, first cut (C5)**
 
 - **Callable endpoints:** `completeSignup` (birthdate in, age bucket and nickname out; the birthdate is never stored, and an under-13 answer stores nothing on the server), `startRun` (hands out the pack location of a gate or scored variant only when that run begins), `scoreReplay` (order log in, server result and findings out), `requestDebrief`, `resetLiveAccount`, `redeemInvite`, `removeFriend`, `setLeaderboardVisibility`, `exportMyData` and `deleteMyAccount`.
-- **Where they run:** `scoreReplay` and the live market run in the Dart `sim_server` on Cloud Run, so the server uses the same engine as the apps; the rest run as TypeScript Cloud Functions (**Proposed**). Both check the Firebase ID token and the App Check token on every call.
+- **Where they run:** `startRun`, `scoreReplay`, `resetLiveAccount` and the live market run in the Dart `sim_server` on Cloud Run, so the server uses the same engine as the apps. It reaches Firestore, Auth and App Check through Firebase's official Admin SDK for Dart, which is experimental (0.5.x) as of Nov 2026 ([release notes](https://firebase.google.com/support/release-notes/admin/dart)), so its version is pinned. The rest run as TypeScript Cloud Functions, where the runtime, the Admin SDK, server-side Remote Config and scheduled triggers are all generally available. Both check the Firebase ID token and the App Check token on every call.
+- **Why not all Dart yet:** Cloud Functions for Firebase has run Dart since May 2026, but as an experiment that deploys only HTTP and callable functions, not scheduled or Firestore triggers ([Firebase docs](https://firebase.google.com/docs/functions/start-dart)), and the Admin SDK for Dart does not cover Remote Config. Genkit Dart 1.0, stable since October 2026, could call Gemini from Dart ([Genkit](https://genkit.dev/blog/genkit-dart-1-0/)). Identity, data deletion and cost controls for teens should not launch on two experimental layers, so the split is revisited when Dart functions leave experimental.
 - **Scheduled jobs:** a minute dispatcher that advances every open market around the clock, a nightly corporate-actions job and a weekly challenge rollover whose time is set per market (Monday 9 AM Eastern for the US). That is exactly Cloud Scheduler's three free jobs, so prod pays $0, and adding a market adds no job; the dev project runs these jobs by hand when testing instead of on a schedule (**Proposed**).
 
 **Contract-change rules**
@@ -258,9 +259,9 @@ The critical path runs through the engine, not the screens: Foundation, then the
 | `web-build` | `flutter build web --wasm`, bundle-size budget, preview deploy to a Firebase Hosting preview channel | App and UI pull requests |
 | `lighthouse` | Performance, accessibility and PWA scores on the preview URL | App and UI pull requests |
 | `walkthrough` | A video is embedded in the pull request body | `ui` pull requests |
-| `ios-build` | iOS build and tests | Main, release branches and pull requests labeled `ios` only, to save macOS minutes |
+| `ios-build` | iOS build and tests | Main, release branches and pull requests labeled `ios` only, because macOS builds are slow |
 
-Linux jobs run on Prafull's Tenki runners and are filtered by path, so a content change does not build the app. If minutes run low, the checks run less often, but no check is skipped or weakened.
+Every job runs on GitHub's standard hosted runners, which are free while the repo is public, and jobs are filtered by path, so a content change does not build the app. If the repo goes private, Linux jobs move to Prafull's Tenki runners and iOS builds to Codemagic. No check is ever skipped or weakened.
 
 **Branch protection on main**
 
@@ -344,10 +345,10 @@ These six adapt ideas from the open-source project [virattt/ai-hedge-fund](https
 | Every agent pushes as the same GitHub user | CODEOWNERS cannot separate streams | Ownership is enforced by `stream-guard` from `streams.yml`, and CODEOWNERS is used only to require Prafull on sensitive paths |
 | Contracts churn after the freeze | Parallel streams stall or diverge | Fakes for every interface, additive-first changes, a daily batch window and Prafull's approval on every change |
 | Engine results differ between the Dart VM, JavaScript and WebAssembly | Client and server disagree on a score | Integer money and prices, a pure-Dart seeded random generator, deterministic rounding, and golden vectors on all three targets in CI |
-| No official Dart Admin SDK for the server | Dart scoring service cannot reach Firestore easily | A spike in Phase 0 using Google's REST APIs; if it fails, a TypeScript port of scoring verified by the same golden vectors, as the spec allows |
+| The official Admin SDK for Dart is experimental | A breaking release, or a missing feature, stalls the scoring service | A spike in Phase 0 proves it can verify tokens and read and write Firestore from Cloud Run; its version is pinned; if it fails, a TypeScript port of scoring verified by the same golden vectors, as the spec allows |
 | Flutter web no longer ships a default service worker ([flutter-announce](https://groups.google.com/g/flutter-announce/c/0Vv-j_TyrdI)) | Offline replays and installability break | S11 writes its own service worker in Phase 1, modeled on the guest experience app's setup, and tests offline play in the installed app |
 | Main is unprotected until the branch ruleset is added | Unreviewed merges | The free branch ruleset in step 2, added before Phase 0 ends |
-| CI minutes run out, as they did on another project | Slow or stalled builds | Path filters, Tenki Linux runners, iOS builds only on main, release and `ios`-labeled pull requests, and Codemagic's free macOS minutes; no check is ever skipped |
+| The repo goes private, or GitHub changes its free runners | CI starts to cost money or stalls | Path filters and iOS builds only on main, release and `ios`-labeled pull requests keep usage low; Tenki Linux runners and Codemagic's free macOS minutes are the fallback; no check is ever skipped |
 | Google Play's 12-tester, 14-day closed test | Android launch slips | Start the closed track at M5, so the clock runs during hardening; or use an organization account |
 | Apple or Google account setup takes days | Sign in with Apple and TestFlight blocked | Steps 5 and 6 start at the beginning of Phase 1 |
 | Content and scenario review becomes the bottleneck | Code waits for words | S12 and S2 start in Phase 1, with a review queue and a fixed template per lesson and scenario. Prafull is the only approver, so S12 sends content in small batches ordered by milestone |
@@ -361,25 +362,25 @@ These six adapt ideas from the open-source project [virattt/ai-hedge-fund](https
 
 ## Proposed decisions
 
-Everything above that the spec, design guide or lesson plan did not already decide is listed here, so each can be accepted or changed in one place.
+Everything above that the spec, design guide or lesson plan did not already decide is listed here. Prafull accepted every row on Nov 28, 2026, four of them with changes (spec decisions 46 to 50), so nothing in this plan awaits sign-off. The **Proposed** markers in the text above are kept to show which choices were this plan's own.
 
 | # | Proposed decision | Why |
 | --- | --- | --- |
-| 1 | A Dart pub workspace monorepo with the layout above | One lock file, shared packages and clean per-folder ownership |
-| 2 | Fourteen streams with the ownership table above | Every path has exactly one owner |
-| 3 | At most six streams running at once | Keeps the review queue manageable from a phone |
-| 4 | A `stream-guard` CI check driven by `.github/streams.yml` | The only way to separate streams that share one GitHub user |
-| 5 | Rebase and merge only, linear history | Keeps every signed-off commit intact on main |
-| 6 | Contract changes merge in one daily batch window, and every one needs Prafull's approval | Limits churn for parallel streams |
-| 7 | `scoreReplay` and the live market in the Dart `sim_server` on Cloud Run; other endpoints in TypeScript Cloud Functions | One engine for apps and server; mature Firebase and Gemini SDKs for the rest |
-| 8 | Money as an integer count of a currency's smallest unit, carried with its currency, and prices as integer ten-thousandths of the currency unit | Identical results on every platform, in any currency |
-| 9 | Separate dev and prod Firebase projects; dev runs scheduled jobs by hand | Safe testing; stays inside Cloud Scheduler's three free jobs |
-| 10 | Budget alerts at $5 for dev and $100 for prod | Early warning well above the expected spend |
-| 11 | Codemagic's free macOS minutes for iOS builds, Tenki for Linux | Near-zero CI cost |
-| 12 | A Firebase Hosting preview channel per UI pull request, used to record its walkthrough video | Every reviewer and the video see the same build |
-| 13 | Widgetbook as the component catalog | The design guide names it as an option for the component library |
-| 14 | Coverage floors of 95% for engine and pricing, 80% elsewhere | The engine decides scores and unlocks, so it gets the highest bar |
-| 15 | Start the Play closed test at M5 | Lets the 14-day clock run during hardening |
+| 1 | Accepted Nov 28. A Dart pub workspace monorepo with the layout above | One lock file, shared packages and clean per-folder ownership |
+| 2 | Accepted Nov 28. Fourteen streams with the ownership table above | Every path has exactly one owner |
+| 3 | Accepted Nov 28, changed. At most four streams at once until M1, then up to six | Prafull approves every pull request and every piece of content, so his queue sets the pace |
+| 4 | Accepted Nov 28. A `stream-guard` CI check driven by `.github/streams.yml` | The only way to separate streams that share one GitHub user |
+| 5 | Accepted Nov 28. Rebase and merge only, linear history | Keeps every signed-off commit intact on main |
+| 6 | Accepted Nov 28. Contract changes merge in one daily batch window, and every one needs Prafull's approval | Limits churn for parallel streams |
+| 7 | Accepted Nov 28, after checking current releases. The engine endpoints and the live market in the Dart `sim_server` on Cloud Run, on Firebase's official but experimental Admin SDK for Dart; other endpoints in TypeScript Cloud Functions; revisit all-Dart when Dart functions leave experimental | One engine for apps and server; generally available tooling under identity, deletion and cost controls |
+| 8 | Accepted Nov 28. Money as an integer count of a currency's smallest unit, carried with its currency, and prices as integer ten-thousandths of the currency unit | Identical results on every platform, in any currency |
+| 9 | Accepted Nov 28. Separate dev and prod Firebase projects; dev runs scheduled jobs by hand | Safe testing; stays inside Cloud Scheduler's three free jobs |
+| 10 | Accepted Nov 28, changed. A $5 alert for dev; a $100 monthly budget for prod with alerts at 50%, 90% and 100% | Says at $50 that a month is running hot, not only at $100 |
+| 11 | Accepted Nov 28, changed. GitHub's standard hosted runners for Linux and iOS while the repo is public; Tenki and Codemagic as the fallback | $0 with no extra accounts, since standard runners are free on public repos |
+| 12 | Accepted Nov 28. A Firebase Hosting preview channel per UI pull request, used to record its walkthrough video | Every reviewer and the video see the same build |
+| 13 | Accepted Nov 28. Widgetbook as the component catalog | The design guide names it as an option for the component library |
+| 14 | Accepted Nov 28. Coverage floors of 95% for engine and pricing, 80% elsewhere | The engine decides scores and unlocks, so it gets the highest bar |
+| 15 | Accepted Nov 28. Start the Play closed test at M5 | Lets the 14-day clock run during hardening |
 | 16 | Accepted Nov 28. The contract additions for R1 to R6 and R17 to R24, now in the contracts above | They are cheap before the freeze and breaking changes after it |
 | 17 | Accepted Nov 28. Localization files in every package from the first screen, with the `l10n` check | Later markets need other languages, and retrofitting strings touches every stream |
 | 18 | Accepted Nov 28. One scheduler dispatcher for every market's minute tick | Keeps scheduled jobs at Cloud Scheduler's three free ones as markets are added |

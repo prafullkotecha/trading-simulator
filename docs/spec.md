@@ -18,7 +18,7 @@ An app for iPhone, Android and the web (an installable PWA) that teaches anyone 
 
 ## Decision log
 
-Eighteen decisions came out of the interview on Nov 27, 2026, and later rows record changes Prafull made after reading the first draft and after the Nov 28 review. Rows 25 to 44 came from a second interview on Nov 28 and its follow-ups, where the answer column quotes the option Prafull chose. The answer column quotes Prafull's words; the last column says what the spec does with each one.
+Eighteen decisions came out of the interview on Nov 27, 2026, and later rows record changes Prafull made after reading the first draft and after the Nov 28 review. Rows 25 to 50 came from a second interview on Nov 28 and its follow-ups, where the answer column quotes the option Prafull chose. The answer column quotes Prafull's words; the last column says what the spec does with each one.
 
 | # | Topic | Answer | What the spec does |
 | --- | --- | --- | --- |
@@ -66,6 +66,12 @@ Eighteen decisions came out of the interview on Nov 27, 2026, and later rows rec
 | 42 | Order of markets | "ES, SG, IN, MX, then JP/KR/HK" (Nov 28) | Planning assumption: Spanish for the US pack, then Singapore, India, Mexico, then Japan, Korea and Hong Kong. |
 | 43 | Investing badge | "Orchard badge - yes" (Nov 28) | The investing track has its own badge, Orchard, in the level icons' style. |
 | 44 | Held-out packs | "startRun endpoint - approved/signed." (Nov 28) | A `startRun` endpoint hands out a gate or scored variant's pack only when that run begins. It is a build detail of R1 and asks nothing further of Prafull. |
+| 45 | Design guide proposals 1 to 14 | "Accept all 14" (Nov 28) | The design guide's own choices are accepted as written: violet brand color, neutral Buy and Sell, level icons, fonts, five tabs, shortcuts, haptics, load budget and reading level. |
+| 46 | Implementation plan proposals | "Accept 11, discuss 4" (Nov 28) | Eleven of the plan's fifteen choices are accepted as written; rows 3, 7, 10 and 11 were discussed (decisions 47 to 50). |
+| 47 | Streams at once | "Start at 4, raise to 6" (Nov 28) | At most four coding streams run at once until M1, then up to six if Prafull's review queue is comfortable. |
+| 48 | Server split | "check the latest SDK/library/language updates first and not depend purely on your training data." Then: "Dart engine, TypeScript rest" (Nov 28) | Checked on Nov 28: Firebase has an official Admin SDK for Dart and Dart support in Cloud Functions, both experimental, and Genkit Dart 1.0 is stable. Scoring, held-out packs and the live market run in Dart on Cloud Run on the official Admin SDK; debrief, identity and challenges stay in TypeScript. All-Dart is revisited when Dart functions leave experimental. |
+| 49 | Budget alerts | "Stepped alerts" (Nov 28) | A $5 alert for the dev project, and a $100 monthly budget for prod that alerts at 50%, 90% and 100%. |
+| 50 | CI runners | "GitHub runners, others as backup" (Nov 28) | GitHub's standard hosted runners build Linux and iOS at $0 while the repo is public; Tenki and Codemagic are the fallback. |
 
 ## Goals and non-goals
 
@@ -399,7 +405,7 @@ One Flutter codebase ships native iOS and Android apps and an installable web ap
 | Remote Config | Daily caps, feature flags, AI kill switch, live market hours, gate thresholds, enabled markets |
 | Analytics and Crashlytics | Product metrics on all three platforms and crash reports on iOS and Android, ad features off. Crashlytics does not cover Flutter web, so the web app reports uncaught errors as Analytics events. |
 
-The replay scoring function runs the shared Dart engine compiled for the server (Dart on Cloud Run) or a faithful TypeScript port verified by shared test vectors; the build should prefer the Dart route so there is only one engine.
+The replay scoring function and the live market run the shared Dart engine on the server (Dart on Cloud Run), so there is only one engine. They reach Firebase through its official Admin SDK for Dart, which exists but is experimental as of Nov 2026 ([release notes](https://firebase.google.com/support/release-notes/admin/dart)). The other server code stays in TypeScript Cloud Functions, where everything it needs is generally available (decision 48). If the Dart route fails its Phase 0 spike, the fallback is a faithful TypeScript port of scoring verified by shared test vectors.
 
 **Official Google agent tooling for the build**
 
@@ -416,7 +422,7 @@ The app uses its own design system built on Material 3 tokens rather than stock 
 
 **Design guide**
 
-The full UX and UI rules live in [Trading Simulator: UX and UI Design Guide v1](design-guide.md): color, type and motion tokens for both themes, components, navigation, the key screens with wireframes, chart rules, microcopy, accessibility and teen safety, and PWA and native differences. It raises the accessibility bar here from WCAG 2.1 AA to 2.2 AA, and every new choice it makes is marked Proposed and listed at its end for sign-off.
+The full UX and UI rules live in [Trading Simulator: UX and UI Design Guide v1](design-guide.md): color, type and motion tokens for both themes, components, navigation, the key screens with wireframes, chart rules, microcopy, accessibility and teen safety, and PWA and native differences. It raises the accessibility bar here from WCAG 2.1 AA to 2.2 AA, and every new choice it makes is marked Proposed and listed at its end for sign-off. Prafull accepted all of them on Nov 28, 2026 (decision 45).
 
 **Implementation plan**
 
