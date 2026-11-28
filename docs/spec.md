@@ -13,6 +13,7 @@ An app for iPhone, Android and the web (an installable PWA) that teaches anyone 
 - **Safety:** no real money, ads, chat, data selling or real names; teen defaults follow current state laws.
 - **Only real cost driver:** AI debriefs, which scale with usage.
 - **Recommended name:** Ticker Camp, pending a trademark clearance search.
+- **Under review:** 25 refinements proposed on Nov 28, 2026, including a plan for markets beyond the US, await sign-off in [Review refinements](#review-refinements-proposed-nov-28-2026) and [Markets beyond the US](#markets-beyond-the-us-proposed).
 
 ## Decision log
 
@@ -104,70 +105,19 @@ Each lesson is 3 to 5 minutes: a short read with an interactive diagram, two or 
 
 **Lesson plan**
 
-The curriculum is 38 core lessons of 3 to 5 minutes plus 5 two-minute reality checks, about 161 minutes of reading in all. Each lesson opens with one line from a single running analogy, a farm and its harvest, then switches to real tickers and numbers: one goal, one diagram the learner can drag (price, days left or strike) with real dollar amounts, and one short replay to try it. No other metaphors are used. The glossary at the end gives every term a one-line "think of it like". On Nov 27, 2026 the lessons were checked against the Jump$tart national investing standards, the SIFMA Stock Market Game, SEC investor.gov, the Options Industry Council and the FINRA SIE outline; Prafull approved the resulting changes, so Level 1 gained five lessons (1.3, 1.9, 1.11, 1.12 and 1.15, marked new), 1.5, 1.13, 1.16 and 3.7 were widened or trimmed, and the reality checks now cover investment scams and real-world options rules. The full lesson plan, with every diagram and the benchmark map, is in [Trading Simulator Lesson Plan](lesson-plan.md) (Nov 27, 2026).
+The curriculum is 38 core lessons of 3 to 5 minutes plus 5 two-minute reality checks, about 161 minutes of reading in all. Each lesson opens with one line from a single running analogy, a farm and its harvest, then switches to real tickers and numbers: one goal, one diagram the learner can drag (price, days left or strike) with real dollar amounts, and one short replay to try it. No other metaphors are used. The glossary in the lesson plan gives every term a one-line "think of it like". On Nov 27, 2026 the lessons were checked against the Jump$tart national investing standards, the SIFMA Stock Market Game, SEC investor.gov, the Options Industry Council and the FINRA SIE outline; Prafull approved the resulting changes, so Level 1 gained five lessons (1.3, 1.9, 1.11, 1.12 and 1.15, marked new), 1.5, 1.13, 1.16 and 3.7 were widened or trimmed, and the reality checks now cover investment scams and real-world options rules. The full lesson plan, with every diagram and the benchmark map, is in [Trading Simulator Lesson Plan](lesson-plan.md) (Nov 27, 2026).
 
-*L1 Stocks and ETFs: 16 lessons + 2 reality checks, 64 min*
+*Lessons by level*
 
-| # | Lesson | Farm line | Goal | Diagram |
-| --- | --- | --- | --- | --- |
-| 1.1 | What a share is | Owning a share is like owning a slice of a farm: you get a piece of every future harvest. | A share is one small piece of a company, and your holding is worth shares × price. | A company drawn as 100 squares with 10 of them yours. |
-| 1.2 | Why prices move | Wheat sells for more at the market when more bakers want it than farmers bring. | The price is the last trade. When buyers are more eager than sellers, trades happen at higher prices. | A price line above a bar chart of buy minus sell orders. |
-| 1.3 | Dividends and earnings (new) | Some farms pay out part of every harvest in cash, while others replant it all to grow bigger. | Your return is the price change plus any dividends, and over time prices follow earnings. | Two bars for one year on $1,000: a stock that replants every dollar grows by price alone, while a dividend payer adds cash on top. |
-| 1.4 | Reading a price chart | A price chart is the market's record of what wheat sold for, day after day. | Read open, high, low and close from a candle, and see a trend across days. | One large labeled candle next to 18 days of small candles. |
-| 1.5 | Bid, ask and spread | The grain dealer buys a little lower than they sell, and that gap is the cost of trading. | You buy at the ask and sell at the bid, so every round trip costs the spread. Thinly traded stocks have wider spreads and are harder to sell quickly. | A price ladder with bids below and asks above. |
-| 1.6 | Market, limit and stop orders | A limit order says "sell my wheat only at $8 or more"; a stop says "sell it if the price falls to $6". | A market order fills now, a limit order fills at your price or better, and a stop order sells after a drop. | A price line with a buy-limit line and a sell-stop line. |
-| 1.7 | Gains, losses and percent | If a bad year halves the farm's value, it takes a doubled harvest to get back. | Measure results in percent, and see why losses take more to win back. | A curve of loss against the gain needed to get back to even: −10% needs +11%, −50% needs +100%. |
-| 1.8 | Diversification | A farm that grows wheat, corn and apples does not lose everything to one bad crop. | Several unrelated holdings give the account a smoother path than any single stock. | One stock's jagged line against a 10-stock portfolio's smoother line over the same 120 days. |
-| 1.9 | Risk and return (new) | A grain store pays a little every year, while a new orchard might pay a lot or nothing at all. | Riskier investments are expected to pay more over time, and their results swing more widely. | Cash, a bond fund, a broad-market ETF and one small stock as dots of yearly return against the size of their swings. |
-| 1.10 | ETFs and index funds | An ETF is like a co-op that owns hundreds of farms; one share gives you a slice of all of them. | One ETF ticker holds many companies, so one trade buys a diversified basket. | One broad-market ETF split into its holdings: the 10 largest as big blocks and the other 490 as small cells. |
-| 1.11 | Fees and expense ratios (new) | A co-op that keeps 1% of every harvest takes far more over 30 years than one that keeps 0.05%. | Fund fees come out every year, so a small fee compounds into a large gap. | $10,000 over 30 years at 7%, after a 0.05% fee and after a 1% fee, with the dollar gap printed. |
-| 1.12 | Indexes and benchmarks (new) | A harvest is only a good one if it beats what the whole valley grew that year. | Judge your results against an index such as the S&P 500, not against zero. | Your replay account line against the broad-market index line, with the gap between them shaded. |
-| 1.13 | Position sizing | Plant only as much as you can afford to lose in one bad season. | Start from your own risk tolerance, then decide how much you can lose before you buy: about 1 to 2% of the account per trade. | A five-question risk-tolerance check sets your starting risk, then a $10,000 account bar with the $100 at risk highlighted, and the math that turns a $2 stop distance into 50 shares. |
-| 1.14 | Drawdowns | Drawdown is how far the farm's value falls from its best year before it recovers. | Drawdown is the drop from the account's high point. Keeping it small keeps you in the game. | An account value line with its largest peak-to-trough drop shaded and labeled in percent. |
-| 1.15 | Your own biases (new) | A farmer who always plants whatever sold best last year is always one season late. | Loss aversion and chasing hot stocks lead to buying high and selling low. | Your own buys and sells from a replay, marked on its price line, with the high-buy and low-sell trades circled. |
-| 1.16 | Compounding over time | Replanting seed grows a bigger harvest every year, but if bread costs 3% more each year, the harvest has to grow faster than that. | Gains left invested earn their own gains, so growth speeds up over the years. Inflation means real growth is your return minus inflation. | Three lines over 30 years at 7% a year: $1,000 left to compound, the same money after 3% inflation, and $1,000 with gains taken out each year. |
-| Check | Why simulated prices differ | None | Replay prices follow the shape and size of real events, not the exact daily numbers, so a real chart will show different prices. | None |
-| Check | Spotting investment scams (new) | None | Promises of guaranteed returns, pressure to act now and pump-and-dump hype on social media are red flags. Real money never needs to move to learn here. | None |
+| Level | Core lessons | Reality checks | Reading time |
+| --- | --- | --- | --- |
+| L1 Stocks and ETFs | 16 (1.1 to 1.16) | 2 | 64 min |
+| L2 Covered calls and cash-secured puts | 8 (2.1 to 2.8) | 1 | 35 min |
+| L3 Long calls and puts | 8 (3.1 to 3.8) | 1 | 34 min |
+| L4 Spreads | 6 (4.1 to 4.6) | 1 | 28 min |
+| **Total** | **38** | **5** | **161 min** |
 
-*L2 Covered calls and cash-secured puts: 8 lessons + 1 reality check, 35 min*
-
-| # | Lesson | Farm line | Goal | Diagram |
-| --- | --- | --- | --- | --- |
-| 2.1 | What an option is | An option is a deal on 100 bushels: one side gets a choice, and the other side must honor it. | An option is a contract on 100 shares. The buyer gets a right, and the seller takes on an obligation. | A contract card with its five parts: stock, call or put, strike, expiry and price × 100. |
-| 2.2 | Strike, expiry and the chain | A chain is a menu of price locks: each row is a different locked price, each page a different harvest date. | Read an option chain: strikes in rows, calls on one side, puts on the other, one expiry at a time. | A five-row chain with in-the-money prices shaded and the stock price drawn between the rows. |
-| 2.3 | Premium | The premium is the fee for holding a price, and the seller keeps it whether the deal is used or not. | Premium is the price of an option. The buyer pays it and the seller keeps it, whatever happens next. | Cash moving from buyer to seller when the trade fills, and the two possible endings at expiry. |
-| 2.4 | Calls and puts at expiry | At harvest, a price lock is worth the gap between the market price and the locked price, or nothing. | At expiry a call is worth price minus strike, a put is worth strike minus price, and neither is worth less than zero. | Value lines for a $100 call and a $100 put. |
-| 2.5 | The covered call | You own the harvest and sell a buyer the right to it at a set price, for a fee today. | Selling a call on shares you own pays you now and caps your gain at the strike. | Profit at expiry for 100 shares plus one short $105 call, drawn over the shares-only line. |
-| 2.6 | The cash-secured put | You are paid a fee to promise to buy a neighbor's harvest at a set price, with the cash ready. | Selling a put pays you now. If the price ends below the strike, you buy 100 shares at the strike. | Profit at expiry for one short $95 put, with the $9,500 of cash it reserves. |
-| 2.7 | Assignment at expiry | On harvest day the deal settles, and the crop changes hands only if the lock is worth using. | In-the-money options settle automatically at expiry, so know in advance what you will own or sell. | Two branches at expiry for a covered call: price above the strike, price below it, and what happens to your shares and cash on each. |
-| 2.8 | Income versus upside | Selling your harvest ahead at a set price pays steadily, but you miss out if prices soar. | Selling options earns steady income in flat markets and gives up gains in strong rallies. | Shares alone against shares with monthly covered calls, in a rally and in a flat market. |
-| Check | Real-world options rules | None | Real US stock options are American style and can be assigned before expiry, most often just before a dividend; Version 1 settles only at expiry. Brokers also approve options trading by level and ask you to read the Options Disclosure Document first. | None |
-
-*L3 Long calls and puts: 8 lessons + 1 reality check, 34 min*
-
-| # | Lesson | Farm line | Goal | Diagram |
-| --- | --- | --- | --- | --- |
-| 3.1 | Buying a call | A call is a small deposit that locks today's wheat price for later. | A long call profits above strike plus premium, and the most you can lose is the premium. | Profit at expiry for one $100 call bought for $4, with the breakeven at $104. |
-| 3.2 | Buying a put | A put is crop insurance: it pays when the price falls. | A long put profits below strike minus premium, and it can protect shares you already own. | Profit at expiry for one $100 put bought for $4, with the breakeven at $96. |
-| 3.3 | Leverage | A small deposit controls a whole harvest, so a small price move swings the deposit a lot. | The same dollars in options move many times faster than in shares, in both directions. | $1,000 in shares against $1,000 in calls, held to expiry, after the stock moves −10%, 0% and +10%. |
-| 3.4 | Time decay | A price lock loses value as harvest day gets closer, and fastest in the final weeks. | An option loses value every day, and the loss speeds up in the last month. | The price of a 90-day at-the-money call as the days run out. |
-| 3.5 | Implied volatility | Crop insurance costs more in a stormy year, when everyone expects big price swings. | Options cost more when the market expects big moves, and get cheaper when that fear fades. | The price of the same 30-day call at different volatility levels, from a calm market to the March 2020 peak. |
-| 3.6 | Delta | Delta is how much your price lock gains when wheat rises $1 a bushel. | Delta is how many dollars the option moves when the stock moves $1. | Delta of a $100 call across stock prices, from near 0 to near 1. |
-| 3.7 | The greeks on one card | The greeks tell you what moves your price lock: the wheat price, its speed, the days left and the weather. | Read delta and theta together to see what will move your position most. Gamma and vega are optional extras. | One position card with delta and theta up front, each written as dollars per contract. |
-| 3.8 | Why most short-dated options expire worthless | Insurance against a once-in-a-lifetime frost is cheap because the frost almost never comes. | A far out-of-the-money option with a week left needs a large move, and large moves are rare. | The spread of likely prices one week out, with the small area above a $110 strike shaded and its probability shown. |
-| Check | How real option chains differ | None | Replay option prices come from a model and carry a Modeled badge. Real chains are set by traders and have wider spreads on thinly traded strikes. | None |
-
-*L4 Spreads: 6 lessons + 1 reality check, 28 min*
-
-| # | Lesson | Farm line | Goal | Diagram |
-| --- | --- | --- | --- | --- |
-| 4.1 | What a spread is | A spread buys one price lock and sells another to cut the cost. | A spread buys one option and sells another on the same stock, which caps both the loss and the gain. | A long $100 call and a short $110 call drawn thin, and their sum drawn thick: a line with a floor and a ceiling. |
-| 4.2 | The bull call spread | Lock in the right to buy at $10 and sell someone the right to buy at $11: cheaper, but your gain stops at $11. | Pay a debit to profit from a rise, with max loss, max gain and breakeven known before you trade. | Profit at expiry for a $100/$110 call spread bought for $3.00. |
-| 4.3 | The bear put spread | Buy crop insurance at $10 and sell insurance at $9: cheaper cover for the drop in between. | Pay a debit to profit from a fall, for less than a single put costs. | Profit at expiry for a $100/$90 put spread bought for $2.80. |
-| 4.4 | Credit spreads | Sell insurance and buy cheaper insurance behind it: you collect a fee, and your worst case is capped. | Sell a spread to collect a credit now. The cash reserved equals your maximum loss. | Profit at expiry for a $95/$90 put spread sold for $1.40, with $360 of cash reserved. |
-| 4.5 | Choosing strikes | A wider gap between the two locked prices costs more and can pay more. | A wider spread can earn more but costs and risks more. Pick the width by how much you can lose. | A call spread whose upper strike you drag from $105 to $120. |
-| 4.6 | Managing and closing early | You do not have to wait for harvest day: sell the deal early once it has paid enough. | Close at a planned profit or loss instead of waiting for expiry. | The spread's value today drawn as a curve over its value at expiry. |
-| Check | Defined risk is not no risk | None | A spread tells you the worst case before you trade. It does not make the worst case unlikely, so size it like any other trade. Real brokers also require a higher options approval level before you can trade spreads. | None |
+Every lesson's farm line, goal, diagram and "Try it", and the glossary of every term with its farm line, live only in the [lesson plan](lesson-plan.md). This spec used to carry a copy of both, and the two copies had started to drift, so the copy was removed on Nov 28, 2026.
 
 *Unlock gates (quiz of 10 to 15 questions at 80% or better, plus a replay challenge)*
 
@@ -177,53 +127,6 @@ The curriculum is 38 core lessons of 3 to 5 minutes plus 5 two-minute reality ch
 | L2 to L3 | 2022 rate-hike bear market | Sell at least 4 covered calls or cash-secured puts and finish with a smaller drawdown than holding the broad-market ETF alone. | Proposed, needs review |
 | L3 to L4 | January 2021 meme-stock squeeze | Trade calls or puts with no more than 5% of the account in any one trade, and finish with less than a 10% drawdown. | Proposed, needs review |
 | Final challenge (L4 badge) | 2008 financial crisis | Use only defined-risk trades, risk no more than 3% of the account per trade, and finish with less than a 12% drawdown. | Proposed, needs review |
-
-*Glossary: every term with its farm line*
-
-| Term | Meaning | Think of it like | Lesson |
-| --- | --- | --- | --- |
-| Share | One unit of ownership in a company. | A slice of the farm and its future harvests. | 1.1 |
-| Dividend | Cash a company pays shareholders out of its profits. | The part of each harvest a farm pays out in cash. | 1.3 |
-| Earnings | A company's profit over a period, the main driver of its price over time. | The farm's harvest after costs. | 1.3 |
-| Bid and ask | The highest price a buyer offers and the lowest price a seller accepts. | What the grain dealer pays you, and what they charge you. | 1.5 |
-| Bid-ask spread | The gap between bid and ask, paid on every round trip. | The grain dealer's cut. | 1.5 |
-| Liquidity | How quickly you can sell without moving the price. | How easily you can find a buyer for your wheat on market day. | 1.5 |
-| Market order | Buy or sell now at the best available price. | Sell the wheat at today's market price, whatever it is. | 1.6 |
-| Limit order | Buy or sell only at your price or better. | Sell the wheat only at $8 a bushel or more. | 1.6 |
-| Stop order | Sell once the price falls to a level you set. | Sell the wheat if the price drops to $6. | 1.6 |
-| Diversification | Owning several unrelated holdings to smooth the path. | Growing wheat, corn and apples instead of one crop. | 1.8 |
-| Risk and return | Investments that swing more are expected to pay more over time. | A grain store pays a little every year; a new orchard might pay a lot or nothing. | 1.9 |
-| ETF | One fund, traded under one ticker, that holds many companies. | A co-op that owns hundreds of farms. | 1.10 |
-| Expense ratio | The yearly fee a fund charges, as a percent of your money. | The share of every harvest the co-op keeps. | 1.11 |
-| Index | A list of companies whose combined price shows how a market did. | What the whole valley grew this year. | 1.12 |
-| Benchmark | The index you compare your results against. | The valley's harvest you hope to beat. | 1.12 |
-| Position size | How much you put into one trade, set by how much you can lose. | How many acres you plant with one crop. | 1.13 |
-| Risk tolerance | How much loss you can live with, in money and in nerves. | How bad a season you could get through without selling the farm. | 1.13 |
-| Drawdown | The drop from the account's high point to its low point. | How far the farm's value falls from its best year. | 1.14 |
-| Loss aversion | Feeling a loss more strongly than an equal gain, which leads to poor timing. | Refusing to sell a failing crop because selling would admit the loss. | 1.15 |
-| Compounding | Gains that stay invested and earn their own gains. | Replanting seed from each harvest. | 1.16 |
-| Inflation | Prices rising over time, which shrinks what money buys. | Bread costing a little more every year. | 1.16 |
-| Option | A contract on 100 shares that gives the buyer a right and the seller an obligation. | A deal on 100 bushels. | 2.1 |
-| Strike | The price written into the option. | The locked price per bushel. | 2.2 |
-| Expiry | The last day the option exists. | Harvest day, when the deal settles. | 2.2 |
-| In the money | An option that would be worth something if it settled now. | A price lock that beats the market price. | 2.2 |
-| Premium | The price of an option, paid by the buyer to the seller. | The fee for holding a price. | 2.3 |
-| Covered call | Selling a call on 100 shares you own. | Selling a buyer the right to your harvest at a set price. | 2.5 |
-| Cash-secured put | Selling a put with the cash set aside to buy the shares. | Being paid to promise to buy a neighbor's harvest at a set price. | 2.6 |
-| Assignment | The seller fulfilling the contract when an in-the-money option settles. | The crop changing hands on harvest day. | 2.7 |
-| Call | The right to buy at the strike price until expiry. | A deposit that locks today's wheat price. | 3.1 |
-| Breakeven | The price at which a trade neither makes nor loses money. | The wheat price at which the deal just pays for its fee. | 3.1 |
-| Put | The right to sell at the strike price until expiry. | Crop insurance against a price drop. | 3.2 |
-| Leverage | Controlling more value than the money you put in. | A small deposit that controls a whole harvest. | 3.3 |
-| Time decay (theta) | The value an option loses each day. | A price lock that weakens as harvest day nears. | 3.4 |
-| Implied volatility | How big a move the market expects, built into option prices. | How stormy the year looks. | 3.5 |
-| Delta | How many dollars an option moves for a $1 move in the stock. | How much your price lock gains when wheat rises $1. | 3.6 |
-| Gamma | How fast delta changes as the stock moves. | How quickly your price lock gets more sensitive. | 3.7 |
-| Vega | How much an option's price changes when implied volatility moves 1 point. | How much insurance prices jump when storms are forecast. | 3.7 |
-| Spread | Buying one option and selling another on the same stock. | Buying one price lock and selling another to cut the cost. | 4.1 |
-| Debit spread | A spread you pay for up front. | Paying a smaller fee for a price lock with a ceiling. | 4.2 |
-| Max loss and max gain | The worst and best results a trade can have, known before you trade. | The floor and the ceiling on the deal. | 4.2 |
-| Credit spread | A spread you are paid for up front, with the max loss held as cash. | Selling insurance with cheaper insurance bought behind it. | 4.4 |
 
 ## Replay engine
 
@@ -578,7 +481,116 @@ Version 1 is the full learning product, free for everyone: all four levels, mode
 | Weekly challenge, global, level and friends leaderboards, invite codes | Seasons, team challenges |
 | iOS and Android apps, plus an installable web app with offline replays and web push | Desktop-specific layouts |
 | Everything free, with no payments | Monthly paid plan (in-app on mobile, Stripe on the web for adults), then annual and family plans and a parent-pays web checkout |
-| English, US market | Spanish, other markets |
+| English, US market | Spanish, other markets (see Markets beyond the US) |
+
+## Review refinements (Proposed, Nov 28, 2026)
+
+A review of all four documents on Nov 28, 2026 asked one question: what would make this the best app for learning to invest and trade, in the US first and in other markets later? It found two kinds of things. Mistakes in the documents were fixed in place. Changes to the product are listed here as **Proposed**, and none of them changes a decision until Prafull accepts it: where a row disagrees with text elsewhere, the text elsewhere stands until then. The detail for each row lives in the document named in its last column.
+
+**Fixed in place**
+
+1. The Resolved line under Open questions cited the wrong decision numbers: the debrief model is decision 20 and the web app is decision 19.
+2. The design guide said candles start at lesson 1.3. After the Level 1 renumbering the chart lesson is 1.4, and the guide now says so.
+3. The lesson tables and the glossary existed in both this spec and the lesson plan. The spec now keeps a per-level summary and the unlock gates, and links to the lesson plan for the rest.
+
+**Proposed: the core loop**
+
+| # | Refinement | Why | Detail |
+| --- | --- | --- | --- |
+| R1 | Gates and scored challenge runs use a path the learner has not played | Lesson "Try it" replays use March 2020 seven times, 2022 seven times and the January 2021 squeeze three times, each on one fixed seed, before those same replays become the gates. The weekly challenge allows unlimited practice on the exact path of its one scored run. A pass can come from memory. Proposed: each scenario is generated as several seed variants that all meet its calibration targets; lessons and practice draw from some, each gate and each scored run uses a held-out one, and some replays hide the event's name until the debrief ("mystery market"). A learner who inspects the pack file could still read ahead; that is accepted for an app with no prizes. | Lesson plan; implementation plan C3 |
+| R2 | Gate rules require real exposure, and the challenge score is bounded | The L1 gate passes with 97% of the account in cash and three one-share positions, and the L2 gate's drawdown test is easiest to pass by holding cash. The challenge score, return divided by max drawdown, has no value at zero drawdown and explodes near it. Proposed: every gate adds a minimum average invested share and compares the result with the scenario's broad-market ETF; the challenge score becomes return minus the benchmark's return, minus half of any drawdown beyond the benchmark's, with the same minimum exposure to qualify. | Lesson plan |
+| R3 | "Try it" replays fit their 2 to 5 minutes | The fastest speed is one trading day per 10 seconds, so "hold through one replay year" (1.3, 2.5) takes about 42 minutes and the dot-com replay played twice (1.8) takes hours. Proposed: concept replays of 20 to 60 bars cut from the scenarios, added speeds of one day per 1 or 3 seconds, and a "Skip to next event" control that jumps to the next news beat, fill or expiry. | Lesson plan; design guide |
+| R4 | Every "Try it" is a replay, and the live market is open when learners are | Lessons 1.1, 1.10 and 2.1 send the learner to the live market, which runs only in US market hours, while Maya plays in the evening and onboarding promises a first practice trade within 3 minutes. Prices are synthetic, so nothing ties the simulated market to exchange hours. Proposed: all "Try it" buttons open seeded replays, as the design guide already assumes; the live market runs around the clock, labeled "Always open", and real exchange hours are taught in a reality check. One price document a minute is 1,440 writes a day, inside Firestore's free 20,000. The alternative is to keep US hours and add an evening session. | Lesson plan; design guide |
+| R5 | Scenarios from L2 up start with $100,000 | A covered call needs 100 shares and the put in lesson 2.6 reserves $9,500, which is nearly all of a $10,000 account in one position. That contradicts lessons 1.8 and 1.13. Proposed: any scenario at L2 or above starts at $100,000, so 100 shares of a $100 stock is 10% of the account. | Lesson plan |
+| R6 | A rule-based coach reviews every replay; AI words it within the cap | The core loop promises a debrief of each trade, but the AI cap is one a day and every other replay gets a template. The server already holds the order log and the bars, so it can find most beginner mistakes by rule at no cost: a position larger than the 1 to 2% rule, no stop, buying after a run-up and selling after a drop, one stock above a share of the account, a stop that gapped, an option held through its fastest decay. Proposed: every replay gets these findings, each tied to a moment and a lesson; Gemini only turns them into the coach's words when the cap allows. Computed facts are also easier to keep clear of advice than generated ones. | Implementation plan C2, C6 |
+
+**Proposed: curriculum and learning**
+
+| # | Refinement | Why | Detail |
+| --- | --- | --- | --- |
+| R7 | An investing track beside the options ladder | 22 of the 38 lessons are about options, and bonds, asset allocation and regular investing were left out on purpose, yet the product promises investing as well as trading. Proposed: ten lessons that open after Level 1, with a "decades in minutes" replay of monthly bars for regular investing. | Lesson plan |
+| R8 | A placement check and a measured learning gain | Dev has a 401(k) and still has to read "What a share is". The north-star metric counts activity, not learning. Proposed: an optional 10-question check lets a learner skip lessons they already know (gates still apply), and the same question bank asked again at the end of each level gives a learning-gain number reported beside the north-star metric. | Lesson plan; Analytics |
+| R9 | Spaced review, a trade plan and one daily decision | A concept is taught once and nothing brings it back, and streaks are off for teens, so the only habit support is the weekly challenge. Proposed: missed check and quiz questions return in a short review set some days later; the ticket offers an optional plan picked from choices, never typed (why, target, exit), which the debrief compares with what happened; and one two-minute decision a day on an unlabeled chart, with no streak attached. | Lesson plan; design guide |
+| R10 | Five more reality checks | The traps that cost new traders most in real accounts are not named: volatility falling after earnings, same-day-expiry options, taxes on gains and option income, settlement and day-trading rules, and margin and short selling (taught as ideas, still not offered). | Lesson plan |
+| R11 | Content is approved by people, and may be drafted by AI | "Who writes and reviews the lessons" is an open question and the largest unowned item on the critical path; every added market and language multiplies it. Proposed: change "written and reviewed by people" to "approved by people". Drafts may come from AI; a person approves every lesson, quiz item and news beat; and a reviewer with a finance credential signs off each level for accuracy. At run time, AI is still used only for debriefs. | Implementation plan S12 |
+
+**Proposed: reach, validation and risk**
+
+| # | Refinement | Why | Detail |
+| --- | --- | --- | --- |
+| R12 | Plain HTML pages for lessons and glossary terms | Flutter's own guidance is that Flutter web suits app-like experiences and that text-rich pages meant for search belong in HTML ([Flutter web FAQ](https://docs.flutter.dev/platform-integration/web/faq)). Search is how people find "what is a covered call". Proposed: build a static page per lesson summary and glossary term from the same content files, served from Firebase Hosting for $0, each with an "Open in the app" link. | Implementation plan |
+| R13 | Adults can share a certificate or a challenge result | Decision 17 ("No ads, no sharing") is about data, and the persona table limits outbound sharing for teens, but the design guide removes the share sheet for everyone. That leaves invite codes as the only way the app spreads. Proposed: learners 18 and over can share an image of a level certificate or a challenge result, showing the nickname and the risk-adjusted score and no dollar gains. Nothing changes for under-18s. | Design guide |
+| R14 | Prototype tests before M0 and an open web beta at M3 | Every contract freezes before a single learner has tried a lesson or a replay, and usability tests are an open question "before launch". Proposed: test a clickable prototype of onboarding, one lesson and one replay with adults before the freeze, and open the web app to adults at M3 (Level 1 complete) to measure activation and "Try it" completion while M4 and M5 are built. Launch scope does not change. | Implementation plan |
+| R15 | Live mode invents no news about a named company | Live mode produces earnings-day jumps and shocks for real, named companies. An invented earnings result beside a real name is a statement about that company that is not true, which is a different risk from a labeled replay of a past event. Proposed: live events are market-wide or sector-wide, a company's event is shown only as "Simulated earnings day" with no invented figures or headline, and counsel's list gains this question. The fallback is fictional companies in live mode only. | Live paper trading |
+| R16 | The age gate blocks an immediate second try | "Under-13s are turned away and nothing is kept" lets a child go back and enter a different year. FTC staff guidance has long asked for a technical measure, such as a cookie, against this ([FTC COPPA FAQ](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions); [FPF summary](https://fpf.org/blog/ftc-updates-coppa-faqs/)). Proposed: a flag kept on the device only, holding no personal data, shows the "Come back when you're 13" screen again. | Privacy |
+
+Rows R17 to R25, on getting ready for other markets, are in the next section.
+
+**What I could and could not verify**
+
+1. The scenario counts in R1 and the times in R3 were counted from the lesson plan as it stood on Nov 28, 2026.
+2. The FTC position in R16 comes from summaries of the FAQ; I did not open the current FAQ text, whose numbering changes between versions.
+3. The Flutter page in R12 and the Firestore page in R23 were cited from memory and not re-read on Nov 28.
+4. Every legal point here and in the next section is a question for counsel, not a conclusion.
+
+## Markets beyond the US (Proposed)
+
+Version 1 stays English and US only, and non-goal 5 stands. Prafull wants other markets after launch: India, Mexico, Japan, Hong Kong, Singapore, Korea and more. The contracts freeze at M0, so anything a second market needs from them costs almost nothing to add now and is a breaking change later. This section proposes what to build in from the start, and what can wait.
+
+**The idea: a market pack.** A market is data, not code. A market pack holds one market's rules, instruments, scenarios, lessons and legal settings, and the US is simply the first pack. The app, the engine and the server read the pack; none of them contains the word "dollar" or the number 100.
+
+**Build in before the M0 freeze**
+
+| # | Refinement | What it means |
+| --- | --- | --- |
+| R17 | A market id on everything | An instrument is identified by its market plus its symbol (Tokyo, Hong Kong and Korea use numeric codes, so a symbol alone is not unique). Scenarios, live prices, live accounts, challenges and leaderboards carry a market id, and the weekly rollover time is set per market rather than fixed at Monday 9 AM Eastern. |
+| R18 | Money carries its currency | The plan's "integer cents" becomes an amount with a currency and that currency's number of decimals: two for dollars and rupees, none for yen and won. One account holds one currency; exchange rates and multi-currency accounts wait. |
+| R19 | Market rules as data | Trading unit (lot size), tick-size table, daily price limits or circuit breakers, session calendar with lunch breaks and holidays, settlement cycle, and the fees and taxes charged per trade. For options: contract multiplier, exercise style, settlement in shares or cash, expiry rule and strike steps. The fill model and the ticket read these instead of assuming US values. |
+| R20 | Rise and fall colors are a market setting | Japan, Korea, mainland China and Taiwan show a rising price in red; Korea shows a fall in blue; Hong Kong uses both conventions ([Benzinga](https://www.benzinga.com/general/education/21/10/23258001/did-you-know-you-dont-want-to-be-in-the-green-if-youre-trading-in-china-japan-or-taiwan), [Asia Economy](https://view.asiae.co.kr/en/article/2026071309151503447)). The design guide's "blue is gain, orange is loss" would read as "falling" to a Korean learner. The colors stay tokens, their values come from the market pack, and lesson text stops naming colors. |
+| R21 | Localization from the first line of code | Strings live in Flutter's localization files from day one, numbers and dates format by locale (lakh and crore grouping in India, no decimals for yen), layouts allow for longer text, and fonts have a plan for Japanese, Korean, Chinese and Devanagari, which Inter and Space Grotesk do not cover. |
+| R22 | A universal core plus market modules | Most of Level 1 is true everywhere; the options ladder mirrors US brokers and US contracts. Lessons get a stable id that is not their number, a market tag (core or a pack), and variables for currency amounts and for the farm's crops. |
+| R23 | A region plan for data | A Firestore database's location cannot be changed after it is created ([Firestore locations](https://firebase.google.com/docs/firestore/locations)). Decide before the prod project exists whether later markets share the US project or get their own, and keep sign-in providers a per-market list, since Apple, Google and email are not the habit everywhere. |
+| R24 | One scheduler job that serves every market | The implementation plan uses exactly Cloud Scheduler's three free jobs. A tick job per market would break that, so the minute job becomes a dispatcher that advances every open market. |
+| R25 | Clear the name in every target market | The name check covered US marks only. Before buying domains, check the chosen name's trademarks, meaning and pronunciation in each market on the list. "Camp" may also read as young in markets where most learners will be adults. |
+
+**What differs by market**
+
+This table is indicative and comes from general knowledge, not from each exchange's rulebook. Every cell is to be verified when that market's pack is built.
+
+| Market | Currency decimals | Shares trade in | Rise and fall colors | Options a beginner meets | Also plan for |
+| --- | --- | --- | --- | --- | --- |
+| US (launch) | 2 | Single shares | Green up, red down at most brokers; the app uses blue and orange | Stock options on 100 shares, American style | The current spec |
+| India | 2 | Single shares; derivatives in exchange-set lots | Green up, red down | Index options, European style, settled in cash | Child-data law and SEBI's stance on virtual trading (below); lakh and crore; transaction taxes |
+| Japan | 0 | Units of 100 shares | Red up | Index options, European style, settled in cash | A midday break; daily price limits; Japanese text and fonts |
+| Hong Kong | 2, with finer ticks on low prices | Board lots that differ by company | Both conventions in use; offer a setting | Stock options and listed warrants | Stamp duty on each trade; a midday break; Traditional Chinese and English |
+| Singapore | 2, with finer ticks on low prices | Units of 100 shares | Green up, red down | Few listed options; warrants, REITs and ETFs matter more | A REIT and ETF track in place of the options ladder |
+| Korea | 0 | Single shares | Red up, blue down | Index options, European style, settled in cash | Daily price limits; consent rules for under-14s; local sign-in habits; Korean text and fonts |
+| Mexico | 2 | Single shares | Green up, red down | A thin listed options market | Spanish; currency risk as a core lesson |
+
+**Law and rules to check first, by market**
+
+- **India, children's data.** The Digital Personal Data Protection Act treats everyone under 18 as a child, requires verifiable parental consent and bars tracking and behavioral monitoring of children; the rules were notified in November 2025 and these duties are reported to start about 18 months later, around May 2027 ([LiveLaw](https://www.livelaw.in/amp/top-stories/digital-personal-data-protection-rules-2025-notified-309928), [Shardul Amarchand Mangaldas](https://www.amsshardul.com/insight/enforcement-of-the-dpdp-act-and-notification-of-the-dpdp-rules/)). The 13-and-up signup with no parent step would not carry over.
+- **India, virtual trading.** On Nov 4, 2024 SEBI cautioned the public against apps offering "virtual trading or paper trading or fantasy games" based on the stock price data of listed companies ([Business Standard](https://business-standard.com/markets/stock-market-news/sebi-warns-investors-against-using-unauthorised-virtual-trading-platforms-124110400804_1.html), [Khaitan & Co](https://khaitanco.com/thought-leadership/SEBI-Cracks-Down-on-Unauthorised-Gaming-and-Trading-Platforms)). A January 2025 circular limited educators to price data at least three months old, and a later consultation proposed 30 days ([Business Standard](https://www.business-standard.com/markets/news/sebi-finfluencer-circular-live-stock-data-market-education-rules-125013000571_1.html), [The Week](https://www.theweek.in/news/biz-tech/2026/01/07/sebi-mulls-30-day-lag-on-sharing-stock-market-data-for-investor-education-here-is-why.amp.html)). Synthetic prices avoid real price data altogether, which helps, but real company names beside leaderboards need an Indian counsel's view. The fallback is this spec's earlier plan of fictional tickers, for that market only.
+- **Every market.** Whether general education stays outside the local investment-adviser rules, the local age of digital consent, the store age rating in that country, and whether index names used as benchmarks (many are licensed trademarks) can be named in plain text as the US plan does.
+
+**Scenario candidates by market**
+
+Each market needs replays its learners recognize, and some carry lessons the US set cannot teach. Japan's 1989 peak, which the Nikkei 225 took about 34 years to regain, is the strongest counter to "the index always comes back soon". The 1997 Asian crisis serves Korea, Hong Kong and Singapore. Mexico's 1994 peso crisis teaches currency risk. India has its own 2008 and March 2020, and the 1992 securities scam for a lesson on fraud.
+
+**Proposed order of markets**
+
+1. Spanish for the US pack, which the launch scope already lists as "later" and which serves US learners at once.
+2. Singapore, then India: the lessons can stay in English, so the first new pack tests the market-pack design without a new script. India waits on the two legal points above.
+3. Mexico, which reuses the Spanish work.
+4. Japan, Korea and Hong Kong, which need new scripts, fonts and rise-and-fall colors.
+
+**What waits until a second market is real**
+
+Exchange rates, accounts in more than one currency, portfolios across markets, local payment methods, local sign-in providers, and each market's own derivatives or REIT track. The contracts only need to leave room for them.
+
+**Cost of a market**
+
+A market adds scenario packs (storage only), one live price document a minute, and one dispatcher run it shares with the others. At ten markets open around the clock that is 14,400 writes a day, still inside Firestore's free 20,000 before learner writes are counted, so the live market stays near $0. The real cost is content: lessons, quiz banks, news beats and review in each language, which is why R11 matters.
 
 ## Build rules
 
@@ -608,6 +620,9 @@ These standing rules apply to all code for this project.
 | State teen privacy or app-store age laws change | Rework | Minimal data by design; use the platforms' age-signal APIs and the signup birthdate gate on the web; review laws before launch |
 | No revenue at launch | The publisher carries \~$81 a month, rising with usage | Keep the AI cap and the Flash-Lite fallback ready, and add the paid plan once usage justifies it |
 | Name conflicts with an existing trademark | Rebrand cost | Attorney clearance search before buying domains or launching |
+| Gates and scored runs are passed from memory or by holding cash (found in the Nov 28 review) | Levels unlock without the skill they certify | R1 and R2: held-out seed variants, minimum exposure and a bounded, benchmark-relative score |
+| Live mode attaches invented events to real company names (Nov 28 review) | A false statement about a real company, shared as a screenshot | R15: market-wide and sector-wide events only, no invented figures, counsel review, fictional companies in live mode as the fallback |
+| A second market arrives after the contracts are frozen around dollars, 100-share contracts and US hours (Nov 28 review) | Breaking changes across every stream | R17 to R24: market id, currency-aware money, market rules as data and localization built in before M0 |
 
 ## Open questions
 
@@ -619,5 +634,8 @@ These standing rules apply to all code for this project.
 - Who writes and reviews the lesson content and the news beats for each replay?
 - Should teens be able to hide from the global leaderboard by default, rather than opt out?
 - Which entity publishes the apps (an existing company or a new one), since the developer accounts, and later the Stripe account, need a legal owner?
+- Which of the refinements R1 to R25 are accepted? R17 to R24 change the contracts, so they need an answer before M0; R1 to R6 change what the engine and the scenario packs must do, so they need one before Phase 1.
+- Should the live market run around the clock (R4), or keep US hours and add an evening session?
+- Which market comes second, and does counsel in that market accept real company names beside synthetic prices and leaderboards?
 
-Resolved Nov 27: the debrief model is gemini-4-hydrogen (decision 19), no market data is bought (decision 21), stocks and tickers are real while every price is synthetic (decision 21), the installable web app ships in version 1 (decision 20), and version 1 has no payments (decision 6).
+Resolved Nov 27: the debrief model is gemini-4-hydrogen (decision 20), no market data is bought (decision 21), stocks and tickers are real while every price is synthetic (decision 21), the installable web app ships in version 1 (decision 19), and version 1 has no payments (decision 6).

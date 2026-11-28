@@ -6,9 +6,9 @@ This repository holds the plan only: the product spec, the design guide, the les
 
 ## Documents
 
-- **[Product spec](docs/spec.md):** what the app does, the curriculum, the farm-analogy glossary, architecture, costs and launch scope.
+- **[Product spec](docs/spec.md):** what the app does, the level curriculum and unlock gates, architecture, costs, launch scope, the proposed refinements and the plan for markets beyond the US.
 - **[UX and UI design guide](docs/design-guide.md):** design tokens, components, navigation, key screens, charts, microcopy, accessibility and PWA versus native differences.
-- **[Lesson plan](docs/lesson-plan.md):** all four levels, lesson by lesson, with timings and what each level unlocks.
+- **[Lesson plan](docs/lesson-plan.md):** all four levels, lesson by lesson, with timings, what each level unlocks and the farm-analogy glossary.
 - **[Implementation plan](docs/implementation-plan.md):** phases, parallel workstreams with exclusive folder ownership, frozen interface contracts, merge rules, testing, risks, and the steps and costs that need Prafull.
 
 ## At a glance
@@ -18,9 +18,10 @@ This repository holds the plan only: the product spec, the design guide, the les
 - **Options:** unlocked through four gated levels, from stocks and ETFs up to spreads, priced with a labeled Black-Scholes model.
 - **Platforms:** one Flutter codebase for iOS, Android and an installable web app (PWA), with Firebase and Gemini server-side.
 - **Launch:** free, with no payments, ads, chat or data selling.
+- **Markets:** US and English at launch. Other markets are planned as market packs, with the contracts made market-ready before the build starts (Proposed).
 
 ## Status
 
-Spec v1, November 2026. The working product name, Ticker Camp, is not yet cleared by a trademark search, so this repository uses a generic name.
+Spec v1, November 2026. A review on Nov 28, 2026 added 25 proposed refinements and a plan for markets beyond the US (India, Mexico, Japan, Hong Kong, Singapore, Korea and others); they are marked Proposed in each document and listed in the [spec](docs/spec.md#review-refinements-proposed-nov-28-2026), and none is a decision until signed off. The working product name, Ticker Camp, is not yet cleared by a trademark search, so this repository uses a generic name.
 
 Nothing here is investment advice. The planned app uses simulated money only.

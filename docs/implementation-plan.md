@@ -2,7 +2,7 @@
 
 Nov 27, 2026 · Prafull Kotecha
 
-This plan turns the [Product spec](spec.md), the [UX and UI design guide](design-guide.md) and the [Lesson plan](lesson-plan.md) into a build that many coding agents can run at the same time without touching each other's code. Anything the spec did not already decide is marked **Proposed** and collected at the end for sign-off.
+This plan turns the [Product spec](spec.md), the [UX and UI design guide](design-guide.md) and the [Lesson plan](lesson-plan.md) into a build that many coding agents can run at the same time without touching each other's code. Anything the spec did not already decide is marked **Proposed** and collected at the end for sign-off. Changes proposed by the Nov 28, 2026 review are kept apart in [Proposed changes from the Nov 28 review](#proposed-changes-from-the-nov-28-review) and are not yet reflected in the sections before it.
 
 ## Summary
 
@@ -312,6 +312,59 @@ S0 runs each integration milestone on a dedicated `ws/s0/integration-mN` branch 
 
 **Launch is done when** every row of the spec's launch scope ships, counsel has answered the spec's legal questions, both stores have approved the apps, the web app is live, its URL is in the repo's Website field and README, budget alerts are on, and the AI kill switch has been tested in production.
 
+## Proposed changes from the Nov 28 review
+
+The spec's review on Nov 28, 2026 proposed 25 refinements, R1 to R25 ([spec](spec.md#review-refinements-proposed-nov-28-2026)). This section says what each accepted one would change in the build. All of it is **Proposed**, and the sections above are unchanged until Prafull accepts a row. The timing matters: most of these touch contracts, and a contract is cheap to shape before the M0 freeze and a breaking change after it.
+
+**Contract additions, to settle before M0**
+
+| Contract | Proposed addition | From |
+| --- | --- | --- |
+| C1 Domain model | `MarketId` on every Instrument, whose identity becomes market plus symbol. `Money` as an integer amount with a currency and that currency's decimals, replacing bare integer cents. Lot size on Instrument. An optional `TradePlan` (reason, target, exit, all enumerated) on Order. | R17, R18, R19, R9 |
+| C2 Engine interfaces | A `MarketRules` interface (tick sizes, lot size, price limits, sessions, settlement, fees and taxes, option multiplier and exercise style) that `FillModel` and the ticket read instead of US constants. A `MistakeDetector` interface that turns an order log and bars into findings, each with a moment and a lesson id. `Scorer` returns average invested share, the benchmark's return and drawdown, and the bounded score. | R19, R6, R2 |
+| C3 Scenario pack format | The header carries market id, currency, a variant id (one scenario, several seed variants) and a role for each variant (lesson, practice, gate, scored). Bar intervals include monthly, for decades replays. `startingCash` follows the level rule in R5. | R17, R1, R7, R5 |
+| C4 Firestore schema | A market id in the live paths (`live/{market}/state`, `live/{market}/ticks/{minute}`), one live account per learner per market, and market-scoped challenges and leaderboards. New learner collections for the review queue and for placement and level-end check results. | R17, R8, R9 |
+| C5 Server API | `scoreReplay` also returns the detector findings. The minute job becomes a dispatcher that advances every open market, so the count of scheduled jobs stays at three. | R6, R24 |
+| C6 Debrief input and output | The input carries the computed findings, and the model's job narrows to wording and ordering them. The output shape does not change. | R6 |
+| C7 Design tokens | Gain and loss token values are keyed by market convention, with blue and orange as the US values. Number-format tokens read the currency's decimals. | R20, R18 |
+| C8 Routes | Routes for the placement check, the review set, the daily decision and the investing track. The static lesson and glossary pages take paths under `/learn/` that the single-page rewrite must not catch. | R8, R9, R7, R12 |
+| C10 Analytics events | Placement result, learning gain per level, "Try it" started and finished with its duration, review set finished, gate attempt with the rule that failed. | R8, R3, R2 |
+| C11 Remote Config keys | Live market hours mode, enabled markets, and gate thresholds (minimum invested share, drawdown limits), so playtests can tune them without a release. | R4, R17, R2 |
+| C12 Content format | Each lesson has a stable id that is not its number, a display number, a market tag (core or a pack id) and a locale. Currency amounts and the farm's crops are variables. The diagram registry is an open list, not a fixed 38. Quiz items carry tags for placement and review. | R22, R7, R8 |
+| C13 Golden vectors | Vectors for a second, made-up market with a zero-decimal currency, a 100-share lot and a daily price limit, so market rules are exercised before any real second market exists. | R18, R19 |
+
+**Stream changes**
+
+| Stream | Proposed change | From |
+| --- | --- | --- |
+| S0 | Decides the region plan before the prod Firebase project is created, because a Firestore database's location cannot be changed later. | R23 |
+| S2 | Generates several seed variants per scenario, each passing the calibration checks, and tags each with its role. Builds concept cuts of 20 to 60 bars and the monthly-bar packs for decades replays. Live events are market-wide or sector-wide only. | R1, R3, R7, R15 |
+| S4 | Implements the gate rules with minimum exposure and the bounded score, and the `MistakeDetector` set. | R2, R6 |
+| S5 | Builds the placement check, the review set, the daily decision and, if accepted, the ten investing-track lessons and diagrams. | R7, R8, R9 |
+| S6 | Adds the faster speeds, "Skip to next event" and the optional plan on the ticket. | R3, R9 |
+| S7 | Runs the live market around the clock if R4 is accepted; the market-hours calendar becomes data in `MarketRules`. | R4, R19 |
+| S8 | Shows detector findings on every replay and calls Gemini only to word them, within the cap. | R6 |
+| S9 | Adds the device-only flag at the age gate. | R16 |
+| S11 | Uses Flutter's localization files from the first screen, and serves the static pages beside the app. | R21, R12 |
+| S12 | Owns a proposed `tools/site_builder` that turns the content files into static lesson and glossary pages. Works to "approved by people": AI may draft, a person approves every item, and a credentialed reviewer signs off each level. | R12, R11 |
+| S13 | Deploys the static pages with the web app, and adds a check that fails user-facing strings written outside the localization files. | R12, R21 |
+
+The hotspot rule for strings changes with R21: each package keeps its own localization files (ARB, English first) instead of an "English strings file", and generated localization code stays inside the package that owns its source.
+
+**Tests these add**
+
+- **S2:** every seed variant of a scenario meets the scenario's calibration targets, and no gate or scored variant is referenced by any lesson.
+- **S4:** each gate fails the known shortcuts (all cash, one-share positions, a single trade) and passes a reference run; the score stays finite at zero drawdown; engine vectors pass for the made-up second market.
+- **S5 and S12:** every "Try it" finishes inside 5 minutes at its default speed, checked from bar count and speed, and none points at the live market.
+- **S8:** each detector fires on a hand-built order log and stays silent on a clean one.
+- **S11 and S13:** the app builds and passes golden tests in a pseudo-locale with long strings, and with a zero-decimal currency.
+
+**Milestone changes**
+
+- **Before M0:** a clickable prototype of onboarding, one lesson and one replay is tested with adults, and its findings go into the contracts before they freeze (R14).
+- **M3:** besides its current exit test, the web app opens to adults as a public beta, and activation and "Try it" completion are measured while M4 and M5 are built (R14). Teens wait for counsel's review, as the launch does.
+- **M5:** the live market's first test in the dev project runs with two market ids, the US and the made-up one, to prove the dispatcher (R24).
+
 ## Risks
 
 | Risk | Impact | Mitigation |
@@ -332,6 +385,8 @@ S0 runs each integration milestone on a dedicated `ws/s0/integration-mN` branch 
 | AI debrief text reads as advice | Trust and regulatory risk | Structured output, advice filter, template fallback, weekly human sample review, as the spec requires |
 | Flutter web loads slowly | Poor first impression on the web | WebAssembly build, HTML splash, bundle budget and Lighthouse in CI |
 | Usability tests with teens need parental consent | Late feedback | Test with adults first; run teen sessions only with a consent form counsel approves |
+| The contracts freeze around US assumptions (dollars and cents, 100-share contracts, US hours, English strings) | Every stream takes a breaking change when a second market arrives | The contract additions in Proposed changes from the Nov 28 review, settled before M0, and golden vectors for a made-up second market |
+| Contracts freeze before any learner has tried the product | The frozen shapes fit a design that testing later changes | A prototype test before M0 and an open web beta for adults at M3 (R14) |
 
 ## Proposed decisions
 
@@ -354,9 +409,17 @@ Everything above that the spec, design guide or lesson plan did not already deci
 | 13 | Widgetbook as the component catalog | The design guide names it as an option for the component library |
 | 14 | Coverage floors of 95% for engine and pricing, 80% elsewhere | The engine decides scores and unlocks, so it gets the highest bar |
 | 15 | Start the Play closed test at M5 | Lets the 14-day clock run during hardening |
+| 16 | Accept the contract additions in Proposed changes from the Nov 28 review before M0 | They are cheap before the freeze and breaking changes after it |
+| 17 | Localization files in every package from the first screen, with a CI check | Later markets need other languages, and retrofitting strings touches every stream |
+| 18 | One scheduler dispatcher for every market's minute tick | Keeps scheduled jobs at Cloud Scheduler's three free ones as markets are added |
+| 19 | Static lesson and glossary pages built by a new `tools/site_builder` owned by S12 | Search engines index plain HTML far better than a Flutter canvas, at $0 |
+| 20 | A prototype test before M0 and an open web beta for adults at M3 | Learners see the product before every contract and feature is built |
+| 21 | Content is approved by people and may be drafted by AI, with a credentialed reviewer per level | Content is the largest unowned item on the critical path |
 
 ## Open questions
 
 - Should the Apple and Google developer accounts be personal or belong to a company? An organization account avoids Google's 12-tester rule but needs a D-U-N-S number, and it ties into the spec's open question on which entity publishes the apps.
 - Who are the 12 or more closed testers for Google Play?
 - Who signs off the lesson content and each scenario's calibration, as the spec's open questions ask?
+- Which of the spec's refinements R1 to R25 are accepted? The contract additions above need an answer before M0.
+- Do later markets share the US Firebase project or get their own? The Firestore location is fixed when the prod project is created.

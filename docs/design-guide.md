@@ -147,7 +147,7 @@ Every interactive component has the same six states: enabled, hovered (web and t
 | --- | --- | --- |
 | Replay timeline scrubber (signature) | Horizontal timeline under the replay chart; thumb drag rewinds to review; the live head is marked | Orders can be placed only at the live head; rewinding greys the trade button with "Return to live to trade"; 48 dp thumb; keyboard ← → step one bar, Shift for ten |
 | Payoff diagram (signature) | Profit at expiry and today for a position; drag price, strike or days left | Zero line always drawn; profit zone filled `gainContainer`, loss zone `lossContainer`; strike dashed; breakeven a ring with its price; max gain and max loss labeled in dollars |
-| Price chart | Line by default, candles from lesson 1.3 on; volume bars optional | See Charts; "Simulated price" label in the chart's top-left |
+| Price chart | Line by default, candles from lesson 1.4 on; volume bars optional | See Charts; "Simulated price" label in the chart's top-left |
 | Trade ticket | Order entry in a sheet (phone) or side panel (tablet, web) | Shows cost, cash after, max loss and breakeven before the Review button; quantity stepper plus keypad |
 | Option chain | Strikes in rows, calls left, puts right, one expiry at a time | Stock price drawn as a line between rows; in-the-money cells tinted; tap a price to open the ticket prefilled |
 | Greeks card | Delta, gamma, theta and vega as dollars per contract | Each greek has a one-line plain meaning and a farm line in its info sheet |
@@ -314,7 +314,7 @@ Charts are the main teaching surface, so they follow one grammar across lessons,
 5. **Direct labels beat legends.** Series are labeled at their line ends; a legend appears only when lines would collide.
 6. **No 3D, no gradients, no dual axes**, and no pie charts; parts of a whole (an ETF's holdings) use a treemap or stacked bar.
 7. **Grid lines are quiet**: horizontal only, `outlineVariant`, at most five.
-8. **Price lines are lines.** Candles appear only once lesson 1.3 has taught them; learners can switch between line and candle on any price chart after that.
+8. **Price lines are lines.** Candles appear only once lesson 1.4 has taught them; learners can switch between line and candle on any price chart after that.
 9. **Scales are honest.** Price axes may start above zero but say so with a broken-axis mark; percent and P&L axes always include zero.
 10. **Every chart is touchable.** Touch and hold shows a crosshair with the date, price and P&L at that point; on the web, hover does the same and arrow keys move the crosshair.
 
@@ -449,9 +449,22 @@ Content never stretches past 1,440 dp; wider windows center it.
 - **System sheets:** native date picker for the birthdate gate; no share sheet anywhere, because the spec allows no sharing.
 - **App icon and splash:** adaptive icon on Android, a single icon on iOS, and a splash that matches the web splash.
 
+## Designing for more markets (Proposed)
+
+The spec's Nov 28, 2026 review proposes building the app so that a second market is a new market pack, not a redesign (spec rows R17 to R25). Version 1 still ships English and US only, and nothing in this section changes what a US learner sees. Four parts of this guide assume the US and should become settings before the tokens freeze at M0.
+
+- **Rise and fall colors.** "Blue is gain, orange is loss" holds for the US pack. Japan, Korea, mainland China and Taiwan show a rise in red, Korea shows a fall in blue, and Hong Kong uses both conventions, so the fixed blue would read as "falling" to a Korean learner. `MarketColors` already keeps gain and loss out of widget code; its values should come from the market pack, with a "Rise and fall colors" choice in Settings. Three rules follow. Every pair a pack uses must pass the same contrast and color-blind checks as blue and orange. Where a pack uses red for a rise, the `error` color must change so an error never looks like a gain. Copy and chart titles never name a color.
+- **Numbers and money.** "Prices always to two decimals" becomes "to the currency's decimals": none for yen and won. Grouping follows the locale, which means lakh and crore in India. Currency symbols and their position come from the locale, and the true minus sign rule stays.
+- **Type.** Inter and Space Grotesk do not cover Japanese, Korean, Traditional Chinese or Devanagari, which need a companion family such as Noto Sans, matched in weight to Inter. Those font files are several megabytes each, so they should download from the app's own hosting when a learner picks the language, never from a third-party font service, and stay cached for offline use. Tabular figures must be checked in each family.
+- **Text length and line breaking.** Spanish and Hindi run longer than English, and Japanese and Chinese break lines without spaces. Buttons, chips, tabs and chart labels must hold a label 40% longer than the English one without clipping, and the "up to 3 words" rule for buttons becomes a length budget per component. The grade 7 reading-level check is an English tool; each language needs its own.
+
+The farm analogy travels, but its nouns do not: wheat and bushels become rice or maize where that is the familiar crop, and the level icons (Seed, Sprout, Stalk, Harvest) work everywhere. None of the markets on the current list reads right to left, so mirroring is not planned.
+
 ## Proposed decisions and open questions
 
 Everything above that the spec had not already settled is marked Proposed; this table collects those decisions so each can be accepted or changed in one place.
+
+Rows 15 to 25 were added by the Nov 28, 2026 review. Unlike rows 1 to 14, some of them change text above (the speed control, the Portfolio banner, the share sheet, number formatting), and that text has been left as it was until each row is accepted.
 
 | # | Proposed decision | Why |
 | --- | --- | --- |
@@ -469,6 +482,17 @@ Everything above that the spec had not already settled is marked Proposed; this 
 | 12 | Sign-in button order: Apple first on iOS, Google first elsewhere | Platform expectation |
 | 13 | Web budget: splash within 1 s, interactive within 3 s on mid-range 4G | Flutter web loads a large bundle; the splash covers it |
 | 14 | Grade 7 reading level for lessons | Fits 13-year-olds and busy adults |
+| 15 | Rise and fall colors come from the market pack, with a choice in Settings; blue and orange stay the US default (spec R20) | Red means a rise in Japan and Korea and blue means a fall in Korea, so one fixed pair cannot serve every market |
+| 16 | Prices show the currency's decimals and group by locale (spec R18, R21) | Yen and won have no decimals; India groups in lakh and crore |
+| 17 | Companion fonts for scripts Inter does not cover, downloaded from the app's own hosting when a language is chosen (spec R21) | Keeps the first download small and still makes no third-party font request |
+| 18 | Components hold labels 40% longer than English (spec R21) | Spanish and Hindi run long; the 3-word button rule is English-only |
+| 19 | Replay speeds of one day per 1, 3, 10 or 30 seconds, plus a "Skip to next event" button (spec R3) | A year-long "Try it" takes about 42 minutes at today's fastest speed |
+| 20 | The live market is labeled "Always open" and the closed-hours banner on Portfolio goes away (spec R4) | Learners play in the evening, and synthetic prices need no exchange hours |
+| 21 | Coach findings appear on every replay's result and debrief, each linked to its moment and lesson; the AI text is an added section when the cap allows (spec R6) | The loop no longer depends on one AI debrief a day |
+| 22 | An optional plan on the ticket, picked from choices and never typed: reason, target and exit (spec R9) | Teaches planning the exit before the entry, and gives the debrief something to compare |
+| 23 | Home gains two quiet cards: "Already know the basics?" for the placement check, and a short review set when one is due (spec R8, R9) | Adults can skip what they know; missed questions come back |
+| 24 | Learners 18 and over get a share button on level certificates and challenge results; the image shows nickname, level and risk-adjusted score, never dollar gains. Under-18s still have no share button (spec R13) | The spec's "no sharing" is about data, and its teen rule covers teens; invite codes alone will not spread the app |
+| 25 | The "Come back when you're 13" screen is shown again on a later try from the same device (spec R16) | Stops a child from going back and entering a different year |
 
 Open questions:
 
