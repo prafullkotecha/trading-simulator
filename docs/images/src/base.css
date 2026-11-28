@@ -1,0 +1,7 @@
+/* Shared look for the design-guide and implementation-plan diagrams. Tokens are the design guide's light theme. */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:#12161C;background:#fff;-webkit-font-smoothing:antialiased}
+#frame{position:relative;background:#fff;overflow:hidden}
+h1{font-weight:700;letter-spacing:-0.01em}
+.muted{color:#4A5361}
+svg{position:absolute;left:0;top:0;overflow:visible}

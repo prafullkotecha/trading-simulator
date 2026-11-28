@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+#frame{width:2125px;height:708px}
+h1{position:absolute;left:50px;top:26px;font-size:30px}
+.sub{position:absolute;left:50px;top:68px;font-size:18px;color:#4A5361}
+.s{position:absolute;top:175px;width:215px;height:120px;border:2px solid #C5CBD6;border-radius:12px;background:#F2F4F8;padding:18px 16px}
+.s b{font-size:21px;display:block;margin-bottom:8px}.s span{font-size:16.5px;color:#4A5361;line-height:1.35;display:block}
+.c{position:absolute;top:582px;width:275px;height:80px;border:2px solid #4A5361;border-radius:12px;background:#F2F4F8;padding:15px 16px}
+.c b{font-size:19px;display:block;margin-bottom:5px}.c span{font-size:16px;color:#4A5361}
+.checks{position:absolute;left:50px;top:395px;width:2025px;height:120px;border:2px dashed #2F5FDD;border-radius:12px;padding:16px 18px}
+.checks b{color:#1D4FD8;font-size:18px;display:block;margin-bottom:10px}
+.k{display:inline-block;background:#DCE8FC;border-radius:999px;padding:4px 14px;font-size:16.5px;margin-right:9px}
+.k.new{outline:2px solid #2F5FDD}
+.lab{position:absolute;font-size:16.5px}
+</style>
+<div id="frame">
+<h1>How a pull request reaches main</h1>
+<div class="sub">Every stream follows the top lane. Contract changes take the bottom lane and always need Prafull's approval.</div>
+<svg width="2125" height="708"><defs>
+<marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7A8391"/></marker>
+<marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#DC143C"/></marker>
+<marker id="v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5B43D6"/></marker></defs>
+<g stroke="#7A8391" stroke-width="2.5" fill="none" marker-end="url(#g)">
+<path d="M267 235H307"/><path d="M527 235H567"/><path d="M787 235H827"/><path d="M1047 235H1087"/><path d="M1307 235H1347"/><path d="M1567 235H1607"/><path d="M1827 235H1867"/>
+<path d="M327 622H375"/><path d="M654 622H702"/><path d="M981 622H1029"/><path d="M1308 622H1356"/><path d="M1635 622H1683"/></g>
+<path d="M1197 173C1190 140 440 140 417 172" stroke="#DC143C" stroke-width="2" fill="none" marker-end="url(#r)"/>
+<path d="M1457 297C1450 345 700 345 677 298" stroke="#5B43D6" stroke-width="2" fill="none" marker-end="url(#v)"/></svg>
+<div class="lab" style="left:685px;top:114px;color:#DC143C">A check fails: fix it on the branch</div>
+<div class="lab" style="left:897px;top:338px;color:#5B43D6">Main moved: rebase again and re-run checks</div>
+<div class="s" style="left:50px"><b>1 Branch</b><span>ws/&lt;id&gt;/&lt;topic&gt;<br>in the stream's clone</span></div>
+<div class="s" style="left:310px"><b>2 Commit</b><span>Authored and signed<br>off as Prafull</span></div>
+<div class="s" style="left:570px"><b>3 Rebase</b><span>on the latest main</span></div>
+<div class="s" style="left:830px"><b>4 Open PR</b><span>One stream, small,<br>tests and notes</span></div>
+<div class="s" style="left:1090px;background:#DCE8FC;border-color:#1D4FD8"><b>5 Checks</b><span>see list below</span></div>
+<div class="s" style="left:1350px;background:#EDE9FC;border-color:#5B43D6"><b>6 Ready</b><span>Green, current,<br>mergeable, re-verified</span></div>
+<div class="s" style="left:1610px"><b>7 Approve</b><span>Prafull, from<br>his phone</span></div>
+<div class="s" style="left:1870px;background:#DDF6E4;border-color:#15803D"><b>8 Merge</b><span>Rebase and merge<br>into main</span></div>
+<div class="checks"><b>Required checks (step 5)</b>
+<span class="k">stream-guard</span><span class="k">dco</span><span class="k">analyze</span><span class="k new">l10n</span><span class="k">test</span><span class="k">contracts-compat</span><span class="k">vectors (VM, JS, Wasm)</span><span class="k">rules</span><span class="k">functions</span><span class="k">web-build and preview</span><span class="k">lighthouse</span><span class="k">walkthrough (ui)</span><span class="k">ios-build (main, release, ios)</span></div>
+<div class="lab" style="left:50px;top:548px;font-weight:700;font-size:19px">Contract-change lane</div>
+<div class="c" style="left:50px"><b>contract/&lt;topic&gt;</b><span>contract paths only</span></div>
+<div class="c" style="left:377px"><b>Version bump</b><span>additive first</span></div>
+<div class="c" style="left:704px"><b>contracts-compat</b><span>all consumers' tests</span></div>
+<div class="c" style="left:1031px"><b>Prafull approves</b><span>daily batch window</span></div>
+<div class="c" style="left:1358px"><b>Merge</b><span>&nbsp;</span></div>
+<div class="c" style="left:1685px"><b>Affected streams</b><span>rebase right after</span></div>
+</div>

@@ -1,0 +1,41 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+#frame{width:2112px;height:1000px}
+h1{position:absolute;left:50px;top:24px;font-size:30px}
+.ph{position:absolute;top:88px;height:72px;background:#F2F4F8;border-radius:10px;text-align:center;padding-top:13px;font-size:19px;font-weight:700}
+.ph span{display:block;font-size:16.5px;font-weight:400;color:#4A5361;margin-top:4px}
+.ms{position:absolute;top:184px;font-size:16.5px;font-weight:700;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.dm{width:17px;height:17px;background:#1C2230;transform:rotate(45deg);margin-right:4px}
+.dm.open{background:#fff;border:2.5px solid #1C2230}
+.msnote{position:absolute;top:208px;font-size:14px;color:#4A5361;white-space:nowrap}
+.r{position:absolute;left:50px;width:2012px;height:45px}.r.alt{background:#F8F9FB}
+.pill{position:absolute;left:8px;top:9px;width:54px;height:27px;border-radius:14px;color:#fff;font-size:14.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.nm{position:absolute;left:75px;top:11px;font-size:18px}
+.bar{position:absolute;top:10px;height:25px;border-radius:8px;border:2px solid}
+.fix{border:2px dashed #C5CBD6!important;background:#fff!important}
+.vl{position:absolute;top:92px;width:1.5px;height:762px;background:#E3E7EE}
+.lg{position:absolute;top:880px;font-size:16.5px;color:#4A5361;display:flex;align-items:center;gap:10px}
+.lg i{width:33px;height:21px;border-radius:6px;border:2px solid;display:inline-block}
+.foot{position:absolute;left:50px;top:926px;font-size:16.5px;color:#4A5361;line-height:1.5}
+</style>
+<div id="frame"><h1>Phases, streams and milestones</h1><div id="g"></div>
+<div class="foot">Phases end at milestones, not dates. At most four streams run at once until M1, then up to six; waiting streams build against fakes from the contracts package.<br>A prototype is tested with adults before the M0 freeze, and the web app opens to adults as a beta at M3. Teens wait for the launch.</div></div>
+<script>
+const g=document.getElementById('g'),add=h=>g.insertAdjacentHTML('beforeend',h);
+const P=[[430,180,'Phase 0','Foundation'],[616,368,'Phase 1','Engines and system'],[990,532,'Phase 2','Features'],[1528,282,'Phase 3','Integration and hardening'],[1816,244,'Phase 4','Beta and launch']];
+P.forEach(([x,w,a,b])=>add(`<div class="ph" style="left:${x}px;width:${w}px">${a}<span>${b}</span></div>`));
+[613,987,1525,1813].forEach(x=>add(`<div class="vl" style="left:${x}px"></div>`));
+add('<div class="ms" style="left:50px;color:#4A5361">Milestones</div>');
+const M=[[588,'M0'],[962,'M1'],[1095,'M2'],[1224,'M3'],[1353,'M4'],[1482,'M5'],[1787,'M6'],[2037,'M7']];
+M.forEach(([x,n])=>add(`<div class="ms" style="left:${x}px"><span class="dm"></span>${n}</div>`));
+add('<div class="ms" style="left:444px;font-weight:500"><span class="dm open"></span>Prototype</div>');
+add('<div class="msnote" style="left:1190px">adult web beta</div>');
+const C={g:['#475569','#E2E8F0','#475569'],t:['#0F766E','#CCFBF1','#0F766E'],b:['#1D4ED8','#DBEAFE','#1D4ED8'],v:['#5B43D6','#EDE9FE','#5B43D6'],o:['#B45309','#FEF3C7','#B45309']};
+const S=[['S0','Platform, contracts, integration','g',432,2058,0],['S1','Design system','t',620,1520,1],['S2','Market model and scenarios','b',620,1808,0],['S3','Options pricing','b',620,980,1],['S4','Simulation engine and scoring','b',620,1520,1],['S5','Learn','v',995,1520,1],['S6','Replay and trading UI','v',995,1520,1],['S7','Live market and portfolio','v',995,1520,1],['S8','AI debrief','v',995,1520,1],['S9','Identity, onboarding, safety','v',620,1520,1],['S10','Challenges and leaderboards','v',995,1520,1],['S11','App shell, PWA and web','t',620,1520,1],['S12','Content and static pages','o',620,1808,0],['S13','CI/CD and release','g',432,2058,0]];
+S.forEach(([id,nm,c,a,b,fix],k)=>{const y=234+k*45,[pc,bg,bd]=C[c];
+ add(`<div class="r ${k%2?'':'alt'}" style="top:${y}px"><span class="pill" style="background:${pc}">${id}</span><span class="nm">${nm}</span>
+ <span class="bar" style="left:${a-50}px;width:${b-a}px;background:${bg};border-color:${bd}"></span>${fix?'<span class="bar fix" style="left:1482px;width:276px"></span>':''}</div>`)});
+const L=[[50,'g','Platform and release'],[316,'b','Engines'],[462,'t','Design system and shell'],[758,'v','Features'],[912,'o','Content']];
+L.forEach(([x,c,t])=>add(`<div class="lg" style="left:${x}px"><i style="background:${C[c][1]};border-color:${C[c][2]}"></i>${t}</div>`));
+add('<div class="lg" style="left:1056px"><i style="border:2px dashed #C5CBD6;background:#fff"></i>Fixes found in hardening</div>');
+</script>

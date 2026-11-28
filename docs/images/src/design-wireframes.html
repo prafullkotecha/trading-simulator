@@ -1,0 +1,67 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+#frame{width:1172px;height:723px}
+h1{position:absolute;left:52px;top:44px;font-size:22px}
+.ph{position:absolute;top:98px;width:250px;height:565px;border:2px solid #7A8391;border-radius:34px;overflow:hidden;padding:26px 22px;background:#fff}
+.cap{position:absolute;top:677px;width:250px;text-align:center;font-size:16px;color:#4A5361}
+h2{font-size:20px;font-weight:700;margin-bottom:12px}
+.chip{display:inline-block;background:#EEF1F5;border-radius:14px;padding:4px 13px;font-size:14.5px}
+.card{border:1.5px solid #7A8391;border-radius:14px;padding:12px 14px;margin-top:12px;font-size:15.5px}
+.fill{background:#EEF1F5;border:0}
+.btn{display:flex;align-items:center;justify-content:center;background:#5B43D6;color:#fff;font-weight:700;border-radius:999px;height:44px;font-size:17px}
+.row{display:flex;justify-content:space-between;font-size:14.5px;margin-top:8px;white-space:nowrap}
+.note{font-size:14.5px;color:#4A5361;line-height:1.35}
+.pc{display:inline-block;border:1.5px solid #7A8391;border-radius:999px;padding:3px 8px;font-size:12.5px;margin:6px 2px 0 0;white-space:nowrap}
+.pc.on{background:#E9E6FA;border-color:#5B43D6;font-weight:600}
+.nav{position:absolute;left:0;right:0;bottom:0;height:64px;background:#EEF1F5;display:flex;align-items:center;gap:24px;padding-left:26px}
+.dot{width:19px;height:19px;border-radius:50%;border:1.5px solid #7A8391}.dot.on{background:#5B43D6;border-color:#5B43D6}
+</style>
+<div id="frame">
+<h1>Four key screens: one primary action each, simulation always labeled</h1>
+
+<div class="ph" style="left:52px"><h2>Learn</h2>
+ <div class="card fill">Level 2 · Sprout<div style="height:8px;border-radius:5px;border:1.5px solid #7A8391;margin:9px 0 7px;overflow:hidden"><div style="width:37%;height:100%;background:#5B43D6"></div></div><span class="muted">3 of 8 lessons</span></div>
+ <div class="card"><span class="muted">Next up</span><div style="font-weight:700;font-size:17px;margin:4px 0">2.5 The covered call</div><span class="muted">5 min, then a replay</span><div class="btn" style="width:118px;height:34px;margin-top:10px;font-size:15.5px">Continue</div></div>
+ <div class="card">This week's challenge</div>
+ <div class="card" style="border-style:dashed">Review: 4 due</div>
+ <div class="nav"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+<div class="cap" style="left:52px">Home</div>
+
+<div class="ph" style="left:325px"><h2>March 2020 replay</h2>
+ <span class="chip">Simulated price</span>
+ <div style="font-size:25px;font-weight:700;margin-top:10px">$248.10</div>
+ <div style="color:#B24E00;font-size:16px">▼ −$31.40 (−11.2%)</div>
+ <svg style="position:static;margin-top:10px" width="206" height="128" viewBox="0 0 206 128"><polyline points="0,14 26,8 53,23 80,17 107,65 134,96 160,84 187,117 206,108" fill="none" stroke="#12161C" stroke-width="2.5" stroke-linejoin="round"/><line x1="0" y1="127" x2="206" y2="127" stroke="#7A8391" stroke-width="1.5"/></svg>
+ <div class="row muted" style="font-size:15px;margin-top:6px"><span>Day 14 of 40</span><span style="color:#12161C">⏸ &nbsp;3×</span></div>
+ <div class="card" style="text-align:center;padding:7px;margin-top:10px;border-radius:999px;font-size:14.5px">⏭ Skip to next event</div>
+ <div class="btn" style="margin-top:12px">Trade</div>
+ <div class="note" style="margin-top:14px">No tab bar: the chart<br>gets the room</div></div>
+<div class="cap" style="left:325px">Replay</div>
+
+<div class="ph" style="left:598px;padding:0"><div style="height:128px;background:#EEF1F5;display:flex;align-items:center;justify-content:center" class="note">chart stays visible</div>
+ <div style="border-top:2px solid #7A8391;border-radius:26px 26px 0 0;margin-top:-22px;background:#fff;padding:18px 22px;height:462px">
+ <h2 style="margin-bottom:4px">Buy SPY</h2>
+ <div class="row"><span class="muted">Shares</span><span>10</span></div>
+ <div class="row"><span class="muted">Est. cost</span><span>$4,125.00</span></div>
+ <div class="row"><span class="muted">Cash after</span><span>$95,875.00</span></div>
+ <div class="row"><span class="muted">Most you can lose</span><span>$4,125.00</span></div>
+ <div style="border-top:1.5px solid #7A8391;margin:12px 0 8px"></div>
+ <div class="note">Your plan (optional)</div>
+ <span class="pc on">Trend</span><span class="pc">+10%</span><span class="pc on">Stop −5%</span><span class="pc">3 mo</span>
+ <div class="note" style="margin-top:10px;color:#12161C;font-size:13.5px;white-space:nowrap">4% of account (your limit: 10%)</div>
+ <div class="btn" style="margin-top:12px">Review order</div>
+ <div class="note" style="text-align:center;margin-top:10px">Simulated money only</div></div></div>
+<div class="cap" style="left:598px">Trade ticket</div>
+
+<div class="ph" style="left:871px"><h2>Covered call</h2><span class="chip">Modeled</span>
+ <svg style="position:static;margin-top:14px" width="206" height="250" viewBox="0 0 206 250">
+ <polygon points="78,117 134,38 206,38 206,117" fill="#DCEEFC"/><polygon points="2,117 78,117 2,228" fill="#FFE8D4"/>
+ <line x1="0" y1="0" x2="0" y2="235" stroke="#7A8391" stroke-width="1.5"/><line x1="0" y1="117" x2="206" y2="117" stroke="#7A8391" stroke-width="1.5"/>
+ <line x1="134" y1="0" x2="134" y2="232" stroke="#4A5361" stroke-width="1.5" stroke-dasharray="6 4"/>
+ <polyline points="2,228 78,117" fill="none" stroke="#B24E00" stroke-width="3"/><polyline points="78,117 134,38 206,38" fill="none" stroke="#0B66B8" stroke-width="3"/>
+ <circle cx="78" cy="117" r="7" fill="#fff" stroke="#12161C" stroke-width="2"/>
+ <g font-family="Inter" font-size="14.5"><text x="8" y="104" fill="#4A5361">Breakeven</text><text x="141" y="62" fill="#0B66B8">▲ Max gain</text><text x="140" y="226" fill="#4A5361">Strike</text><text x="22" y="246" fill="#B24E00">▼ Loss</text></g></svg>
+ <div class="note" style="text-align:center">Price at expiry →</div>
+ <div style="font-size:15.5px;margin-top:16px;line-height:1.35">Shape + label, never<br>color alone</div></div>
+<div class="cap" style="left:871px">Payoff diagram</div>
+</div>
