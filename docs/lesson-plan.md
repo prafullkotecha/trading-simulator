@@ -1,8 +1,8 @@
 # Trading Simulator Lesson Plan
 
-Draft for review, Nov 27, 2026. Updated Nov 28, 2026 with the review refinements Prafull accepted that day (R1 to R6 and R22 in the [spec](spec.md#review-refinements-nov-28-2026)). The lesson diagrams were not redrawn. Visual version: see the published page.
+Draft for review, Nov 27, 2026. Updated Nov 28, 2026 with the review refinements Prafull decided that day (R1 to R31 in the [spec](spec.md#review-refinements-nov-28-2026)). The existing lesson diagrams were not redrawn, and the six investing-track diagrams are not drawn yet. Visual version: see the published page.
 
-**4 levels · 38 core lessons · 5 reality checks · about 161 minutes of reading · 3 to 5 minutes per lesson**
+**4 levels and an investing track · 44 lessons · 10 reality checks · about 195 minutes of reading · 3 to 5 minutes per lesson**
 
 ## Every lesson
 
@@ -22,9 +22,20 @@ Draft for review, Nov 27, 2026. Updated Nov 28, 2026 with the review refinements
 - Every diagram responds to touch: drag price, days left or strike and numbers update.
 - Every price is labeled Simulated price; every option price Modeled.
 
+## The learning loop
+
+What surrounds the lessons. All of it was accepted on Nov 28, 2026 (R6, R8, R9, R26, R29).
+
+- **Placement check.** An optional 10 questions from the Level 1 bank, offered on Home ("Already know the basics?"). Lessons whose questions the learner gets right are marked as known and can be skipped; the gate quiz and challenge still apply. The same bank asked again at the end of the level gives a learning-gain number.
+- **Spaced review.** Check and quiz questions a learner misses come back in a review set of three to five questions some days later, and again after a longer gap if missed again.
+- **A plan before the trade.** Lesson 1.13 teaches deciding the loss before buying. The ticket offers an optional plan picked from choices, never typed: a reason, a target, an exit and a horizon. The debrief compares the plan with what the learner did.
+- **A scorecard for your own calls.** Each planned trade is graded at the horizon the learner chose, on its return in excess of the broad-market ETF: how often the calls beat the benchmark, and how large the wins were against the losses. Lesson 1.12 teaches judging against a benchmark; this applies it to every plan.
+- **Limits you set yourself.** After lesson 1.13 the learner can set their own limits: largest position, largest sector, and a drawdown at which to pause. The ticket names any limit an order would break and lets the learner change the order or place it anyway, and the debrief lists each time a limit held or was overridden.
+- **A debrief on every replay.** Mistakes the server can find by rule are shown after every replay with the lesson that covers each one. AI puts them in a coach's words once a day.
+
 ## L1: Stocks and ETFs
 
-*Open to everyone at signup. 16 lessons + 2 reality checks, 64 min.*
+*Open to everyone at signup. 16 lessons + 5 reality checks, 70 min.*
 
 Unlocks: Buy and sell shares and ETFs with market, limit and stop orders.
 
@@ -180,6 +191,18 @@ Replay prices follow the shape and size of real events, not the exact daily numb
 
 Promises of guaranteed returns, pressure to act now and pump-and-dump hype on social media are red flags. Real money never needs to move to learn here.
 
+### Reality check: Taxes on gains (2 min) (new)
+
+In a real account, gains and dividends are taxed, and gains on holdings sold within a year are usually taxed more. The simulator shows results before tax. This is the US wording; each market pack carries its own.
+
+### Reality check: Settlement and day-trading rules (2 min) (new)
+
+In a real account the money from a sale takes a business day to settle, and brokers limit frequent day trading in small accounts. The simulator settles at once. The lesson is checked against the current FINRA and SEC rules when it is drafted.
+
+### Reality check: Margin and short selling (2 min) (new)
+
+Borrowing to buy more, and selling shares you do not own, both exist in real accounts and both can lose more than you put in. The app teaches the ideas and offers neither.
+
 ### Gate to L2
 
 - **Scenario:** A held-out variant of the March 2020 COVID crash and rebound, one the learner has not played
@@ -278,7 +301,7 @@ Real US stock options are American style and can be assigned before expiry, most
 
 ## L3: Long calls and puts
 
-*After the L2 quiz and replay challenge. 8 lessons + 1 reality check, 34 min.*
+*After the L2 quiz and replay challenge. 8 lessons + 3 reality checks, 38 min.*
 
 Unlocks: Buy calls and puts.
 
@@ -358,6 +381,14 @@ Unlocks: Buy calls and puts.
 
 Replay option prices come from a model and carry a Modeled badge. Real chains are set by traders and have wider spreads on thinly traded strikes.
 
+### Reality check: Earnings and the volatility drop (2 min) (new)
+
+Option prices rise before an earnings report and fall right after it, so a call can lose money even when the stock rises. The live market raises volatility before a simulated earnings day and drops it after, so learners meet this in practice.
+
+### Reality check: Options that expire today (2 min) (new)
+
+Same-day-expiry options are the fastest way to lose a premium. Lesson 3.8's diagram explains why: with hours left, the move needed is large and the time for it is almost gone.
+
 ### Gate to L4
 
 - **Scenario:** A held-out variant of the January 2021 meme-stock squeeze
@@ -436,6 +467,54 @@ A spread tells you the worst case before you trade. It does not make the worst c
 - **Challenge:** Make at least 6 trades, all defined-risk, risk no more than 3% of the account on each, and finish with less than a 12% drawdown.
 - Failed quizzes can be retaken after a short review. Levels never re-lock.
 
+## Investing track
+
+*Open after Level 1 and not required for any options gate. 6 lessons, 24 min. Accepted on Nov 28, 2026 (R7); four more lessons follow after launch. The six diagrams are not drawn yet.*
+
+Unlocks: the Investing badge, and decades replays: monthly bars, 30 years in about 3 minutes, with a deposit each month.
+
+### I.1 Goals and time horizon (4 min) (new)
+
+- **Farm:** Seed you need next spring should not go into an orchard that takes ten years to fruit.
+- **Goal:** Money needed soon belongs in steadier things; money for decades can ride out the swings.
+- **Visual:** The best and worst yearly result of a broad-market ETF held for 1, 5, 10 and 20 years: the range narrows as the years grow.
+- **Try it:** Play one crash with money needed in a year, then with money needed in ten.
+
+### I.2 Bonds and cash (4 min) (new)
+
+- **Farm:** Lending seed to a neighbor pays back a fixed amount; owning the farm pays whatever the harvest brings.
+- **Goal:** A bond is a loan that pays interest, and its price falls when interest rates rise.
+- **Visual:** A bond's price against a slider for the interest rate.
+- **Try it:** Hold a bond fund through a cut of the 2022 replay.
+
+### I.3 Asset allocation (4 min) (new)
+
+- **Farm:** Decide how much land goes to steady crops and how much to risky ones before the season starts.
+- **Goal:** The split between stocks, bonds and cash sets most of how far an account swings.
+- **Visual:** Three accounts through 2008: all stocks, 60/40 and 20/80.
+- **Try it:** Play the same replay with two different splits.
+
+### I.4 Investing a little every month (4 min) (new)
+
+- **Farm:** Planting a row each week means no single week decides the harvest.
+- **Goal:** A fixed amount each month buys more shares when prices are low and removes the timing decision.
+- **Visual:** Monthly buys on a line that falls and then rises, with the average cost marked.
+- **Try it:** A decades replay with a monthly deposit.
+
+### I.5 Rebalancing (4 min) (new)
+
+- **Farm:** When the orchard outgrows the wheat field, replant to get back to your plan.
+- **Goal:** Selling some of what grew and buying what lagged holds risk at the level you chose.
+- **Visual:** A 60/40 account drifting to 75/25, then reset.
+- **Try it:** Rebalance once a year in a decades replay and compare with never rebalancing.
+
+### I.6 Time in the market (4 min) (new)
+
+- **Farm:** A farmer who skips the ten best growing weeks of a decade loses much of the decade's harvest.
+- **Goal:** Much of the long-run gain comes from a few strong days, and they tend to follow the worst ones, so selling in a crash often misses them.
+- **Visual:** Twenty years fully invested against the same years without the ten best days.
+- **Try it:** A decades replay played twice: stay invested, then sell after each 10% drop.
+
 ## Glossary
 
 | Term | Meaning | Think of it like | Lesson |
@@ -482,6 +561,13 @@ A spread tells you the worst case before you trade. It does not make the worst c
 | Debit spread | A spread you pay for up front. | Paying a smaller fee for a price lock with a ceiling. | 4.2 |
 | Max loss and max gain | The worst and best results a trade can have, known before you trade. | The floor and the ceiling on the deal. | 4.2 |
 | Credit spread | A spread you are paid for up front, with the max loss held as cash. | Selling insurance with cheaper insurance bought behind it. | 4.4 |
+| Time horizon | How long until you need the money. | How many seasons until you need the seed back. | I.1 |
+| Bond | A loan to a government or company that pays interest and returns the amount lent. | Lending seed to a neighbor for a fixed amount back. | I.2 |
+| Asset allocation | How an account is split between stocks, bonds and cash. | How much land goes to steady crops and how much to risky ones. | I.3 |
+| Regular investing | Putting in a fixed amount on a schedule, whatever the price. Also called dollar-cost averaging. | Planting a row every week, rain or shine. | I.4 |
+| Rebalancing | Trading back to your chosen split after prices have moved it. | Replanting to get back to your plan. | I.5 |
+| Margin | Money borrowed from a broker to buy more than your cash allows. Not offered in the app. | Planting on borrowed seed. | L1 check |
+| Short selling | Selling borrowed shares, hoping to buy them back for less. Not offered in the app. | Selling a neighbor's wheat today and promising to return it later. | L1 check |
 
 ## Benchmark check (Nov 27, 2026)
 
@@ -557,9 +643,9 @@ Approved by Prafull on Nov 27, 2026 and applied: five new Level 1 lessons (1.3, 
 
 ### Left out on purpose
 
-- Bonds and asset allocation beyond one comparison line (Jump$tart 8-3, 12-6; SMG S8): the simulator trades stocks, ETFs and options only.
-- Taxes, retirement accounts and choosing an adviser or robo-adviser (Jump$tart 12-8, 12-11, 12-14): real-account topics, outside a simulator.
-- Short selling, margin and naked options (SIE 3.1.1, 3.2.1): high risk and not offered in the app.
+- Bonds and asset allocation beyond one comparison line (Jump$tart 8-3, 12-6; SMG S8): the simulator trades stocks, ETFs and options only. Update Nov 28: now covered by investing-track lessons I.2 and I.3, using a bond ETF.
+- Taxes, retirement accounts and choosing an adviser or robo-adviser (Jump$tart 12-8, 12-11, 12-14): real-account topics, outside a simulator. Update Nov 28: taxes on gains now have a Level 1 reality check; the rest stays out.
+- Short selling, margin and naked options (SIE 3.1.1, 3.2.1): high risk and not offered in the app. Update Nov 28: margin and short selling are explained in a Level 1 reality check and still not offered.
 - Index options, straddles, condors and calendars (SIE 2.1.3; OIC): left for a later release, as the spec already says.
 
 ### Sources
@@ -572,9 +658,9 @@ Approved by Prafull on Nov 27, 2026 and applied: five new Level 1 lessons (1.3, 
 
 ## Review refinements (Nov 28, 2026)
 
-A review of all four documents on Nov 28, 2026 produced refinements R1 to R31, listed in the [spec](spec.md#review-refinements-nov-28-2026). Prafull accepted R1 to R6 and R17 to R24 the same day, and the parts that touch lessons are applied above and recorded here. The rest is **Proposed** and changes nothing until accepted.
+A review of all four documents on Nov 28, 2026 produced refinements R1 to R31, listed in the [spec](spec.md#review-refinements-nov-28-2026). Prafull decided all of them the same day. This section records what changed in this plan and what was accepted for after launch.
 
-### Accepted and applied (R1 to R6, R22)
+### Applied to this plan
 
 - **Every "Try it" is a concept replay** of 20 to 60 bars, never the live market and never a gate's path (R1, R3, R4). Nine lessons changed:
 
@@ -595,6 +681,10 @@ A review of all four documents on Nov 28, 2026 produced refinements R1 to R31, l
 - **Every replay gets a debrief** from rule-based findings, each tied to its lesson: position too large (1.13), no stop (1.6), buying high and selling low (1.15), one stock too large a share (1.8), an option held through its fastest decay (3.4). AI words it once a day (R6).
 - **The live market is always open** (R4), and the Level 1 reality check on simulated prices now also teaches real exchange hours.
 - **Lessons are ready for other markets** (R22): stable ids, no color words in lesson text, and amounts and crops as values the market pack fills in. Nothing a US learner sees has changed.
+- **A six-lesson investing track** opens after Level 1 (R7): goals and time horizon, bonds, asset allocation, monthly investing, rebalancing and time in the market. None needs company fundamentals. Before this, 22 of the 38 lessons were about options.
+- **Five more reality checks** (R10): taxes, settlement and day-trading rules, and margin and short selling in Level 1; the earnings volatility drop and same-day-expiry options in Level 3.
+- **The learning loop** near the top of this plan (R8, R9, R26, R29): a placement check, spaced review, a plan before the trade, a scorecard for the learner's own calls and limits the learner sets.
+- **Lesson text may be drafted by AI and is approved by Prafull** (R11). No outside reviewer signs off; the benchmark check above and the sources it cites are the accuracy reference.
 
 ### Lesson ids
 
@@ -645,6 +735,17 @@ Each lesson has a stable id that is not its number, so adding or reordering less
 | L2 check | Real-world options rules | `check-real-options-rules` |
 | L3 check | How real option chains differ | `check-real-option-chains` |
 | L4 check | Defined risk is not no risk | `check-defined-risk` |
+| I.1 | Goals and time horizon | `goals-and-time-horizon` |
+| I.2 | Bonds and cash | `bonds-and-cash` |
+| I.3 | Asset allocation | `asset-allocation` |
+| I.4 | Investing a little every month | `regular-investing` |
+| I.5 | Rebalancing | `rebalancing` |
+| I.6 | Time in the market | `time-in-the-market` |
+| L1 check | Taxes on gains | `check-taxes-on-gains` |
+| L1 check | Settlement and day-trading rules | `check-settlement-and-day-trading` |
+| L1 check | Margin and short selling | `check-margin-and-short-selling` |
+| L3 check | Earnings and the volatility drop | `check-earnings-volatility-drop` |
+| L3 check | Options that expire today | `check-same-day-expiry` |
 
 ### Core lessons and market modules
 
@@ -652,37 +753,28 @@ Each lesson has a stable id that is not its number, so adding or reordering less
 |---|---|
 | Level 1 (1.1 to 1.16) and its reality checks | Core. 1.5 and 1.6 take tick sizes and order types from the market pack, 1.11 uses local fund fees, and 1.12 names the local index. |
 | Levels 2 to 4 | US pack. The ideas travel, but the lessons are built on 100-share contracts, American-style exercise and US broker approval levels. Markets where beginners meet index options first (India, Japan, Korea) need their own Level 2, and markets with few listed options (Singapore, Mexico) may replace the ladder with REITs and ETFs. |
+| Investing track (I.1 to I.6) | Core. Tax and account lessons are written per market, and I.10, after launch, changes its home market. |
 
-### Still proposed
+### Accepted for after launch
 
-Everything from here to the Notes awaits sign-off. If the investing track is accepted it is core, with tax and account lessons written per market.
+#### Four more investing lessons (R7)
 
-#### An investing track (R7)
-
-Ten lessons, open to everyone who has finished Level 1 and not required for any options gate. They follow the same format as the lessons above: one farm line, one goal, one diagram, one "Try it". Several use a "decades in minutes" replay: monthly bars, 30 years in about 3 minutes, with a deposit each month.
+These need modeled company fundamentals or several countries' modeled indexes, which arrive after launch (R30).
 
 | # | Lesson | Farm line | Goal | Diagram | Try it |
 |---|---|---|---|---|---|
-| I.1 | Goals and time horizon | Seed you need next spring should not go into an orchard that takes ten years to fruit. | Money needed soon belongs in steadier things; money for decades can ride out the swings. | The best and worst yearly result of a broad-market ETF held for 1, 5, 10 and 20 years: the range narrows as the years grow. | Play one crash with money needed in a year, then with money needed in ten. |
-| I.2 | Bonds and cash | Lending seed to a neighbor pays back a fixed amount; owning the farm pays whatever the harvest brings. | A bond is a loan that pays interest, and its price falls when interest rates rise. | A bond's price against a slider for the interest rate. | Hold a bond fund through a cut of the 2022 replay. |
-| I.3 | Asset allocation | Decide how much land goes to steady crops and how much to risky ones before the season starts. | The split between stocks, bonds and cash sets most of how far an account swings. | Three accounts through 2008: all stocks, 60/40 and 20/80. | Play the same replay with two different splits. |
-| I.4 | Investing a little every month | Planting a row each week means no single week decides the harvest. | A fixed amount each month buys more shares when prices are low and removes the timing decision. | Monthly buys on a line that falls and then rises, with the average cost marked. | A decades replay with a monthly deposit. |
-| I.5 | Rebalancing | When the orchard outgrows the wheat field, replant to get back to your plan. | Selling some of what grew and buying what lagged holds risk at the level you chose. | A 60/40 account drifting to 75/25, then reset. | Rebalance once a year in a decades replay and compare with never rebalancing. |
-| I.6 | Size and sector | A valley has big old farms and small new ones, and grain, fruit and dairy have their good years at different times. | A company's size and sector explain much of how its stock moves. | A market drawn as blocks grouped by sector and sized by company value. | Compare a large company and a small one from the same sector in one replay. |
-| I.7 | What a share costs: price to earnings | Paying 30 harvests for a farm only makes sense if the harvests will grow. | Price divided by earnings per share is how many years of today's profit you pay for; a high number needs growth to justify it. | One price with a slider for earnings, and the growth needed to bring the ratio down to the market's. | Sort a replay's stocks by this ratio before the dot-com cut and see what followed. |
-| I.8 | Reading a company's numbers | Before buying a farm, ask what it sold, what it kept and what it owes. | Find revenue, profit and debt in a company summary, and know that real filings are free to read. | Revenue stepping down through costs to profit, beside a bar for debt. | Compare two companies' summary cards inside a replay. |
-| I.9 | Time in the market | A farmer who skips the ten best growing weeks of a decade loses much of the decade's harvest. | Much of the long-run gain comes from a few strong days, and they tend to follow the worst ones, so selling in a crash often misses them. | Twenty years fully invested against the same years without the ten best days. | A decades replay played twice: stay invested, then sell after each 10% drop. |
+| I.7 | Size and sector | A valley has big old farms and small new ones, and grain, fruit and dairy have their good years at different times. | A company's size and sector explain much of how its stock moves. | A market drawn as blocks grouped by sector and sized by company value. | Compare a large company and a small one from the same sector in one replay. |
+| I.8 | What a share costs: price to earnings | Paying 30 harvests for a farm only makes sense if the harvests will grow. | Price divided by earnings per share is how many years of today's profit you pay for; a high number needs growth to justify it. | One price with a slider for earnings, and the growth needed to bring the ratio down to the market's. | Sort a replay's stocks by this ratio before the dot-com cut and see what followed. |
+| I.9 | Reading a company's numbers | Before buying a farm, ask what it sold, what it kept and what it owes. | Find revenue, profit and debt in a company summary, and know that real filings are free to read. | Revenue stepping down through costs to profit, beside a bar for debt. | Compare two companies' summary cards inside a replay. |
 | I.10 | Home bias and currency | A farmer who knows only one valley forgets that other valleys have different weather. | Markets in different countries do not move together, and one market can stay below its peak for decades, as Japan's did after 1989. Foreign holdings also move with the exchange rate. | Three countries' modeled index lines over 35 years, with the longest time below a peak shaded. | Split an account between two markets in a decades replay. |
 
-If accepted, the plan becomes 48 lessons and about 200 minutes of reading, and ten more diagrams need drawing. The benchmark check listed bonds and asset allocation under "Left out on purpose" because the simulator traded only stocks, ETFs and options; I.2 and I.3 need only a bond ETF in the scenario universe, which the 1.9 diagram already assumes.
+#### Investing-style lenses (R28)
 
-#### Investing-style lenses (R28, needs R7 and R30)
-
-Lessons I.7 and I.8 would each end with a lens: a short checklist, computed by rule from a company's modeled numbers, of what one investing style looks at. Value asks whether the price is low against earnings and book value and whether debt is modest. Quality asks whether profits are steady and returns on capital high. Growth at a fair price sets the price-to-earnings ratio against the growth rate. Trend asks whether price and earnings are both rising. A lens states facts against a style's usual thresholds ("31 times earnings; a value approach looks for under 15 to 20") and never says buy or sell. Lesson text credits the investors whose books describe each style; no AI speaks in their names.
+Lessons I.8 and I.9 each end with a lens: a short checklist, computed by rule from a company's modeled numbers, of what one investing style looks at. Value asks whether the price is low against earnings and book value and whether debt is modest. Quality asks whether profits are steady and returns on capital high. Growth at a fair price sets the price-to-earnings ratio against the growth rate. Trend asks whether price and earnings are both rising. A lens states facts against a style's usual thresholds ("31 times earnings; a value approach looks for under 15 to 20") and never says buy or sell. It does not appear in live mode. Lesson text credits the investors whose books describe each style; no AI speaks in their names.
 
 #### A strategy lab after Level 4 (R27)
 
-A capstone for learners who hold the Level 4 badge, proposed for after launch. The learner builds a rule-based strategy from blocks (a style lens, a rebalance schedule, risk limits), runs it on practice variants against the broad-market ETF, then on a variant it has never seen.
+A capstone for learners who hold the Level 4 badge. The learner builds a rule-based strategy from blocks (a style lens, a rebalance schedule, risk limits), runs it on practice variants against the broad-market ETF, then on a variant it has never seen.
 
 | # | Lesson | Goal |
 |---|---|---|
@@ -692,29 +784,13 @@ A capstone for learners who hold the Level 4 badge, proposed for after launch. T
 | S.4 | Costs and turnover | Every trade pays the spread, so a rule that trades often must earn more just to stay level. |
 | S.5 | Did it beat the index? | Most strategies end behind a broad-market ETF after costs. Knowing that is the most useful result in the lab. |
 
-#### More reality checks (R10)
+#### One decision a day (R9)
 
-Two minutes each, in the same format as the five above.
-
-- **Level 1, Taxes on gains:** in a real account, gains and dividends are taxed, and gains on holdings sold within a year are usually taxed more. The simulator shows results before tax. (US wording; each market pack carries its own.)
-- **Level 1, Settlement and day-trading rules:** real trades take a day to settle and real brokers limit frequent day trading in small accounts. Written against the current FINRA and SEC rules when the lesson is drafted.
-- **Level 1, Margin and short selling:** borrowing to buy more, and selling shares you do not own, both exist in real accounts and both can lose more than you put in. The app teaches the ideas and offers neither.
-- **Level 3, Earnings and the volatility drop:** option prices rise before an earnings report and fall right after it, so a call can lose money even when the stock rises. The live market's model should raise volatility before a simulated earnings day and drop it after, so learners meet this in practice.
-- **Level 3, Options that expire today:** same-day-expiry options are the fastest way to lose a premium. Lesson 3.8's diagram already explains why.
-
-#### The learning loop (R8, R9, R26, R29)
-
-- **Placement check.** An optional 10 questions from the Level 1 bank, offered on Home ("Already know the basics?"). Lessons whose questions the learner gets right are marked as known and can be skipped; the gate quiz and challenge still apply. The same bank asked again at the end of the level gives a learning-gain number.
-- **Spaced review.** Check and quiz questions a learner misses come back in a review set of three to five questions some days later, and again after a longer gap if missed again.
-- **A plan before the trade.** Lesson 1.13 already teaches deciding the loss before buying. The ticket offers an optional plan picked from choices, never typed: a reason, a target and an exit. The debrief compares the plan with what the learner did.
-- **One decision a day.** A two-minute question on a short, unlabeled chart ("Your stop is $96 and the stock opens at $91. Where does it fill?"). No streak is attached to it.
-
-- **A scorecard for your own calls (R26).** Each planned trade is graded at the horizon the learner chose, on its return in excess of the broad-market ETF: how often the calls beat the benchmark, and how large the wins were against the losses. Lesson 1.12 already teaches judging against a benchmark; this applies it to every plan.
-- **Limits you set yourself (R29).** After lesson 1.13 the learner can set their own limits: largest position, largest sector, and a drawdown at which to pause. The ticket shows which limit an order would break, and the debrief lists each time a limit held or was overridden.
+A two-minute question on a short, unlabeled chart ("Your stop is $96 and the stock opens at $91. Where does it fill?"), cut from scenario variants. No streak is attached to it.
 
 ## Notes
 
 - All four gates use the rules accepted on Nov 28, 2026 (R1 and R2). Their thresholds are starting points, held in Remote Config and tuned in playtests.
 - Diagram numbers are worked examples: option prices use Black-Scholes, 30% volatility, 4% rate unless noted.
-- All lesson text will be written and reviewed by people; AI is used only for debriefs.
-- The Review refinements section (Nov 28, 2026) records what was applied and lists the changes that still await sign-off.
+- Lesson text, quiz items and news beats may be drafted by AI. Prafull approves every one before it ships (R11, decided Nov 28). At run time AI is used only for debriefs.
+- The Review refinements section (Nov 28, 2026) records what was applied and what was accepted for after launch. Nothing in this plan is awaiting sign-off.

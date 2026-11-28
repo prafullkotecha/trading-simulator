@@ -2,7 +2,7 @@
 
 Nov 27, 2026 · Prafull Kotecha
 
-This guide turns the Product Spec v1 into a buildable design system and screen set for the Flutter apps and the PWA. Anything the spec did not already decide is marked **Proposed**. It was updated on Nov 28, 2026 with the review refinements Prafull accepted that day (spec R1 to R6 and R17 to R24); the diagrams were not redrawn.
+This guide turns the Product Spec v1 into a buildable design system and screen set for the Flutter apps and the PWA. Anything the spec did not already decide is marked **Proposed**. It was updated on Nov 28, 2026 with the review refinements Prafull decided that day (spec R1 to R31, decisions 22 to 42); the diagrams were not redrawn.
 
 ## Principles
 
@@ -161,6 +161,11 @@ Every interactive component has the same six states: enabled, hovered (web and t
 | Leaderboard row | Rank, generated nickname, score, level badge | No photo, no location, no free text; the learner's own row is pinned and highlighted |
 | Disclaimer banner | The spec's educational disclaimer | Persistent footer on web screens; on mobile at signup, in Settings and on every debrief |
 | Break prompt | Gentle prompt after 45 minutes of continuous play for under-18s | A sheet, not a blocker: "Take a break" and "Keep going" |
+| Plan chips | An optional plan on the ticket: reason, target, exit and horizon | Picked from choice chips, never typed; skipping it is one tap and never nags |
+| Limit notice | Names a limit of the learner's own that an order would break | Sits in the risk panel in `onSurface` with an icon, never in `error`; "Change the order" and "Place anyway" are equal buttons |
+| Scorecard card | How the learner's planned trades did against the benchmark at their horizons | Two figures with plain labels ("Beat the benchmark: 7 of 12", "Average win against average loss: 1.4 to 1"); plans still inside their horizon show as pending |
+| Review set card | Three to five missed questions, due again | One quiet card on Home when a set is due; no badge count, no reminder push for under-18s |
+| Share card | An image of a level certificate or a challenge result, for learners 18 and over | Nickname, level badge and risk-adjusted score; never dollar gains; always carries "Simulated money. Not real trading." |
 
 Empty, loading and error states are part of every component: skeletons in `surfaceContainerHigh` for content under 1 second, a short line of help text plus one action for empty states, and an inline retry for errors. Offline states say what still works ("Downloaded replays still play").
 
@@ -172,12 +177,12 @@ Five top-level destinations follow the core loop, and the trade ticket is one sh
 
 Learn is home. A lesson's "Try it" jumps straight into a seeded replay, and the replay's debrief links back to the next lesson, so the loop never needs the tab bar.
 
-- **Learn:** level path, lessons, quizzes, gate challenges, level unlocks.
+- **Learn:** level path, the investing track, lessons, quizzes, gate challenges, level unlocks, the placement check and review sets.
 - **Replays:** scenario library by level and event, downloaded packs, past results and debriefs.
 - **Live:** the simulated live market of about 100 real tickers, always open, each ticker's chart and, from L2, its option chain.
 - **Challenges:** this week's challenge, leaderboards and friends by invite code.
 - **Portfolio:** the live paper account: value, positions, orders and the weekly reset.
-- **You** (top bar, not a tab): profile and nickname, settings (theme, streaks, notifications, shortcuts, data export and delete), help and glossary, and the disclaimer.
+- **You** (top bar, not a tab): profile and nickname, the scorecard, settings (theme, streaks, notifications, shortcuts, my limits, data export and delete), help and glossary, and the disclaimer.
 
 Rules: the tab bar hides during a replay and inside the ticket to give the chart room; back always returns to where the learner came from; and a deep link (a lesson URL on the web, a notification on mobile) opens its screen with the tab bar restored underneath.
 
@@ -192,7 +197,7 @@ Ten screens carry the whole product. Each is described top to bottom on a compac
 The goal is a first practice trade within 3 minutes of opening the app, with only the data the spec allows.
 
 1. **Welcome:** the app name, one line ("Learn to invest by replaying real market moments with simulated money"), and "Get started". The web version is the landing page, with the 13+ gate and the disclaimer.
-2. **Birthdate:** a neutral date picker with no default year and no hint of the right answer. Under 13 sees a kind "Come back when you're 13" screen and nothing is stored.
+2. **Birthdate:** a neutral date picker with no default year and no hint of the right answer. Under 13 sees a kind "Come back when you're 13" screen and no personal data is stored. A flag kept only on the device shows that screen again on a later try.
 3. **Sign in:** Apple, Google or email link, in that order on iOS and Google first on Android and web (**Proposed**). No password.
 4. **Nickname:** a generated nickname ("Calm Otter 482") with a reroll button; it can never be typed.
 5. **Disclaimer:** the full educational disclaimer with one "I understand" button. It is an acknowledgment, not a certification checkbox.
@@ -205,9 +210,11 @@ No notification prompt, streak setup or tour appears during onboarding.
 Home answers "what do I do next?" in one glance.
 
 - **Next up card** (primary): the next lesson or the replay its "Try it" opens, with time ("4 min") and one filled button, "Continue".
-- **Level path:** the four levels as a vertical path with Seed, Sprout, Stalk and Harvest icons; the current level expanded to show its lessons as rows with check marks; locked levels show what unlocks them.
+- **Level path:** the four levels as a vertical path with Seed, Sprout, Stalk and Harvest icons; the current level expanded to show its lessons as rows with check marks; locked levels show what unlocks them. The investing track branches off after Level 1 as a second, shorter path with no gate.
 - **This week's challenge** card, when one is open, with days left and the learner's best practice score.
 - **Latest debrief** card if one is unread.
+- **Review set** card when missed questions are due again.
+- **"Already know the basics?"** card for the placement check, shown until the learner takes it, dismisses it or finishes Level 1.
 
 There is no market news feed, no trending list and no portfolio total on Home, which keeps learning first.
 
@@ -241,8 +248,8 @@ Leaving mid-replay asks once ("Leave this replay? Progress is saved").
 
 The ticket makes the cost and risk of every order visible before it is placed.
 
-1. **Build:** Buy/Sell segmented control, ticker and simulated price, quantity stepper, order type (market, limit, stop, stop-limit), limit or stop price, day or good-till-cancelled.
-2. **Risk panel**, always visible: estimated cost, cash after, max loss, and for options the breakeven and a mini payoff diagram.
+1. **Build:** Buy/Sell segmented control, ticker and simulated price, quantity stepper, order type (market, limit, stop, stop-limit), limit or stop price, day or good-till-cancelled. Below these sits an optional plan in choice chips, never typed: reason, target, exit and horizon.
+2. **Risk panel**, always visible: estimated cost, cash after, max loss, and for options the breakeven and a mini payoff diagram. If the order would break one of the learner's own limits, the panel names it ("This order is 14% of your account. Your limit is 10%.") and offers "Change the order" and "Place anyway" as equal buttons. A gate challenge's risk rule is different: it is shown before the start and cannot be overridden.
 3. **Review:** a summary in plain words ("Buy 10 SPY at market, about $4,124.50"), then "Place order". The ticket never places an order in one tap.
 
 Collateral rules from the spec show as plain blocks, not errors after the fact: "Selling this put sets aside $9,500 of cash." Orders the learner's level does not allow are not offered; the locked type shows what unlocks it.
@@ -260,6 +267,7 @@ The debrief turns the result into one thing to learn next.
 - Header: scenario, result in one line, and the disclaimer link.
 - **Takeaway** first, one sentence in Title L.
 - **Went well:** up to three items. **Mistakes:** up to three, each with a "See on timeline" link that opens the replay at that moment.
+- **Plan and outcome:** when the learner stated a plan, one line per trade compares it with what happened, and the scorecard card follows.
 - **Study next:** one lesson card with "Open lesson".
 - Every debrief is built from findings the server computes by rule, so every replay has one. When the daily AI cap is used, the same layout shows the findings without the coach's wording, and says so in one line.
 
@@ -268,7 +276,7 @@ The debrief turns the result into one thing to learn next.
 Unlocking a level is the one big celebration. The flow is: quiz (10 to 15 questions, one per screen, 80% to pass), then the gate replay challenge with its risk rule shown before start, then the unlock screen.
 
 - The new level icon grows from the previous one (Sprout from Seed) in up to 1,200 ms, skippable, static under reduce motion.
-- One line on what is now allowed ("You can now sell covered calls and cash-secured puts") and "Start Level 2".
+- One line on what is now allowed ("You can now sell covered calls and cash-secured puts") and "Start Level 2". Learners 18 and over also see "Share certificate".
 - A failed quiz shows the score, the two lessons to review and "Retake" after review; nothing is lost, and levels never re-lock.
 
 ### Challenges
@@ -276,7 +284,7 @@ Unlocking a level is the one big celebration. The flow is: quiz (10 to 15 questi
 - **This week:** the scenario, its goal and risk rule, days left, "Practice" (unlimited, unscored, on practice paths) and "Play scored run" (once, on a path nobody has played). A mystery market shows no event name until the debrief.
 - **Leaderboards:** Global, My level and Friends tabs; rows as in Components; the learner's row pinned; "Hide me from global" switch for under-18s on this screen.
 - **Friends:** show my invite code and enter a code; remove a friend from a row's menu. No search, no contact upload.
-- **Past challenges:** results and badges.
+- **Past challenges:** results and badges, with "Share result" for learners 18 and over.
 
 ### Portfolio
 
@@ -365,6 +373,10 @@ The app sounds like a sharp, patient coach: plain, specific and warm, never hype
 | Level unlock | "Level 2 unlocked: covered calls and cash-secured puts" |
 | Break prompt | "You've been at it for 45 minutes. Want a break?" |
 | No-affiliation note | "Prices are simulated. Apple Inc. has no connection to this app." |
+| Placement card | "Already know the basics? Take a 3-minute check." |
+| Limit notice | "This order is 14% of your account. Your limit is 10%." |
+| Simulated event | "Simulated earnings day" |
+| Share card footer | "Simulated money. Not real trading." |
 
 Teens and adults get the same words. The AI debrief adjusts tone only through the spec's "teen" or "adult" bucket, a little warmer for teens, and never changes the facts.
 
@@ -399,7 +411,7 @@ The target is WCAG 2.2 AA on iOS, Android and the web, one step above the spec's
 - **Notifications** never arrive between 9 PM and 8 AM local time and never more than once a day; the permission prompt appears only from a tap, never at first launch.
 - **The break prompt** appears after 45 minutes of continuous play as a calm sheet with two equal buttons.
 - **No autoplay of the next replay**, no infinite feeds, no variable rewards, no countdowns that rush a trade, and no "you'll lose your streak" warnings.
-- **Identity stays private**: generated nickname only, no photo, no location, a "Hide me from the global board" switch right on the leaderboard, and no outbound share buttons anywhere (the spec's "no sharing").
+- **Identity stays private**: generated nickname only, no photo, no location, a "Hide me from the global board" switch right on the leaderboard, and no share button for anyone under 18. Learners 18 and over can share a level certificate or a challenge result (decision 36); the spec's "no sharing" is about data.
 - **Rewards honor process**: badges for passing a challenge within its risk rule and for finishing lessons, never for the size of a profit; leaderboard scores are risk-adjusted, as the spec says.
 - **No real-money cues**: no broker logos, links, referrals or "open an account" prompts, and no imagery of cash, cars or luxury.
 
@@ -424,7 +436,7 @@ Content never stretches past 1,440 dp; wider windows center it.
 - **First load.** `index.html` shows a light HTML splash with the logo and a progress line while the Flutter bundle loads, so the screen is never blank; the budget is a visible splash within 1 second and an interactive home within 3 seconds on a mid-range phone over 4G (**Proposed**).
 - **Offline.** Cached scenario packs play offline in the installed app; screens that need the network (live market, leaderboards, debriefs) show what still works and queue results to sync.
 - **Push.** Web push only after install on iOS, asked from a tap in Settings or after a weekly challenge, with the same quiet hours as mobile.
-- **Links and history.** Every lesson, scenario, ticker and debrief has a URL from go\_router; the browser back button works; each route sets the tab title ("Lesson 2.5: The covered call").
+- **Links and history.** Every lesson, scenario, ticker and debrief has a URL from go\_router; the browser back button works; each route sets the tab title ("Lesson 2.5: The covered call"). Search engines get a plain HTML page for each lesson summary and glossary term under `/learn/`, built from the same content and styled with these tokens, each with one "Open in the app" button.
 - **Pointer and keyboard.** Hover shows crosshairs and rich tooltips; lesson text is selectable (`SelectionArea`); browser zoom to 200% reflows; keyboard shortcuts cover the spec's orders and replay speed (below).
 - **Disclaimer and age gate.** The landing page shows the 13+ gate and "simulated money, no real trading" before signup, and every screen carries the short disclaimer in its footer.
 
@@ -448,7 +460,7 @@ Content never stretches past 1,440 dp; wider windows center it.
 - **Text and motion settings:** Dynamic Type, Android font scale, bold text and reduce motion are read live.
 - **Scroll physics:** bouncing on iOS, clamping with stretch on Android; the custom design is otherwise identical.
 - **Haptics:** only on native, as listed in Motion.
-- **System sheets:** native date picker for the birthdate gate; no share sheet anywhere, because the spec allows no sharing.
+- **System sheets:** native date picker for the birthdate gate; the native share sheet appears only for learners 18 and over, on certificates and challenge results.
 - **App icon and splash:** adaptive icon on Android, a single icon on iOS, and a splash that matches the web splash.
 
 ## Designing for more markets
@@ -466,7 +478,7 @@ The farm analogy travels, but its nouns do not: wheat and bushels become rice or
 
 Everything above that the spec had not already settled is marked Proposed; this table collects those decisions so each can be accepted or changed in one place.
 
-Rows 15 to 28 came from the Nov 28, 2026 review. Rows 15 to 21 were accepted that day and are applied in the sections above. Rows 22 to 28 are still proposed; where one of them would change text above (the ticket, Home, the share sheet, the age gate), that text has been left as it was.
+Rows 15 to 28 came from the Nov 28, 2026 review and were all accepted that day. Rows 15 to 27 are applied in the sections above; row 28 is built after launch. Row 29 is new and still proposed.
 
 | # | Proposed decision | Why |
 | --- | --- | --- |
@@ -491,17 +503,18 @@ Rows 15 to 28 came from the Nov 28, 2026 review. Rows 15 to 21 were accepted tha
 | 19 | Accepted Nov 28. Replay speeds of one day per 1, 3, 10, 30 or 60 seconds, plus a "Skip to next event" button (spec R3) | A year-long "Try it" took about 42 minutes at the old fastest speed |
 | 20 | Accepted Nov 28. The live market is labeled "Always open" and the closed-hours banner on Portfolio goes away (spec R4) | Learners play in the evening, and synthetic prices need no exchange hours |
 | 21 | Accepted Nov 28. Coach findings appear on every replay's result and debrief, each linked to its moment and lesson; the AI text is an added section when the cap allows (spec R6) | The loop no longer depends on one AI debrief a day |
-| 22 | An optional plan on the ticket, picked from choices and never typed: reason, target and exit (spec R9) | Teaches planning the exit before the entry, and gives the debrief something to compare |
-| 23 | Home gains two quiet cards: "Already know the basics?" for the placement check, and a short review set when one is due (spec R8, R9) | Adults can skip what they know; missed questions come back |
-| 24 | Learners 18 and over get a share button on level certificates and challenge results; the image shows nickname, level and risk-adjusted score, never dollar gains. Under-18s still have no share button (spec R13) | The spec's "no sharing" is about data, and its teen rule covers teens; invite codes alone will not spread the app |
-| 25 | The "Come back when you're 13" screen is shown again on a later try from the same device (spec R16) | Stops a child from going back and entering a different year |
-| 26 | A scorecard card on the debrief and in You: how often the learner's planned trades beat the benchmark at the horizon they chose, and wins against losses (spec R26, needs row 22) | Grades the plan, not the luck, and never rewards a rising market |
-| 27 | "My limits" in Settings (largest position, largest sector, a drawdown at which to pause); the ticket's risk panel names any limit an order would break, with "Change the order" and "Place anyway" as equal buttons (spec R29) | Turns lesson 1.13 into a habit the learner owns |
-| 28 | A style lens sheet on a ticker inside replays and in lessons I.7 and I.8: a checklist of facts against one investing style's usual thresholds, with a "Modeled" label, never a buy or sell and never in live mode (spec R28) | Teaches how different investors read the same numbers without giving a signal |
+| 22 | Accepted Nov 28. An optional plan on the ticket, picked from choices and never typed: reason, target and exit (spec R9) | Teaches planning the exit before the entry, and gives the debrief something to compare |
+| 23 | Accepted Nov 28. Home gains two quiet cards: "Already know the basics?" for the placement check, and a short review set when one is due (spec R8, R9) | Adults can skip what they know; missed questions come back |
+| 24 | Accepted Nov 28. Learners 18 and over get a share button on level certificates and challenge results; the image shows nickname, level and risk-adjusted score, never dollar gains. Under-18s still have no share button (spec R13) | The spec's "no sharing" is about data, and its teen rule covers teens; invite codes alone will not spread the app |
+| 25 | Accepted Nov 28. The "Come back when you're 13" screen is shown again on a later try from the same device (spec R16) | Stops a child from going back and entering a different year |
+| 26 | Accepted Nov 28. A scorecard card on the debrief and in You: how often the learner's planned trades beat the benchmark at the horizon they chose, and wins against losses (spec R26, needs row 22) | Grades the plan, not the luck, and never rewards a rising market |
+| 27 | Accepted Nov 28. "My limits" in Settings (largest position, largest sector, a drawdown at which to pause); the ticket's risk panel names any limit an order would break, with "Change the order" and "Place anyway" as equal buttons (spec R29) | Turns lesson 1.13 into a habit the learner owns |
+| 28 | Accepted Nov 28, for after launch. A style lens sheet on a ticker inside replays and in lessons I.8 and I.9: a checklist of facts against one investing style's usual thresholds, with a "Modeled" label, never a buy or sell and never in live mode (spec R28) | Teaches how different investors read the same numbers without giving a signal |
+| 29 | The investing track has its own badge, Orchard, drawn in the level icons' style | Keeps the farm analogy; an orchard is the long-term crop |
 
 Open questions:
 
 - **Name and logo.** The guide uses no logo yet; the mark waits for Ticker Camp, or another name, to clear trademark review.
 - **Illustration style.** Lessons rely on diagrams, so the guide adds no illustrations; a small set of farm spot illustrations for empty states is possible later.
 - **Design files.** The next step is a Figma (or Flutter widgetbook) library built from these tokens, and the 10 screens as high-fidelity mocks, before code starts.
-- **Usability tests.** Five teens and five adults should try onboarding, one lesson and the March 2020 replay on phones before launch.
+- **Usability tests.** Decided Nov 28: about five adults try a clickable prototype of onboarding, one lesson and one replay before the M0 freeze, and the web app opens to adults as a beta at M3. Teen sessions still need a consent form counsel approves.
