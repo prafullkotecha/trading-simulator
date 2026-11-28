@@ -1,7 +1,7 @@
 """Draws docs/images/lessons/coverage-map.png from the "Coverage by lesson" table in docs/lesson-plan.md.
 
 Run: python3 docs/images/src/coverage_map.py   (needs matplotlib)
-A benchmark segment ending in "(partly)" is drawn light; "Not yet checked" rows are drawn dashed.
+A benchmark segment ending in "(partly)" is drawn light, and one ending in "(not checked)" is drawn dashed.
 """
 import os, re
 import matplotlib
@@ -31,7 +31,8 @@ def rows():
             for seg in met.split(" · "):
                 for b in BENCH:
                     if seg.startswith(b):
-                        cells[b] = "partly" if seg.rstrip().endswith("(partly)") else "meets"
+                        end = seg.rstrip()
+                        cells[b] = "unchecked" if end.endswith("(not checked)") else "partly" if end.endswith("(partly)") else "meets"
         out.append((num, title, cells, num in new))
     return out
 
@@ -60,7 +61,7 @@ def main():
         ax.text(32, y + row_h / 2, label, fontsize=16.5, va="center",
                 color=NEW if is_new else INK, fontweight="bold" if is_new else "normal")
         for x, b in zip(col_x, BENCH):
-            if cells is None:
+            if cells is None or cells.get(b) == "unchecked":
                 ax.add_patch(Rectangle((x + 2, y + 7), 174, 30, facecolor="white", edgecolor="#9a9a9a", lw=1.4, ls=(0, (4, 3))))
             else:
                 state = cells.get(b)
@@ -69,7 +70,7 @@ def main():
     yb = top + row_h * len(R) + 44
     ax.text(32, yb, "Sources read Nov 27, 2026: Jump$tart 2021 Investing standards (grades 8 and 12), SIFMA Stock Market Game curriculum,",
             fontsize=14.5, color=MUTED, va="center")
-    ax.text(32, yb + 32, "SEC investor.gov, Options Industry Council pages and courses, FINRA SIE content outline. Investing track added Nov 28.",
+    ax.text(32, yb + 32, "SEC investor.gov, Options Industry Council pages and courses, FINRA SIE content outline. Investing track checked Nov 28; investor.gov could not be read that day.",
             fontsize=14.5, color=MUTED, va="center")
     fig.savefig(OUT, dpi=100, facecolor="white"); plt.close(fig)
     print("wrote", os.path.normpath(OUT), len(R), "rows")
