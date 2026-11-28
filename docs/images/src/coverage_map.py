@@ -70,7 +70,7 @@ def main():
     yb = top + row_h * len(R) + 44
     ax.text(32, yb, "Sources read Nov 27, 2026: Jump$tart 2021 Investing standards (grades 8 and 12), SIFMA Stock Market Game curriculum,",
             fontsize=14.5, color=MUTED, va="center")
-    ax.text(32, yb + 32, "SEC investor.gov, Options Industry Council pages and courses, FINRA SIE content outline. Investing track checked Nov 28; investor.gov could not be read that day.",
+    ax.text(32, yb + 32, "SEC investor.gov, Options Industry Council pages and courses, FINRA SIE content outline. Investing track checked Nov 28 (investor.gov pages found by hand).",
             fontsize=14.5, color=MUTED, va="center")
     fig.savefig(OUT, dpi=100, facecolor="white"); plt.close(fig)
     print("wrote", os.path.normpath(OUT), len(R), "rows")

@@ -633,14 +633,14 @@ Approved by Prafull on Nov 27, 2026 and applied: five new Level 1 lessons (1.3, 
 | 4.4 | Credit spreads | OIC Bull Put Spread; Bear Call Spread |
 | 4.5 | Choosing strikes | OIC Strategy pages (not confirmed) (partly) |
 | 4.6 | Managing and closing early | OIC Not confirmed in pages read (partly) |
-| I.1 | Goals and time horizon | Jump$tart 12-6; 12-6a · SIFMA SMG Life Goals video; holding periods (partly) · investor.gov (not checked) |
-| I.2 | Bonds and cash | Jump$tart 8-3; 12-5d · SIFMA SMG What Is a Bond? · investor.gov (not checked) · FINRA SIE 2.1.2 Debt instruments: price and interest rate |
+| I.1 | Goals and time horizon | Jump$tart 12-6; 12-6a · SIFMA SMG Life Goals video; holding periods (partly) · investor.gov Asset allocation; Target date fund (partly) |
+| I.2 | Bonds and cash | Jump$tart 8-3; 12-5d · SIFMA SMG What Is a Bond? · investor.gov Bonds or fixed income products; Bonds · FINRA SIE 2.1.2 Debt instruments: price and interest rate |
 | I.3 | Asset allocation | Jump$tart 12-6; 12-6a; 12-6c · SIFMA SMG What is Diversification? (partly) · investor.gov Asset allocation and diversification · FINRA SIE 2.2 Mitigation: diversification (partly) |
-| I.4 | Investing a little every month | Jump$tart 8-7c; 12-10b (partly) · SIFMA SMG How Does Money Grow Over Time? (partly) · investor.gov (not checked) |
-| I.5 | Rebalancing | investor.gov (not checked) · FINRA SIE 2.2 Mitigation: portfolio rebalancing |
+| I.4 | Investing a little every month | Jump$tart 8-7c; 12-10b (partly) · SIFMA SMG How Does Money Grow Over Time? (partly) · investor.gov Glossary: Dollar cost averaging |
+| I.5 | Rebalancing | investor.gov Glossary: Rebalancing; Asset allocation · FINRA SIE 2.2 Mitigation: portfolio rebalancing |
 | I.6 | Time in the market | Jump$tart 8-7d; 12-9 (partly) · SIFMA SMG Buy, Sell, or Hold?; holding periods (partly) · investor.gov (not checked) |
 
-The investing-track rows were added on Nov 28, 2026, from the Jump$tart standards, the Stock Market Game 32-week map and the FINRA SIE outline, all read that day. investor.gov refused automated access that day, so its cells are marked "not checked" rather than guessed, except I.3, which uses the page the Nov 27 check had read. No benchmark teaches cost averaging or missing the best days by name, so I.4 and I.6 meet theirs only partly, and only the SIE outline names rebalancing. The five new reality checks are not in the map; the taxes one matches Jump$tart 12-8a.
+The investing-track rows were added on Nov 28, 2026, from the Jump$tart standards, the Stock Market Game 32-week map and the FINRA SIE outline, all read that day. investor.gov refused automated access, so Prafull found its pages by hand: the bonds pages, the glossary entries for dollar cost averaging, rebalancing and target date funds, and the asset allocation page. Those cells rest on the pages existing for the topic; their text was not read for this check. investor.gov has no page on time horizon alone, so I.1 meets it only partly, and nobody has yet looked there for I.6, which stays "not checked". No benchmark teaches cost averaging or missing the best days by name in the other three sources, so I.4 and I.6 meet those only partly, and among them only the SIE outline names rebalancing. The five new reality checks are not in the map; the taxes one matches Jump$tart 12-8a.
 
 ### Gaps the check found, and how each was closed
 
@@ -672,7 +672,7 @@ The investing-track rows were added on Nov 28, 2026, from the Jump$tart standard
 
 - [Jump$tart](https://www.jumpstart.org/wp-content/uploads/2023/04/2021_Natl_Standards_Downloadable_final.pdf): 2021 National Standards for Personal Financial Education, Investing grades 8 and 12
 - [SIFMA SMG](https://www.stockmarketgame.org/document/Fall2020_32wk_curriculum_map.pdf): SIFMA Foundation Stock Market Game curriculum maps and Essential Syllabus
-- [investor.gov](https://www.investor.gov/introduction-investing): SEC Introduction to Investing and Investment Products
+- [investor.gov](https://www.investor.gov/introduction-investing): SEC Introduction to Investing and Investment Products. For the investing track: [Bonds or fixed income products](https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products), [Dollar cost averaging](https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging), [Rebalancing](https://www.investor.gov/introduction-investing/investing-basics/glossary/rebalancing), [Asset allocation](https://www.investor.gov/introduction-investing/getting-started/asset-allocation) and [Target date fund](https://www.investor.gov/introduction-investing/investing-basics/glossary/target-date-fund)
 - [OIC](https://www.optionseducation.org/strategies/all-strategies-en): Options Industry Council: OCC Learning courses, Options Overview, Strategies, Advanced Concepts
 - [FINRA SIE](https://www.finra.org/sites/default/files/SIE_Content_Outline.pdf): FINRA Securities Industry Essentials exam content outline
 
